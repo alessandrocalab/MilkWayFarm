@@ -28,14 +28,18 @@ DATA_ALLOCAZIONE = []
 DATA_DEALLOCAIONE = []
 
 
+theList=list(zip(NUMERO_BLOCCO, NOME_STRUTTURA, CODICE_AREA, ETICHETTA_ANIMALE, DATA_ALLOCAZIONE, DATA_DEALLOCAIONE))
 
-theDict=zip(NUMERO_BLOCCO, NOME_STRUTTURA, CODICE_AREA, ETICHETTA_ANIMALE, DATA_ALLOCAZIONE, DATA_DEALLOCAIONE)
-theList=list(theDict)
+keys = ["NUMERO_BLOCCO", "NOME_STRUTTURA", "CODICE_AREA", "ETICHETTA_ANIMALE", "DATA_ALLOCAZIONE", "DATA_DEALLOCAIONE"]
 
-lines="--NUMERO_BLOCCO, NOME_STRUTTURA, CODICE_AREA, ETICHETTA_ANIMALE, DATA_ALLOCAZIONE, DATA_DEALLOCAIONE"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--NUMERO_BLOCCO, NOME_STRUTTURA, CODICE_AREA, ETICHETTA_ANIMALE, DATA_ALLOCAZIONE, DATA_DEALLOCAIONE\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("ANIMALE_ALLOCATO_BLOCCO", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("ANIMALE_ALLOCATO_BLOCCO", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/9_animale_allocato_blocco.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/9_animale_allocato_blocco.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/9_animale_allocato_blocco.sql", lines)

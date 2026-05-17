@@ -1,13 +1,30 @@
---'NOME_PRODOTTO', 'ALCOL', 'FIBRE', 'PROTEINE', 'GRASSI', 'CARBOIDRATI', 'UNITA_MISURA', 'IS_EDIBILE'
-INSERT INTO TIPO_PRODOTTO VALUES ('latte', 0, 0, 3.3, 3.6, 4.9, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('yogurt', 0, 0, 3.8, 3.5, 4.3, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('formaggio', 0, 0, 25.0, 30.0, 1.5, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('burro', 0, 0, 0.8, 82.0, 0.7, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('panna', 0, 0, 2.1, 35.0, 3.0, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('gelato', 0, 0.2, 3.5, 8.0, 24.0, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('ricotta', 0, 0, 8.8, 10.9, 3.5, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('mozzarella', 0, 0, 18.0, 20.0, 2.0, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('gorgonzola', 0, 0, 19.0, 27.0, 1.0, 'g', 1);
-INSERT INTO TIPO_PRODOTTO VALUES ('parmigiano', 0, 0, 33.0, 29.0, 0.0, 'g', 1);
-
-commit;
+--NOME_PRODOTTO, ALCOL, FIBRE, PROTEINE, GRASSI, CARBOIDRATI, UNITA_MISURA, IS_EDIBILE
+INSERT INTO TIPO_PRODOTTO VALUES ('Latte bovino liofilizzato', 0, 0, 26.0, 27.0, 38.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Uova in polvere', 0, 0, 48.0, 40.0, 2.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Farina di grano idroponico', 0, 3.4, 12.0, 1.5, 72.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Lattuga idroponica', 0, 1.3, 1.4, 0.2, 2.9, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Pomodoro idroponico', 0, 1.2, 0.9, 0.2, 3.9, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Patata coltivata in serra', 0, 2.2, 2.0, 0.1, 17.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Soia essiccata', 0, 9.3, 36.0, 20.0, 30.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Mais essiccato', 0, 7.3, 9.0, 4.7, 74.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Carota idroponica', 0, 2.8, 0.9, 0.2, 9.6, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Fragola idroponica', 0, 2.0, 0.7, 0.3, 7.7, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Funghi coltivati', 0, 2.5, 3.1, 0.3, 3.3, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Yogurt liofilizzato', 0, 0, 35.0, 20.0, 38.0, 'kg', 1);
+INSERT INTO TIPO_PRODOTTO VALUES ('Antibiotico veterinario base', NULL, NULL, NULL, NULL, NULL, 'ml', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Antiparassitario veterinario', NULL, NULL, NULL, NULL, NULL, 'ml', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Vaccino bovino standard', NULL, NULL, NULL, NULL, NULL, 'dose', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Integratore minerale per animali', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Disinfettante per stalla', NULL, NULL, NULL, NULL, NULL, 'l', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Soluzione nutritiva idroponica universale', NULL, NULL, NULL, NULL, NULL, 'l', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Soluzione nutritiva azotata', NULL, NULL, NULL, NULL, NULL, 'l', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Soluzione nutritiva fosfo-potassica', NULL, NULL, NULL, NULL, NULL, 'l', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Correttore PH per colture', NULL, NULL, NULL, NULL, NULL, 'l', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Chelato di ferro per piante', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di lattuga', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di pomodoro', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di grano', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di soia', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di mais', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di carota', NULL, NULL, NULL, NULL, NULL, 'kg', 0);
+INSERT INTO TIPO_PRODOTTO VALUES ('Semi di fragola', NULL, NULL, NULL, NULL, NULL, 'kg', 0);

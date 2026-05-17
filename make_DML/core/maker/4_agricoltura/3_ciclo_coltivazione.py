@@ -32,14 +32,18 @@ NOME_MOD_COLTIVAZIONE = []
 NOME_TIPO_COLTURA = []
 
 
+theList=list(zip(DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA))
 
-theDict=zip(DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA)
-theList=list(theDict)
+keys = ["DATA_INIZIO", "CODICE_CELLA_IDR", "CODICE_AREA", "NOME_STRUTTURA", "DATA_FINE_EFFETTIVA", "QUANTITA_SEMI", "NOME_MOD_COLTIVAZIONE", "NOME_TIPO_COLTURA"]
 
-lines="--DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("CICLO_COLTIVAZIONE", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("CICLO_COLTIVAZIONE", theList[i])+"\n"
 
-make_DML("DB/DML4_agricoltura/3_ciclo_coltivazione.sql", lines)
+os.makedirs("make_DML/data/4_agricoltura", exist_ok=True)
+with open("make_DML/data/4_agricoltura/3_ciclo_coltivazione.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/4_agricoltura/3_ciclo_coltivazione.sql", lines)

@@ -1,1 +1,1 @@
-select * from TIPO_PRODOTTO;
+select * from struttura;

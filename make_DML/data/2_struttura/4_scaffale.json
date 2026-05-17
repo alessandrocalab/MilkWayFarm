@@ -1,0 +1,110 @@
+[
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-12-20'",
+        "CAPACITA_KG": 1200,
+        "DIMENSIONE_M3": 18
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-12-21'",
+        "CAPACITA_KG": 1200,
+        "DIMENSIONE_M3": 18
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-12-22'",
+        "CAPACITA_KG": 1000,
+        "DIMENSIONE_M3": 15
+    },
+    {
+        "NUMERO_SCAFFALE": "'0004'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-12-23'",
+        "CAPACITA_KG": 1000,
+        "DIMENSIONE_M3": 15
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A10A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2021-01-15'",
+        "CAPACITA_KG": 800,
+        "DIMENSIONE_M3": 12
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A10A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2021-01-16'",
+        "CAPACITA_KG": 800,
+        "DIMENSIONE_M3": 12
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A10A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2021-01-17'",
+        "CAPACITA_KG": 600,
+        "DIMENSIONE_M3": 10
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A07A'",
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-03-10'",
+        "CAPACITA_KG": 250,
+        "DIMENSIONE_M3": 5
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A07A'",
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-03-12'",
+        "CAPACITA_KG": 250,
+        "DIMENSIONE_M3": 5
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A11A'",
+        "NOME_STRUTTURA": "'Deposito Tecnico Zeta'",
+        "DATA_SMONTAGGIO": "DATE '2025-10-30'",
+        "DATA_MONTAGGIO": "DATE '2021-07-15'",
+        "CAPACITA_KG": 700,
+        "DIMENSIONE_M3": 14
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A11A'",
+        "NOME_STRUTTURA": "'Deposito Tecnico Zeta'",
+        "DATA_SMONTAGGIO": "DATE '2025-10-30'",
+        "DATA_MONTAGGIO": "DATE '2021-07-18'",
+        "CAPACITA_KG": 700,
+        "DIMENSIONE_M3": 14
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A16A'",
+        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2025-03-10'",
+        "CAPACITA_KG": 300,
+        "DIMENSIONE_M3": 6
+    }
+]

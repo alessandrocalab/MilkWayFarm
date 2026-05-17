@@ -1,0 +1,146 @@
+[
+    {
+        "NOME_DIETA": "'Dieta vitello bovino nano'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane bovino nano'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto bovino nano'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta capretto capra nana'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane capra nana'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto capra nana'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta agnello pecora compatta'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane pecora compatta'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto pecora compatta'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta cucciolo coniglio europeo'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane coniglio europeo'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto coniglio europeo'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta pulcino gallina ovaiola'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta pollastra gallina ovaiola'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto gallina ovaiola'",
+        "OBIETTIVO_DIETA": "'RIPRODUZIONE'"
+    },
+    {
+        "NOME_DIETA": "'Dieta pulcino quaglia giapponese'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane quaglia giapponese'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto quaglia giapponese'",
+        "OBIETTIVO_DIETA": "'RIPRODUZIONE'"
+    },
+    {
+        "NOME_DIETA": "'Dieta anatroccolo anatra domestica'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane anatra domestica'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto anatra domestica'",
+        "OBIETTIVO_DIETA": "'RIPRODUZIONE'"
+    },
+    {
+        "NOME_DIETA": "'Dieta suinetto maiale nano'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane maiale nano'",
+        "OBIETTIVO_DIETA": "'INGRASSO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto maiale nano'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta avannotto trota iridea'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane trota iridea'",
+        "OBIETTIVO_DIETA": "'INGRASSO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto trota iridea'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta avannotto tilapia nilotica'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane tilapia nilotica'",
+        "OBIETTIVO_DIETA": "'INGRASSO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto tilapia nilotica'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta pulcino tacchino nano'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane tacchino nano'",
+        "OBIETTIVO_DIETA": "'INGRASSO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto tacchino nano'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta papero oca domestica'",
+        "OBIETTIVO_DIETA": "'CRESCITA'"
+    },
+    {
+        "NOME_DIETA": "'Dieta giovane oca domestica'",
+        "OBIETTIVO_DIETA": "'INGRASSO'"
+    },
+    {
+        "NOME_DIETA": "'Dieta adulto oca domestica'",
+        "OBIETTIVO_DIETA": "'MANTENIMENTO'"
+    }
+]

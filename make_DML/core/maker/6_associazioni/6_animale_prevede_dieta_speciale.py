@@ -24,14 +24,18 @@ DATA_INIZIO = []
 DATA_FINE = []
 
 
+theList=list(zip(ETICHETTA_ANIMALE, NOME_DIETA, DATA_INIZIO, DATA_FINE))
 
-theDict=zip(ETICHETTA_ANIMALE, NOME_DIETA, DATA_INIZIO, DATA_FINE)
-theList=list(theDict)
+keys = ["ETICHETTA_ANIMALE", "NOME_DIETA", "DATA_INIZIO", "DATA_FINE"]
 
-lines="--ETICHETTA_ANIMALE, NOME_DIETA, DATA_INIZIO, DATA_FINE"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--ETICHETTA_ANIMALE, NOME_DIETA, DATA_INIZIO, DATA_FINE\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("ANIMALE_PREVEDE_DIETA_SPECIALE", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("ANIMALE_PREVEDE_DIETA_SPECIALE", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/6_animale_prevede_dieta_speciale.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/6_animale_prevede_dieta_speciale.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/6_animale_prevede_dieta_speciale.sql", lines)

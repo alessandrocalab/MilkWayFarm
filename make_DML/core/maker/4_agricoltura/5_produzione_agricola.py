@@ -30,14 +30,18 @@ NOME_PRODOTTO = []
 QUANTITA = []
 
 
+theList=list(zip(DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, NOME_PRODOTTO, QUANTITA))
 
-theDict=zip(DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, NOME_PRODOTTO, QUANTITA)
-theList=list(theDict)
+keys = ["DATA_PRODUZIONE_AGRICOLA", "DATA_INIZIO_CICLO_COLTIVAZIONE", "CODICE_CELLA_IDR", "CODICE_AREA", "NOME_STRUTTURA", "NOME_PRODOTTO", "QUANTITA"]
 
-lines="--DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, NOME_PRODOTTO, QUANTITA"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, NOME_PRODOTTO, QUANTITA\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("PRODUZIONE_AGRICOLA", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("PRODUZIONE_AGRICOLA", theList[i])+"\n"
 
-make_DML("DB/DML4_agricoltura/5_produzione_agricola.sql", lines)
+os.makedirs("make_DML/data/4_agricoltura", exist_ok=True)
+with open("make_DML/data/4_agricoltura/5_produzione_agricola.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/4_agricoltura/5_produzione_agricola.sql", lines)

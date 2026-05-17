@@ -1,0 +1,102 @@
+[
+    {
+        "NOME_SOSTANZA": "'Lattosio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Caseina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine del latte'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Albumina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Ovomucoide'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Glutine'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Frumento'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Soia'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Lecitina di soia'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Mais'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Solanina'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Nichel'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Saccarosio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Istamina'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Beta-glucani'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Chitina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Acido citrico'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Potassio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Fibre vegetali'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    }
+]

@@ -34,14 +34,18 @@ NOME_STRUTTURA_SCAFF = []
 QUANTITA_ALLOCATA = []
 
 
+theList=list(zip(DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA))
 
-theDict=zip(DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA)
-theList=list(theDict)
+keys = ["DATA_PRODUZIONE", "NUMERO_BLOCCO", "NOME_STRUTTURA_BLOCCO", "CODICE_AREA_BLOCCO", "NOME_PRODOTTO", "NUMERO_SCAFFALE", "CODICE_AREA_SCAFF", "NOME_STRUTTURA_SCAFF", "QUANTITA_ALLOCATA"]
 
-lines="--DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("PRODUZIONE_ANIMALE_ALLOC_SCAFF", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("PRODUZIONE_ANIMALE_ALLOC_SCAFF", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/18_produzione_animale_alloc_scaff.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/18_produzione_animale_alloc_scaff.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/18_produzione_animale_alloc_scaff.sql", lines)

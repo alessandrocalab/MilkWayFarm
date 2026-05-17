@@ -1,0 +1,292 @@
+[
+    {
+        "NOME_PRODOTTO": "'Latte bovino liofilizzato'",
+        "ALCOL": 0,
+        "FIBRE": 0,
+        "PROTEINE": 26.0,
+        "GRASSI": 27.0,
+        "CARBOIDRATI": 38.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Uova in polvere'",
+        "ALCOL": 0,
+        "FIBRE": 0,
+        "PROTEINE": 48.0,
+        "GRASSI": 40.0,
+        "CARBOIDRATI": 2.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Farina di grano idroponico'",
+        "ALCOL": 0,
+        "FIBRE": 3.4,
+        "PROTEINE": 12.0,
+        "GRASSI": 1.5,
+        "CARBOIDRATI": 72.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Lattuga idroponica'",
+        "ALCOL": 0,
+        "FIBRE": 1.3,
+        "PROTEINE": 1.4,
+        "GRASSI": 0.2,
+        "CARBOIDRATI": 2.9,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Pomodoro idroponico'",
+        "ALCOL": 0,
+        "FIBRE": 1.2,
+        "PROTEINE": 0.9,
+        "GRASSI": 0.2,
+        "CARBOIDRATI": 3.9,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Patata coltivata in serra'",
+        "ALCOL": 0,
+        "FIBRE": 2.2,
+        "PROTEINE": 2.0,
+        "GRASSI": 0.1,
+        "CARBOIDRATI": 17.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Soia essiccata'",
+        "ALCOL": 0,
+        "FIBRE": 9.3,
+        "PROTEINE": 36.0,
+        "GRASSI": 20.0,
+        "CARBOIDRATI": 30.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Mais essiccato'",
+        "ALCOL": 0,
+        "FIBRE": 7.3,
+        "PROTEINE": 9.0,
+        "GRASSI": 4.7,
+        "CARBOIDRATI": 74.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Carota idroponica'",
+        "ALCOL": 0,
+        "FIBRE": 2.8,
+        "PROTEINE": 0.9,
+        "GRASSI": 0.2,
+        "CARBOIDRATI": 9.6,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Fragola idroponica'",
+        "ALCOL": 0,
+        "FIBRE": 2.0,
+        "PROTEINE": 0.7,
+        "GRASSI": 0.3,
+        "CARBOIDRATI": 7.7,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Funghi coltivati'",
+        "ALCOL": 0,
+        "FIBRE": 2.5,
+        "PROTEINE": 3.1,
+        "GRASSI": 0.3,
+        "CARBOIDRATI": 3.3,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Yogurt liofilizzato'",
+        "ALCOL": 0,
+        "FIBRE": 0,
+        "PROTEINE": 35.0,
+        "GRASSI": 20.0,
+        "CARBOIDRATI": 38.0,
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 1
+    },
+    {
+        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'ml'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Antiparassitario veterinario'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'ml'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Vaccino bovino standard'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'dose'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Integratore minerale per animali'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Disinfettante per stalla'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'l'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Soluzione nutritiva idroponica universale'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'l'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Soluzione nutritiva azotata'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'l'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Soluzione nutritiva fosfo-potassica'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'l'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Correttore PH per colture'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'l'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Chelato di ferro per piante'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di lattuga'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di pomodoro'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di grano'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di soia'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di mais'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di carota'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di fragola'",
+        "ALCOL": "NULL",
+        "FIBRE": "NULL",
+        "PROTEINE": "NULL",
+        "GRASSI": "NULL",
+        "CARBOIDRATI": "NULL",
+        "UNITA_MISURA": "'kg'",
+        "IS_EDIBILE": 0
+    }
+]

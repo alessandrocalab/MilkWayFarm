@@ -1,0 +1,122 @@
+[
+    {
+        "NOME_TIPO_ANIMALE": "'Bovino nano'",
+        "SPECIE": "'Bos taurus'",
+        "VITA_MEDIA_ANNI": 18,
+        "MODALITA_RIPRODUZIONE": "'VIVIPARA'",
+        "GIORNI_GESTAZIONE": 283,
+        "UMIDITA_IDEALE": 60,
+        "SPAZIO_MINIMO_MQ": 8.0,
+        "TEMPERATURA_IDEALE": 291.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Capra nana'",
+        "SPECIE": "'Capra hircus'",
+        "VITA_MEDIA_ANNI": 12,
+        "MODALITA_RIPRODUZIONE": "'VIVIPARA'",
+        "GIORNI_GESTAZIONE": 150,
+        "UMIDITA_IDEALE": 55,
+        "SPAZIO_MINIMO_MQ": 2.0,
+        "TEMPERATURA_IDEALE": 290.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
+        "SPECIE": "'Ovis aries'",
+        "VITA_MEDIA_ANNI": 11,
+        "MODALITA_RIPRODUZIONE": "'VIVIPARA'",
+        "GIORNI_GESTAZIONE": 147,
+        "UMIDITA_IDEALE": 55,
+        "SPAZIO_MINIMO_MQ": 2.0,
+        "TEMPERATURA_IDEALE": 289.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
+        "SPECIE": "'Oryctolagus cuniculus'",
+        "VITA_MEDIA_ANNI": 8,
+        "MODALITA_RIPRODUZIONE": "'VIVIPARA'",
+        "GIORNI_GESTAZIONE": 31,
+        "UMIDITA_IDEALE": 60,
+        "SPAZIO_MINIMO_MQ": 0.8,
+        "TEMPERATURA_IDEALE": 293.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
+        "SPECIE": "'Gallus gallus domesticus'",
+        "VITA_MEDIA_ANNI": 7,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 60,
+        "SPAZIO_MINIMO_MQ": 0.25,
+        "TEMPERATURA_IDEALE": 294.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
+        "SPECIE": "'Coturnix japonica'",
+        "VITA_MEDIA_ANNI": 3,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 55,
+        "SPAZIO_MINIMO_MQ": 0.08,
+        "TEMPERATURA_IDEALE": 295.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
+        "SPECIE": "'Anas platyrhynchos domesticus'",
+        "VITA_MEDIA_ANNI": 8,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 65,
+        "SPAZIO_MINIMO_MQ": 0.5,
+        "TEMPERATURA_IDEALE": 293.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Maiale nano'",
+        "SPECIE": "'Sus scrofa domesticus'",
+        "VITA_MEDIA_ANNI": 12,
+        "MODALITA_RIPRODUZIONE": "'VIVIPARA'",
+        "GIORNI_GESTAZIONE": 114,
+        "UMIDITA_IDEALE": 60,
+        "SPAZIO_MINIMO_MQ": 3.0,
+        "TEMPERATURA_IDEALE": 294.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Trota iridea'",
+        "SPECIE": "'Oncorhynchus mykiss'",
+        "VITA_MEDIA_ANNI": 6,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 95,
+        "SPAZIO_MINIMO_MQ": 0.15,
+        "TEMPERATURA_IDEALE": 285.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'",
+        "SPECIE": "'Oreochromis niloticus'",
+        "VITA_MEDIA_ANNI": 8,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 95,
+        "SPAZIO_MINIMO_MQ": 0.12,
+        "TEMPERATURA_IDEALE": 300.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Tacchino nano'",
+        "SPECIE": "'Meleagris gallopavo'",
+        "VITA_MEDIA_ANNI": 6,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 60,
+        "SPAZIO_MINIMO_MQ": 0.4,
+        "TEMPERATURA_IDEALE": 293.15
+    },
+    {
+        "NOME_TIPO_ANIMALE": "'Oca domestica'",
+        "SPECIE": "'Anser anser domesticus'",
+        "VITA_MEDIA_ANNI": 15,
+        "MODALITA_RIPRODUZIONE": "'OVIPARA'",
+        "GIORNI_GESTAZIONE": "NULL",
+        "UMIDITA_IDEALE": 65,
+        "SPAZIO_MINIMO_MQ": 0.7,
+        "TEMPERATURA_IDEALE": 292.15
+    }
+]

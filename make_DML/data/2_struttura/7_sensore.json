@@ -1,0 +1,226 @@
+[
+    {
+        "SERIALE": "'SEN000001'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-TEMP-100'",
+        "CODICE_AREA": "'A01A'",
+        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+    },
+    {
+        "SERIALE": "'SEN000002'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-HUM-120'",
+        "CODICE_AREA": "'A01A'",
+        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+    },
+    {
+        "SERIALE": "'SEN000003'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-PRESS-200'",
+        "CODICE_AREA": "'A01A'",
+        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+    },
+    {
+        "SERIALE": "'SEN000004'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-CO2-310'",
+        "CODICE_AREA": "'A03A'",
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+    },
+    {
+        "SERIALE": "'SEN000005'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-O2-320'",
+        "CODICE_AREA": "'A03A'",
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+    },
+    {
+        "SERIALE": "'SEN000006'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-NH3-330'",
+        "CODICE_AREA": "'A03A'",
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+    },
+    {
+        "SERIALE": "'SEN000007'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-TEMP-100'",
+        "CODICE_AREA": "'A04A'",
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+    },
+    {
+        "SERIALE": "'SEN000008'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-HUM-120'",
+        "CODICE_AREA": "'A04A'",
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+    },
+    {
+        "SERIALE": "'SEN000009'",
+        "NOME_PRODUTTORE": "'BioFarm Analytics'",
+        "NOME_MODELLO": "'BFA-BIO-TEMP-10'",
+        "CODICE_AREA": "'A08A'",
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'"
+    },
+    {
+        "SERIALE": "'SEN000010'",
+        "NOME_PRODUTTORE": "'BioFarm Analytics'",
+        "NOME_MODELLO": "'BFA-BIO-HUM-20'",
+        "CODICE_AREA": "'A08A'",
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'"
+    },
+    {
+        "SERIALE": "'SEN000011'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-CO2-310'",
+        "CODICE_AREA": "'A16A'",
+        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'"
+    },
+    {
+        "SERIALE": "'SEN000012'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-NH3-330'",
+        "CODICE_AREA": "'A16A'",
+        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'"
+    },
+    {
+        "SERIALE": "'SEN000013'",
+        "NOME_PRODUTTORE": "'HydroSpace Lab'",
+        "NOME_MODELLO": "'HSL-PH-400'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000014'",
+        "NOME_PRODUTTORE": "'HydroSpace Lab'",
+        "NOME_MODELLO": "'HSL-EC-410'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000015'",
+        "NOME_PRODUTTORE": "'HydroSpace Lab'",
+        "NOME_MODELLO": "'HSL-LIQ-TEMP-420'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000016'",
+        "NOME_PRODUTTORE": "'AstraControl Sensors'",
+        "NOME_MODELLO": "'ACS-LUX-500'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000017'",
+        "NOME_PRODUTTORE": "'AstraControl Sensors'",
+        "NOME_MODELLO": "'ACS-PAR-510'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000018'",
+        "NOME_PRODUTTORE": "'AgriMoon Devices'",
+        "NOME_MODELLO": "'AMD-MOIST-700'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000019'",
+        "NOME_PRODUTTORE": "'HydroSpace Lab'",
+        "NOME_MODELLO": "'HSL-PH-400'",
+        "CODICE_AREA": "'A06A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000020'",
+        "NOME_PRODUTTORE": "'HydroSpace Lab'",
+        "NOME_MODELLO": "'HSL-EC-410'",
+        "CODICE_AREA": "'A06A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+    },
+    {
+        "SERIALE": "'SEN000021'",
+        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
+        "NOME_MODELLO": "'NHM-LEVEL-810'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+    },
+    {
+        "SERIALE": "'SEN000022'",
+        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
+        "NOME_MODELLO": "'NHM-MASS-800'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+    },
+    {
+        "SERIALE": "'SEN000023'",
+        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
+        "NOME_MODELLO": "'ST-FLOW-620'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+    },
+    {
+        "SERIALE": "'SEN000024'",
+        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
+        "NOME_MODELLO": "'ST-ENERGY-610'",
+        "CODICE_AREA": "'A13A'",
+        "NOME_STRUTTURA": "'Modulo Energia Theta'"
+    },
+    {
+        "SERIALE": "'SEN000025'",
+        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
+        "NOME_MODELLO": "'NHM-MASS-800'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+    },
+    {
+        "SERIALE": "'SEN000026'",
+        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
+        "NOME_MODELLO": "'NHM-LEVEL-810'",
+        "CODICE_AREA": "'A09A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+    },
+    {
+        "SERIALE": "'SEN000027'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-TEMP-100'",
+        "CODICE_AREA": "'A10A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+    },
+    {
+        "SERIALE": "'SEN000028'",
+        "NOME_PRODUTTORE": "'LunaSense Systems'",
+        "NOME_MODELLO": "'LS-HUM-120'",
+        "CODICE_AREA": "'A10A'",
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+    },
+    {
+        "SERIALE": "'SEN000029'",
+        "NOME_PRODUTTORE": "'Orbitron Instruments'",
+        "NOME_MODELLO": "'ORB-O2-320'",
+        "CODICE_AREA": "'A14A'",
+        "NOME_STRUTTURA": "'Centro Controllo Iota'"
+    },
+    {
+        "SERIALE": "'SEN000030'",
+        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
+        "NOME_MODELLO": "'ST-VIB-600'",
+        "CODICE_AREA": "'A13A'",
+        "NOME_STRUTTURA": "'Modulo Energia Theta'"
+    },
+    {
+        "SERIALE": "'SEN000031'",
+        "NOME_PRODUTTORE": "'AstraControl Sensors'",
+        "NOME_MODELLO": "'ACS-UV-520'",
+        "CODICE_AREA": "'A15A'",
+        "NOME_STRUTTURA": "'Cupola Osservazione Kappa'"
+    },
+    {
+        "SERIALE": "'SEN000032'",
+        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
+        "NOME_MODELLO": "'NHM-RAD-820'",
+        "CODICE_AREA": "'A14A'",
+        "NOME_STRUTTURA": "'Centro Controllo Iota'"
+    }
+]

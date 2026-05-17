@@ -20,14 +20,18 @@ NOME_TIPO_COLTURA = []
 NOME_MODALITA_COLTIVAZIONE = []
 
 
+theList=list(zip(NOME_TIPO_COLTURA, NOME_MODALITA_COLTIVAZIONE))
 
-theDict=zip(NOME_TIPO_COLTURA, NOME_MODALITA_COLTIVAZIONE)
-theList=list(theDict)
+keys = ["NOME_TIPO_COLTURA", "NOME_MODALITA_COLTIVAZIONE"]
 
-lines="--NOME_TIPO_COLTURA, NOME_MODALITA_COLTIVAZIONE"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--NOME_TIPO_COLTURA, NOME_MODALITA_COLTIVAZIONE\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("TIPO_COLT_ACCETTA_MOD_COLT", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("TIPO_COLT_ACCETTA_MOD_COLT", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/11_tipo_colt_accetta_mod_colt.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/11_tipo_colt_accetta_mod_colt.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/11_tipo_colt_accetta_mod_colt.sql", lines)

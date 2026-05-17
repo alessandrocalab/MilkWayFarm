@@ -1,0 +1,302 @@
+[
+    {
+        "ETICHETTA": "'10000001'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 3,
+        "ANNO_NASCITA": 2018,
+        "DATA_INGRESSO": "DATE '2018-10-20'",
+        "NOME_TIPO_ANIMALE": "'Bovino nano'"
+    },
+    {
+        "ETICHETTA": "'10000002'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 5,
+        "ANNO_NASCITA": 2019,
+        "DATA_INGRESSO": "DATE '2019-06-10'",
+        "NOME_TIPO_ANIMALE": "'Bovino nano'"
+    },
+    {
+        "ETICHETTA": "'10000003'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000002'",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 9,
+        "ANNO_NASCITA": 2023,
+        "DATA_INGRESSO": "DATE '2023-10-05'",
+        "NOME_TIPO_ANIMALE": "'Bovino nano'"
+    },
+    {
+        "ETICHETTA": "'10000004'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 2,
+        "ANNO_NASCITA": 2019,
+        "DATA_INGRESSO": "DATE '2019-03-12'",
+        "NOME_TIPO_ANIMALE": "'Capra nana'"
+    },
+    {
+        "ETICHETTA": "'10000005'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 6,
+        "ANNO_NASCITA": 2020,
+        "DATA_INGRESSO": "DATE '2020-07-15'",
+        "NOME_TIPO_ANIMALE": "'Capra nana'"
+    },
+    {
+        "ETICHETTA": "'10000006'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000005'",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 11,
+        "ANNO_NASCITA": 2024,
+        "DATA_INGRESSO": "DATE '2024-12-02'",
+        "NOME_TIPO_ANIMALE": "'Capra nana'"
+    },
+    {
+        "ETICHETTA": "'10000007'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 4,
+        "ANNO_NASCITA": 2018,
+        "DATA_INGRESSO": "DATE '2018-11-05'",
+        "NOME_TIPO_ANIMALE": "'Pecora compatta'"
+    },
+    {
+        "ETICHETTA": "'10000008'",
+        "DATA_USCITA": "DATE '2025-11-20'",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 7,
+        "ANNO_NASCITA": 2019,
+        "DATA_INGRESSO": "DATE '2019-08-14'",
+        "NOME_TIPO_ANIMALE": "'Pecora compatta'"
+    },
+    {
+        "ETICHETTA": "'10000009'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000007'",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 1,
+        "ANNO_NASCITA": 2024,
+        "DATA_INGRESSO": "DATE '2024-02-10'",
+        "NOME_TIPO_ANIMALE": "'Pecora compatta'"
+    },
+    {
+        "ETICHETTA": "'10000010'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 8,
+        "ANNO_NASCITA": 2020,
+        "DATA_INGRESSO": "DATE '2020-09-01'",
+        "NOME_TIPO_ANIMALE": "'Coniglio europeo'"
+    },
+    {
+        "ETICHETTA": "'10000011'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 10,
+        "ANNO_NASCITA": 2021,
+        "DATA_INGRESSO": "DATE '2021-11-05'",
+        "NOME_TIPO_ANIMALE": "'Coniglio europeo'"
+    },
+    {
+        "ETICHETTA": "'10000012'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000011'",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 2,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-03-20'",
+        "NOME_TIPO_ANIMALE": "'Coniglio europeo'"
+    },
+    {
+        "ETICHETTA": "'10000013'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 3,
+        "ANNO_NASCITA": 2021,
+        "DATA_INGRESSO": "DATE '2021-04-01'",
+        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'"
+    },
+    {
+        "ETICHETTA": "'10000014'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 3,
+        "ANNO_NASCITA": 2021,
+        "DATA_INGRESSO": "DATE '2021-04-01'",
+        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'"
+    },
+    {
+        "ETICHETTA": "'10000015'",
+        "DATA_USCITA": "DATE '2025-09-12'",
+        "ETICHETTA_GENITORE": "'10000013'",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 6,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-06-25'",
+        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'"
+    },
+    {
+        "ETICHETTA": "'10000016'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 5,
+        "ANNO_NASCITA": 2022,
+        "DATA_INGRESSO": "DATE '2022-06-02'",
+        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'"
+    },
+    {
+        "ETICHETTA": "'10000017'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 5,
+        "ANNO_NASCITA": 2022,
+        "DATA_INGRESSO": "DATE '2022-06-02'",
+        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'"
+    },
+    {
+        "ETICHETTA": "'10000018'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000017'",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 9,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-10-10'",
+        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'"
+    },
+    {
+        "ETICHETTA": "'10000019'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 4,
+        "ANNO_NASCITA": 2020,
+        "DATA_INGRESSO": "DATE '2020-05-20'",
+        "NOME_TIPO_ANIMALE": "'Anatra domestica'"
+    },
+    {
+        "ETICHETTA": "'10000020'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 4,
+        "ANNO_NASCITA": 2021,
+        "DATA_INGRESSO": "DATE '2021-05-15'",
+        "NOME_TIPO_ANIMALE": "'Anatra domestica'"
+    },
+    {
+        "ETICHETTA": "'10000021'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000020'",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 8,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-09-01'",
+        "NOME_TIPO_ANIMALE": "'Anatra domestica'"
+    },
+    {
+        "ETICHETTA": "'10000022'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 1,
+        "ANNO_NASCITA": 2019,
+        "DATA_INGRESSO": "DATE '2019-02-10'",
+        "NOME_TIPO_ANIMALE": "'Maiale nano'"
+    },
+    {
+        "ETICHETTA": "'10000023'",
+        "DATA_USCITA": "DATE '2025-12-05'",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 2,
+        "ANNO_NASCITA": 2020,
+        "DATA_INGRESSO": "DATE '2020-03-05'",
+        "NOME_TIPO_ANIMALE": "'Maiale nano'"
+    },
+    {
+        "ETICHETTA": "'10000024'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "'10000023'",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 6,
+        "ANNO_NASCITA": 2024,
+        "DATA_INGRESSO": "DATE '2024-07-12'",
+        "NOME_TIPO_ANIMALE": "'Maiale nano'"
+    },
+    {
+        "ETICHETTA": "'10000025'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 7,
+        "ANNO_NASCITA": 2024,
+        "DATA_INGRESSO": "DATE '2024-08-01'",
+        "NOME_TIPO_ANIMALE": "'Trota iridea'"
+    },
+    {
+        "ETICHETTA": "'10000026'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 7,
+        "ANNO_NASCITA": 2024,
+        "DATA_INGRESSO": "DATE '2024-08-01'",
+        "NOME_TIPO_ANIMALE": "'Trota iridea'"
+    },
+    {
+        "ETICHETTA": "'10000027'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 9,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-10-01'",
+        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'"
+    },
+    {
+        "ETICHETTA": "'10000028'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'I'",
+        "MESE_NASCITA": 9,
+        "ANNO_NASCITA": 2025,
+        "DATA_INGRESSO": "DATE '2025-10-01'",
+        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'"
+    },
+    {
+        "ETICHETTA": "'10000029'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'M'",
+        "MESE_NASCITA": 11,
+        "ANNO_NASCITA": 2022,
+        "DATA_INGRESSO": "DATE '2022-12-15'",
+        "NOME_TIPO_ANIMALE": "'Tacchino nano'"
+    },
+    {
+        "ETICHETTA": "'10000030'",
+        "DATA_USCITA": "NULL",
+        "ETICHETTA_GENITORE": "NULL",
+        "SESSO": "'F'",
+        "MESE_NASCITA": 12,
+        "ANNO_NASCITA": 2021,
+        "DATA_INGRESSO": "DATE '2022-01-20'",
+        "NOME_TIPO_ANIMALE": "'Oca domestica'"
+    }
+]

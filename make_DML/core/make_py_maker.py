@@ -24,11 +24,11 @@ def makePyMaker(path:str):
 
     tmp=path.split("/")
     path_json:str=""
-    path_json.join(tmp[-2:])
+    path_json+="/".join(tmp[-2:])
     path_json=path_json[:-3] #rimozione sql
     path_json+="json"
 
-    path_DML:str=DML_PATH
+    path_DML:str=DML_PATH+"/"
     path_DML+="/".join(tmp[-2:])
 
     maker_text = (
@@ -56,18 +56,27 @@ def makePyMaker(path:str):
     for el in attr_list:
         maker_text+=f"{el} = []\n\n"
     
-    maker_text+="\n\ntheDict=zip("
+    maker_text+="\ntheList=list(zip("
 
     for el in attr_list:
         maker_text+=f"{el}, "
     
     maker_text=maker_text[:-2]#rimozione , 
 
-    maker_text+=(
-            ")\n"
-            "theList=list(theDict)\n\n"
-            "lines=\"--"
-        )
+    maker_text += "))\n\n"
+
+    maker_text += "keys = ["
+
+    for el in attr_list:
+        maker_text+= f"\"{el}\", "
+        
+    maker_text=maker_text[:-2]
+
+    maker_text+="]\n\n"
+
+    maker_text+="theJsonList=[dict(zip(keys, row)) for row in theList]\n\n"
+
+    maker_text+="lines=\"--"
 
     for el in attr_list:
         maker_text+=f"{el}, "
@@ -75,10 +84,11 @@ def makePyMaker(path:str):
     maker_text=maker_text[:-2]
 
     maker_text+=(
-        "\"\nfor i in range(len(theList)):\n"
-        f"   lines+=make_DML_line(\"{table_name}\", theList[i])+\"\\n\"\n"
+        "\\n\"\nfor i in range(len(theList)):\n"
+        f"  lines+=make_DML_line(\"{table_name}\", theList[i])+\"\\n\"\n\n"
+        f"os.makedirs(\"{DATA_PATH}/{path_json.split("/")[0]}\", exist_ok=True)\n"
         f"with open(\"{DATA_PATH}/{path_json}\", \"w\", encoding=\"utf-8\") as f:\n"
-        "   json.dump(theDict, f, indent=4, ensure_ascii=False)\n\n"
+        "   json.dump(theJsonList, f, indent=4, ensure_ascii=False)\n\n"
         f"make_DML(\"{path_DML}\", lines)"
 
     )

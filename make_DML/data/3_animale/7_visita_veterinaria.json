@@ -1,0 +1,247 @@
+[
+    {
+        "ETICHETTA_ANIMALE": "'10000001'",
+        "DATA_VISITA": "DATE '2024-01-15'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000002'",
+        "DATA_VISITA": "DATE '2024-01-18'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000003'",
+        "DATA_VISITA": "DATE '2024-02-10'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000004'",
+        "DATA_VISITA": "DATE '2024-02-15'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000005'",
+        "DATA_VISITA": "DATE '2024-03-05'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000006'",
+        "DATA_VISITA": "DATE '2025-01-12'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'DISCRETO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000007'",
+        "DATA_VISITA": "DATE '2024-03-20'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000008'",
+        "DATA_VISITA": "DATE '2024-04-01'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'DISCRETO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000009'",
+        "DATA_VISITA": "DATE '2025-02-18'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000010'",
+        "DATA_VISITA": "DATE '2024-04-12'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000011'",
+        "DATA_VISITA": "DATE '2024-05-02'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000012'",
+        "DATA_VISITA": "DATE '2025-04-10'",
+        "MATRICOLA_VETERINARIO": "'ESA005'",
+        "STATO_SALUTE": "'DISCRETO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000013'",
+        "DATA_VISITA": "DATE '2024-05-15'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000014'",
+        "DATA_VISITA": "DATE '2024-05-16'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000015'",
+        "DATA_VISITA": "DATE '2025-07-01'",
+        "MATRICOLA_VETERINARIO": "'ESA005'",
+        "STATO_SALUTE": "'CRITICO'",
+        "TIPO_VISITA": "'EMERGENZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000016'",
+        "DATA_VISITA": "DATE '2024-06-10'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000017'",
+        "DATA_VISITA": "DATE '2024-06-12'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000018'",
+        "DATA_VISITA": "DATE '2025-10-22'",
+        "MATRICOLA_VETERINARIO": "'ESA005'",
+        "STATO_SALUTE": "'DISCRETO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000019'",
+        "DATA_VISITA": "DATE '2024-07-05'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000020'",
+        "DATA_VISITA": "DATE '2024-07-07'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000021'",
+        "DATA_VISITA": "DATE '2025-09-18'",
+        "MATRICOLA_VETERINARIO": "'ESA005'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000022'",
+        "DATA_VISITA": "DATE '2024-08-01'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000023'",
+        "DATA_VISITA": "DATE '2024-08-05'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'CRITICO'",
+        "TIPO_VISITA": "'EMERGENZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000024'",
+        "DATA_VISITA": "DATE '2025-01-25'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'INGRESSO'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000025'",
+        "DATA_VISITA": "DATE '2025-02-15'",
+        "MATRICOLA_VETERINARIO": "'ESA006'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000026'",
+        "DATA_VISITA": "DATE '2025-02-16'",
+        "MATRICOLA_VETERINARIO": "'ESA006'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000027'",
+        "DATA_VISITA": "DATE '2025-11-03'",
+        "MATRICOLA_VETERINARIO": "'ESA006'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000028'",
+        "DATA_VISITA": "DATE '2025-11-04'",
+        "MATRICOLA_VETERINARIO": "'ESA006'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000029'",
+        "DATA_VISITA": "DATE '2024-09-10'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000030'",
+        "DATA_VISITA": "DATE '2024-09-15'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000001'",
+        "DATA_VISITA": "DATE '2025-12-10'",
+        "MATRICOLA_VETERINARIO": "'ESA001'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000005'",
+        "DATA_VISITA": "DATE '2025-12-12'",
+        "MATRICOLA_VETERINARIO": "'ESA002'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'ROUTINE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000013'",
+        "DATA_VISITA": "DATE '2026-01-15'",
+        "MATRICOLA_VETERINARIO": "'ESA003'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000022'",
+        "DATA_VISITA": "DATE '2026-02-20'",
+        "MATRICOLA_VETERINARIO": "'ESA004'",
+        "STATO_SALUTE": "'DISCRETO'",
+        "TIPO_VISITA": "'CONTROLLO_GESTAZIONE'"
+    },
+    {
+        "ETICHETTA_ANIMALE": "'10000027'",
+        "DATA_VISITA": "DATE '2026-03-05'",
+        "MATRICOLA_VETERINARIO": "'ESA006'",
+        "STATO_SALUTE": "'BUONO'",
+        "TIPO_VISITA": "'BIOSICUREZZA'"
+    }
+]

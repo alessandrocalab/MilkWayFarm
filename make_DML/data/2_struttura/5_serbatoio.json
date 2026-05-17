@@ -1,0 +1,92 @@
+[
+    {
+        "NUMERO_SERBATOIO": "'A001'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2022-04-10'",
+        "PRESSIONE_MAX_PA": 300000,
+        "DIMENSIONE_M3": 80
+    },
+    {
+        "NUMERO_SERBATOIO": "'A002'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2022-04-12'",
+        "PRESSIONE_MAX_PA": 450000,
+        "DIMENSIONE_M3": 60
+    },
+    {
+        "NUMERO_SERBATOIO": "'A003'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2022-04-15'",
+        "PRESSIONE_MAX_PA": 250000,
+        "DIMENSIONE_M3": 70
+    },
+    {
+        "NUMERO_SERBATOIO": "'A004'",
+        "CODICE_AREA": "'A12A'",
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2022-04-18'",
+        "PRESSIONE_MAX_PA": 500000,
+        "DIMENSIONE_M3": 50
+    },
+    {
+        "NUMERO_SERBATOIO": "'A001'",
+        "CODICE_AREA": "'A05A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2019-05-10'",
+        "PRESSIONE_MAX_PA": 200000,
+        "DIMENSIONE_M3": 35
+    },
+    {
+        "NUMERO_SERBATOIO": "'A002'",
+        "CODICE_AREA": "'A06A'",
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2019-06-20'",
+        "PRESSIONE_MAX_PA": 200000,
+        "DIMENSIONE_M3": 35
+    },
+    {
+        "NUMERO_SERBATOIO": "'A001'",
+        "CODICE_AREA": "'A11A'",
+        "NOME_STRUTTURA": "'Deposito Tecnico Zeta'",
+        "DATA_SMONTAGGIO": "DATE '2025-10-30'",
+        "DATA_MONTAGGIO": "DATE '2021-07-20'",
+        "PRESSIONE_MAX_PA": 350000,
+        "DIMENSIONE_M3": 45
+    },
+    {
+        "NUMERO_SERBATOIO": "'A002'",
+        "CODICE_AREA": "'A11A'",
+        "NOME_STRUTTURA": "'Deposito Tecnico Zeta'",
+        "DATA_SMONTAGGIO": "DATE '2025-10-30'",
+        "DATA_MONTAGGIO": "DATE '2021-07-25'",
+        "PRESSIONE_MAX_PA": 350000,
+        "DIMENSIONE_M3": 45
+    },
+    {
+        "NUMERO_SERBATOIO": "'A003'",
+        "CODICE_AREA": "'A16A'",
+        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2025-03-15'",
+        "PRESSIONE_MAX_PA": 250000,
+        "DIMENSIONE_M3": 25
+    },
+    {
+        "NUMERO_SERBATOIO": "'A001'",
+        "CODICE_AREA": "'A07A'",
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2020-03-15'",
+        "PRESSIONE_MAX_PA": 150000,
+        "DIMENSIONE_M3": 15
+    }
+]

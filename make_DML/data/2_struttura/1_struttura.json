@@ -1,0 +1,122 @@
+[
+    {
+        "NOME_STRUTTURA": "'Base Selene Centrale'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2100,
+        "LONGITUDINE": 0.0012,
+        "LATITUDINE": -89.9001,
+        "VOLUME_M3": 18000,
+        "SUPERFICIE_MQ": 4200,
+        "DATA_ATTIVAZIONE": "DATE '2017-03-15'"
+    },
+    {
+        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2085,
+        "LONGITUDINE": 0.0021,
+        "LATITUDINE": -89.8994,
+        "VOLUME_M3": 9500,
+        "SUPERFICIE_MQ": 2600,
+        "DATA_ATTIVAZIONE": "DATE '2018-01-20'"
+    },
+    {
+        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2078,
+        "LONGITUDINE": 0.0034,
+        "LATITUDINE": -89.8987,
+        "VOLUME_M3": 7800,
+        "SUPERFICIE_MQ": 2100,
+        "DATA_ATTIVAZIONE": "DATE '2018-09-05'"
+    },
+    {
+        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2092,
+        "LONGITUDINE": 0.0048,
+        "LATITUDINE": -89.8979,
+        "VOLUME_M3": 12000,
+        "SUPERFICIE_MQ": 3200,
+        "DATA_ATTIVAZIONE": "DATE '2019-04-12'"
+    },
+    {
+        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2110,
+        "LONGITUDINE": 0.006,
+        "LATITUDINE": -89.8972,
+        "VOLUME_M3": 5200,
+        "SUPERFICIE_MQ": 1400,
+        "DATA_ATTIVAZIONE": "DATE '2020-02-18'"
+    },
+    {
+        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2065,
+        "LONGITUDINE": -0.0015,
+        "LATITUDINE": -89.9008,
+        "VOLUME_M3": 6000,
+        "SUPERFICIE_MQ": 1800,
+        "DATA_ATTIVAZIONE": "DATE '2020-11-30'"
+    },
+    {
+        "NOME_STRUTTURA": "'Deposito Tecnico Zeta'",
+        "DATA_TERMINAZIONE": "DATE '2025-10-30'",
+        "QUOTA": 2058,
+        "LONGITUDINE": -0.0028,
+        "LATITUDINE": -89.9015,
+        "VOLUME_M3": 4300,
+        "SUPERFICIE_MQ": 1500,
+        "DATA_ATTIVAZIONE": "DATE '2021-06-22'"
+    },
+    {
+        "NOME_STRUTTURA": "'Area Serbatoi Eta'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2049,
+        "LONGITUDINE": -0.004,
+        "LATITUDINE": -89.9021,
+        "VOLUME_M3": 3500,
+        "SUPERFICIE_MQ": 1300,
+        "DATA_ATTIVAZIONE": "DATE '2022-03-10'"
+    },
+    {
+        "NOME_STRUTTURA": "'Modulo Energia Theta'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2135,
+        "LONGITUDINE": 0.0085,
+        "LATITUDINE": -89.8968,
+        "VOLUME_M3": 7000,
+        "SUPERFICIE_MQ": 2200,
+        "DATA_ATTIVAZIONE": "DATE '2022-12-01'"
+    },
+    {
+        "NOME_STRUTTURA": "'Centro Controllo Iota'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2120,
+        "LONGITUDINE": 0.0,
+        "LATITUDINE": -89.8999,
+        "VOLUME_M3": 4800,
+        "SUPERFICIE_MQ": 1200,
+        "DATA_ATTIVAZIONE": "DATE '2023-07-15'"
+    },
+    {
+        "NOME_STRUTTURA": "'Cupola Osservazione Kappa'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2160,
+        "LONGITUDINE": 0.0102,
+        "LATITUDINE": -89.8955,
+        "VOLUME_M3": 2600,
+        "SUPERFICIE_MQ": 900,
+        "DATA_ATTIVAZIONE": "DATE '2024-05-08'"
+    },
+    {
+        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
+        "DATA_TERMINAZIONE": "NULL",
+        "QUOTA": 2070,
+        "LONGITUDINE": -0.0063,
+        "LATITUDINE": -89.903,
+        "VOLUME_M3": 3000,
+        "SUPERFICIE_MQ": 1000,
+        "DATA_ATTIVAZIONE": "DATE '2025-02-14'"
+    }
+]

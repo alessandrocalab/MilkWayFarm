@@ -24,14 +24,18 @@ NOME_STRUTTURA = []
 NOME_CONSERVAZIONE = []
 
 
+theList=list(zip(NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE))
 
-theDict=zip(NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE)
-theList=list(theDict)
+keys = ["NUMERO_SCAFFALE", "CODICE_AREA", "NOME_STRUTTURA", "NOME_CONSERVAZIONE"]
 
-lines="--NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("SCAFFALE_RISPETTA_MOD_CONS", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("SCAFFALE_RISPETTA_MOD_CONS", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/13_scaffale_rispetta_mod_cons.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/13_scaffale_rispetta_mod_cons.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/13_scaffale_rispetta_mod_cons.sql", lines)

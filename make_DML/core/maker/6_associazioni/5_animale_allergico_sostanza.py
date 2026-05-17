@@ -22,14 +22,18 @@ NOME_SOSTANZA = []
 DATA_ATTESTAZIONE = []
 
 
+theList=list(zip(ETICHETTA_ANIMALE, NOME_SOSTANZA, DATA_ATTESTAZIONE))
 
-theDict=zip(ETICHETTA_ANIMALE, NOME_SOSTANZA, DATA_ATTESTAZIONE)
-theList=list(theDict)
+keys = ["ETICHETTA_ANIMALE", "NOME_SOSTANZA", "DATA_ATTESTAZIONE"]
 
-lines="--ETICHETTA_ANIMALE, NOME_SOSTANZA, DATA_ATTESTAZIONE"
+theJsonList=[dict(zip(keys, row)) for row in theList]
+
+lines="--ETICHETTA_ANIMALE, NOME_SOSTANZA, DATA_ATTESTAZIONE\n"
 for i in range(len(theList)):
-   lines+=make_DML_line("ANIMALE_ALLERGICO_SOSTANZA", theList[i])+"\n"
-with open("make_DML/data/json", "w", encoding="utf-8") as f:
-   json.dump(theDict, f, indent=4, ensure_ascii=False)
+  lines+=make_DML_line("ANIMALE_ALLERGICO_SOSTANZA", theList[i])+"\n"
 
-make_DML("DB/DML6_associazioni/5_animale_allergico_sostanza.sql", lines)
+os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
+with open("make_DML/data/6_associazioni/5_animale_allergico_sostanza.json", "w", encoding="utf-8") as f:
+   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+
+make_DML("DB/DML/6_associazioni/5_animale_allergico_sostanza.sql", lines)
