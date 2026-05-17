@@ -7,18 +7,18 @@ MAIN_START=(
     )
 MAIN_END="\n\nCOMMIT;"
 MAIN_PATH="./DB/main.sql"
-DLL_PATH="./DB/DDL/"
+DDL_PATH="./DB/DDL/"
 
 
 main_text=MAIN_START
 
 num_tabelle=0
 
-DDL_dirs=os.listdir(DLL_PATH)
+DDL_dirs=os.listdir(DDL_PATH)
 DDL_dirs=sorted(DDL_dirs, key=lambda x: int(x.split("_")[0])) #ordinamento rispetto i numeri prima del primo trattino
 
 for dir in DDL_dirs:
-    sql_files=os.listdir(DLL_PATH+dir)
+    sql_files=os.listdir(DDL_PATH+dir)
     sql_files=sorted(sql_files, key=lambda x: int(x.split("_")[0]))
     main_text+=f"\n--Sezione: {dir}\n\n"
     for sql in sql_files:

@@ -1,1 +1,1 @@
-select * from cat;
+select * from TIPO_PRODOTTO;
