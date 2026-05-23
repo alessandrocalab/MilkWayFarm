@@ -15,7 +15,6 @@ SET SQLBLANKLINES ON
 @2_struttura/3_blocco_animale.sql
 @2_struttura/4_scaffale.sql
 @2_struttura/5_serbatoio.sql
-@2_struttura/7_sensore.sql
 @2_struttura/9_cella_idroponica.sql
 
 --Sezione: 3_animale
@@ -28,7 +27,10 @@ SET SQLBLANKLINES ON
 @3_animale/6_vaccinazione.sql
 @3_animale/7_visita_veterinaria.sql
 @3_animale/8_prescrizione_animale.sql
-@3_animale/9_produzione_animale.sql
+
+--Sezione: 6_associazioni
+
+@6_associazioni/9_animale_allocato_blocco.sql
 
 
 COMMIT;

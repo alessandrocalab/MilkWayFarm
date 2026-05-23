@@ -16,36 +16,58 @@ from make_DML.core.utils.make_DML import make_DML
 #ANIMALE:ETICHETTA DATA_USCITA ETICHETTA_GENITORE SESSO MESE_NASCITA ANNO_NASCITA DATA_INGRESSO NOME_TIPO_ANIMALE 
 
 ETICHETTA = [
-    "'10000001'",
-    "'10000002'",
-    "'10000003'",
-    "'10000004'",
-    "'10000005'",
-    "'10000006'",
-    "'10000007'",
-    "'10000008'",
-    "'10000009'",
-    "'10000010'",
-    "'10000011'",
-    "'10000012'",
-    "'10000013'",
-    "'10000014'",
-    "'10000015'",
-    "'10000016'",
-    "'10000017'",
-    "'10000018'",
-    "'10000019'",
-    "'10000020'",
-    "'10000021'",
-    "'10000022'",
-    "'10000023'",
-    "'10000024'",
-    "'10000025'",
-    "'10000026'",
-    "'10000027'",
-    "'10000028'",
-    "'10000029'",
-    "'10000030'"
+    "'0000000001'",
+    "'0000000002'",
+    "'0000000003'",
+    "'0000000004'",
+
+    "'0000000005'",
+    "'0000000006'",
+    "'0000000007'",
+
+    "'0000000008'",
+    "'0000000009'",
+    "'0000000010'",
+
+    "'0000000011'",
+    "'0000000012'",
+    "'0000000013'",
+    "'0000000014'",
+    "'0000000015'",
+
+    "'0000000016'",
+    "'0000000017'",
+    "'0000000018'",
+    "'0000000019'",
+    "'0000000020'",
+    "'0000000021'",
+    "'0000000022'",
+    "'0000000023'",
+
+    "'0000000024'",
+    "'0000000025'",
+    "'0000000026'",
+    "'0000000027'",
+
+    "'0000000028'",
+    "'0000000029'",
+    "'0000000030'",
+    "'0000000031'",
+    "'0000000032'",
+    "'0000000033'",
+
+    "'0000000034'",
+    "'0000000035'",
+
+    "'0000000036'",
+    "'0000000037'",
+    "'0000000038'",
+    "'0000000039'",
+
+    "'0000000040'",
+    "'0000000041'",
+    "'0000000042'",
+    "'0000000043'"
 ]
 
 DATA_USCITA = [
@@ -53,28 +75,50 @@ DATA_USCITA = [
     "NULL",
     "NULL",
     "NULL",
+
     "NULL",
     "NULL",
     "NULL",
-    "DATE '2025-11-20'",
+
     "NULL",
     "NULL",
     "NULL",
-    "NULL",
-    "NULL",
-    "NULL",
-    "DATE '2025-09-12'",
-    "NULL",
-    "NULL",
+
     "NULL",
     "NULL",
     "NULL",
     "NULL",
     "NULL",
-    "DATE '2025-12-05'",
+
     "NULL",
     "NULL",
     "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+
+    "NULL",
+    "NULL",
+
+    "DATE '2025-03-18'",
+    "DATE '2025-03-18'",
+    "DATE '2025-03-19'",
+    "DATE '2025-03-19'",
+
     "NULL",
     "NULL",
     "NULL",
@@ -82,203 +126,336 @@ DATA_USCITA = [
 ]
 
 ETICHETTA_GENITORE = [
-    "NULL",          # bovino fondatore
-    "NULL",          # bovino fondatore
-    "'10000002'",    # figlio di bovino
-    "NULL",          # capra fondatrice
-    "NULL",          # capra fondatrice
-    "'10000005'",    # figlio di capra
-    "NULL",          # pecora fondatrice
-    "NULL",          # pecora fondatrice
-    "'10000007'",    # figlio di pecora
-    "NULL",          # coniglio fondatore
-    "NULL",          # coniglio fondatore
-    "'10000011'",    # figlio di coniglio
-    "NULL",          # gallina fondatrice
-    "NULL",          # gallo fondatore
-    "'10000013'",    # pulcino
-    "NULL",          # quaglia fondatrice
-    "NULL",          # quaglia fondatrice
-    "'10000017'",    # giovane quaglia
-    "NULL",          # anatra fondatrice
-    "NULL",          # anatra fondatrice
-    "'10000020'",    # giovane anatra
-    "NULL",          # maiale fondatore
-    "NULL",          # maiale fondatore
-    "'10000023'",    # giovane maiale
-    "NULL",          # trota lotto base
-    "NULL",          # trota lotto base
-    "NULL",          # tilapia lotto base
-    "NULL",          # tilapia lotto base
-    "NULL",          # tacchino fondatore
-    "NULL"           # oca fondatrice
+    "NULL",
+    "NULL",
+    "'0000000001'",
+    "'0000000001'",
+
+    "NULL",
+    "NULL",
+    "'0000000005'",
+
+    "NULL",
+    "NULL",
+    "'0000000008'",
+
+    "NULL",
+    "NULL",
+    "'0000000011'",
+    "'0000000011'",
+    "'0000000011'",
+
+    "NULL",
+    "NULL",
+    "'0000000016'",
+    "'0000000016'",
+    "'0000000016'",
+    "'0000000016'",
+    "'0000000016'",
+    "'0000000016'",
+
+    "NULL",
+    "NULL",
+    "'0000000024'",
+    "'0000000024'",
+
+    "NULL",
+    "NULL",
+    "'0000000028'",
+    "'0000000028'",
+    "'0000000028'",
+    "'0000000028'",
+
+    "NULL",
+    "NULL",
+
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL",
+
+    "NULL",
+    "NULL",
+    "NULL",
+    "NULL"
 ]
 
 SESSO = [
-    "'M'",
-    "'F'",
     "'F'",
     "'M'",
     "'F'",
     "'M'",
+
+    "'F'",
+    "'M'",
+    "'F'",
+
+    "'F'",
+    "'M'",
+    "'F'",
+
     "'F'",
     "'M'",
     "'F'",
     "'M'",
     "'F'",
-    "'I'",
+
     "'F'",
-    "'M'",
-    "'I'",
-    "'M'",
-    "'F'",
-    "'I'",
-    "'M'",
-    "'F'",
-    "'I'",
     "'M'",
     "'F'",
     "'F'",
-    "'I'",
-    "'I'",
-    "'I'",
-    "'I'",
+    "'F'",
+    "'F'",
     "'M'",
-    "'F'"
+    "'F'",
+
+    "'F'",
+    "'M'",
+    "'F'",
+    "'M'",
+
+    "'F'",
+    "'M'",
+    "'F'",
+    "'M'",
+    "'F'",
+    "'M'",
+
+    "'F'",
+    "'M'",
+
+    "'F'",
+    "'F'",
+    "'M'",
+    "'F'",
+
+    "'F'",
+    "'F'",
+    "'F'",
+    "'M'"
 ]
 
+
 MESE_NASCITA = [
-    3,
-    5,
-    9,
-    2,
     6,
-    11,
-    4,
-    7,
-    1,
     8,
+    1,
+    2,
+
+    5,
+    4,
+    9,
+
+    3,
+    7,
     10,
-    2,
-    3,
-    3,
-    6,
-    5,
-    5,
-    9,
-    4,
-    4,
-    8,
-    1,
-    2,
-    6,
-    7,
-    7,
-    9,
-    9,
+
     11,
-    12
+    1,
+    8,
+    8,
+    9,
+
+    4,
+    5,
+    9,
+    9,
+    10,
+    10,
+    11,
+    11,
+
+    3,
+    4,
+    10,
+    10,
+
+    2,
+    6,
+    12,
+    12,
+    1,
+    1,
+
+    12,
+    9,
+
+    1,
+    5,
+    7,
+    6,
+
+    2,
+    3,
+    1,
+    1
 ]
 
 ANNO_NASCITA = [
-    2018,
     2019,
+    2020,
+    2024,
+    2024,
+
+    2021,
+    2022,
+    2024,
+
+    2021,
+    2021,
+    2024,
+
+    2021,
+    2022,
+    2024,
+    2024,
+    2024,
+
     2023,
-    2019,
-    2020,
+    2023,
     2024,
-    2018,
-    2019,
     2024,
-    2020,
-    2021,
+    2024,
+    2024,
+    2024,
+    2024,
+
+    2023,
+    2023,
+    2024,
+    2024,
+
+    2023,
+    2023,
+    2024,
+    2024,
     2025,
-    2021,
-    2021,
     2025,
+
     2022,
-    2022,
-    2025,
-    2020,
-    2021,
-    2025,
-    2019,
-    2020,
+    2023,
+
     2024,
     2024,
     2024,
-    2025,
-    2025,
-    2022,
-    2021
+    2023,
+
+    2024,
+    2024,
+    2024,
+    2024
 ]
 
 DATA_INGRESSO = [
-    "DATE '2018-10-20'",
-    "DATE '2019-06-10'",
-    "DATE '2023-10-05'",
-    "DATE '2019-03-12'",
-    "DATE '2020-07-15'",
-    "DATE '2024-12-02'",
-    "DATE '2018-11-05'",
-    "DATE '2019-08-14'",
-    "DATE '2024-02-10'",
-    "DATE '2020-09-01'",
-    "DATE '2021-11-05'",
-    "DATE '2025-03-20'",
-    "DATE '2021-04-01'",
-    "DATE '2021-04-01'",
-    "DATE '2025-06-25'",
-    "DATE '2022-06-02'",
-    "DATE '2022-06-02'",
-    "DATE '2025-10-10'",
-    "DATE '2020-05-20'",
-    "DATE '2021-05-15'",
-    "DATE '2025-09-01'",
-    "DATE '2019-02-10'",
-    "DATE '2020-03-05'",
-    "DATE '2024-07-12'",
-    "DATE '2024-08-01'",
-    "DATE '2024-08-01'",
-    "DATE '2025-10-01'",
-    "DATE '2025-10-01'",
-    "DATE '2022-12-15'",
-    "DATE '2022-01-20'"
+    "DATE '2025-02-26'",
+    "DATE '2025-02-26'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+
+    "DATE '2025-02-26'",
+    "DATE '2025-02-26'",
+    "DATE '2025-02-27'",
+
+    "DATE '2025-02-26'",
+    "DATE '2025-02-26'",
+    "DATE '2025-02-27'",
+
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+    "DATE '2025-02-28'",
+
+    "DATE '2025-02-24'",
+    "DATE '2025-02-24'",
+
+    "DATE '2025-02-26'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-27'",
+    "DATE '2025-02-28'",
+
+    "DATE '2025-05-04'",
+    "DATE '2025-05-04'",
+    "DATE '2025-05-05'",
+    "DATE '2025-05-05'"
 ]
+
 
 NOME_TIPO_ANIMALE = [
-    "'Bovino nano'",
-    "'Bovino nano'",
-    "'Bovino nano'",
-    "'Capra nana'",
-    "'Capra nana'",
-    "'Capra nana'",
-    "'Pecora compatta'",
-    "'Pecora compatta'",
-    "'Pecora compatta'",
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
-    "'Quaglia giapponese'",
-    "'Quaglia giapponese'",
-    "'Quaglia giapponese'",
-    "'Anatra domestica'",
-    "'Anatra domestica'",
-    "'Anatra domestica'",
-    "'Maiale nano'",
-    "'Maiale nano'",
-    "'Maiale nano'",
-    "'Trota iridea'",
-    "'Trota iridea'",
-    "'Tilapia nilotica'",
-    "'Tilapia nilotica'",
-    "'Tacchino nano'",
-    "'Oca domestica'"
-]
+    "'Bovino'",
+    "'Bovino'",
+    "'Bovino'",
+    "'Bovino'",
 
+    "'Capra'",
+    "'Capra'",
+    "'Capra'",
+
+    "'Pecora'",
+    "'Pecora'",
+    "'Pecora'",
+
+    "'Maiale'",
+    "'Maiale'",
+    "'Maiale'",
+    "'Maiale'",
+    "'Maiale'",
+
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+
+    "'Tacchino'",
+    "'Tacchino'",
+    "'Tacchino'",
+    "'Tacchino'",
+
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
+
+    "'Capra'",
+    "'Coniglio'",
+
+    "'Gallina'",
+    "'Coniglio'",
+    "'Maiale'",
+    "'Pecora'",
+
+    "'Gallina'",
+    "'Gallina'",
+    "'Coniglio'",
+    "'Coniglio'"
+]
 
 theList=list(zip(ETICHETTA, DATA_USCITA, ETICHETTA_GENITORE, SESSO, MESE_NASCITA, ANNO_NASCITA, DATA_INGRESSO, NOME_TIPO_ANIMALE))
 

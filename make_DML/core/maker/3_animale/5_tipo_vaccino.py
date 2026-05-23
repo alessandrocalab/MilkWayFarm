@@ -16,507 +16,228 @@ from make_DML.core.utils.make_DML import make_DML
 #VACCINO:NOME_VACCINO NOME_TIPO_ANIMALE NOME_STADIO_CRESCITA NOME_VACCINO_PROPEDEUTICO NOME_STADIO_CRESCITA_PROPEDEUTICO NOME_TIPO_ANIMALE_PROPEDEUTICO IS_VACCINO_OBBLIGATORIO ETA_MINIMA_MESI DOSE_ML 
 
 NOME_VACCINO = [
-    # Bovino nano
-    "'BOV-BASE-RESP'",
-    "'BOV-RICHIAMO-RESP'",
-    "'BOV-ENTERICO'",
+    "'Newcastle'",
+    "'bronchite infettiva'",
+    "'coccidiosi'",
 
-    # Capra nana
-    "'CAP-BASE-RESP'",
-    "'CAP-RICHIAMO-RESP'",
-    "'CAP-CLOSTRIDI'",
+    "'mixomatosi'",
+    "'malattia emorragica'",
 
-    # Pecora compatta
-    "'PEC-BASE-RESP'",
-    "'PEC-RICHIAMO-RESP'",
-    "'PEC-CLOSTRIDI'",
+    "'clostridiosi'",
+    "'enterotossiemia'",
 
-    # Coniglio europeo
-    "'CON-MIXO'",
-    "'CON-RICHIAMO-MIXO'",
-    "'CON-ENTERITE'",
+    "'clostridiosi'",
+    "'enterotossiemia'",
 
-    # Gallina ovaiola
-    "'GAL-MAREK'",
-    "'GAL-NEWCASTLE'",
-    "'GAL-RICHIAMO-NEWCASTLE'",
+    "'mal rosso'",
+    "'parvovirosi'",
 
-    # Quaglia giapponese
-    "'QUA-NEWCASTLE'",
-    "'QUA-RICHIAMO-NEWCASTLE'",
+    "'respiratorio'",
+    "'clostridiosi'",
+    "'mastite'",
 
-    # Anatra domestica
-    "'ANA-PASTEURELLOSI'",
-    "'ANA-RICHIAMO-PASTEURELLOSI'",
-
-    # Maiale nano
-    "'MAI-BASE-RESP'",
-    "'MAI-RICHIAMO-RESP'",
-    "'MAI-ENTERICO'",
-
-    # Trota iridea
-    "'TRO-SETTICEMIA'",
-    "'TRO-RICHIAMO-SETTICEMIA'",
-
-    # Tilapia nilotica
-    "'TIL-STREPTOCOCCOSI'",
-    "'TIL-RICHIAMO-STREPTOCOCCOSI'",
-
-    # Tacchino nano
-    "'TAC-NEWCASTLE'",
-    "'TAC-RICHIAMO-NEWCASTLE'",
-
-    # Oca domestica
-    "'OCA-PASTEURELLOSI'",
-    "'OCA-RICHIAMO-PASTEURELLOSI'"
+    "'Newcastle'",
+    "'coccidiosi'"
 ]
 
 NOME_TIPO_ANIMALE = [
-    # Bovino nano
-    "'Bovino nano'",
-    "'Bovino nano'",
-    "'Bovino nano'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
 
-    # Capra nana
-    "'Capra nana'",
-    "'Capra nana'",
-    "'Capra nana'",
+    "'Coniglio'",
+    "'Coniglio'",
 
-    # Pecora compatta
-    "'Pecora compatta'",
-    "'Pecora compatta'",
-    "'Pecora compatta'",
+    "'Capra'",
+    "'Capra'",
 
-    # Coniglio europeo
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
+    "'Pecora'",
+    "'Pecora'",
 
-    # Gallina ovaiola
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
+    "'Maiale'",
+    "'Maiale'",
 
-    # Quaglia giapponese
-    "'Quaglia giapponese'",
-    "'Quaglia giapponese'",
+    "'Bovino'",
+    "'Bovino'",
+    "'Bovino'",
 
-    # Anatra domestica
-    "'Anatra domestica'",
-    "'Anatra domestica'",
-
-    # Maiale nano
-    "'Maiale nano'",
-    "'Maiale nano'",
-    "'Maiale nano'",
-
-    # Trota iridea
-    "'Trota iridea'",
-    "'Trota iridea'",
-
-    # Tilapia nilotica
-    "'Tilapia nilotica'",
-    "'Tilapia nilotica'",
-
-    # Tacchino nano
-    "'Tacchino nano'",
-    "'Tacchino nano'",
-
-    # Oca domestica
-    "'Oca domestica'",
-    "'Oca domestica'"
+    "'Tacchino'",
+    "'Tacchino'"
 ]
 
 NOME_STADIO_CRESCITA = [
-    # Bovino nano
-    "'Vitello'",
-    "'Giovane'",
-    "'Vitello'",
-
-    # Capra nana
-    "'Capretto'",
-    "'Giovane'",
-    "'Capretto'",
-
-    # Pecora compatta
-    "'Agnello'",
-    "'Giovane'",
-    "'Agnello'",
-
-    # Coniglio europeo
-    "'Cucciolo'",
-    "'Giovane'",
-    "'Cucciolo'",
-
-    # Gallina ovaiola
     "'Pulcino'",
-    "'Pollastra'",
+    "'Giovane'",
+    "'Pulcino'",
+
+    "'Svezzamento'",
+    "'Giovane'",
+
+    "'Svezzamento'",
+    "'Giovane'",
+
+    "'Svezzamento'",
+    "'Giovane'",
+
+    "'Accrescimento'",
     "'Adulto'",
 
-    # Quaglia giapponese
+    "'Svezzamento'",
+    "'Giovane'",
+    "'Adulto'",
+
     "'Pulcino'",
-    "'Giovane'",
-
-    # Anatra domestica
-    "'Anatroccolo'",
-    "'Giovane'",
-
-    # Maiale nano
-    "'Suinetto'",
-    "'Giovane'",
-    "'Suinetto'",
-
-    # Trota iridea
-    "'Avannotto'",
-    "'Giovane'",
-
-    # Tilapia nilotica
-    "'Avannotto'",
-    "'Giovane'",
-
-    # Tacchino nano
-    "'Pulcino'",
-    "'Giovane'",
-
-    # Oca domestica
-    "'Papero'",
     "'Giovane'"
 ]
 
 NOME_VACCINO_PROPEDEUTICO = [
-    # Bovino nano
     "NULL",
-    "'BOV-BASE-RESP'",
-    "NULL",
-
-    # Capra nana
-    "NULL",
-    "'CAP-BASE-RESP'",
+    "'Vaccino pollame Newcastle'",
     "NULL",
 
-    # Pecora compatta
     "NULL",
-    "'PEC-BASE-RESP'",
-    "NULL",
+    "'Vaccino conigli mixomatosi'",
 
-    # Coniglio europeo
     "NULL",
-    "'CON-MIXO'",
-    "NULL",
+    "'Vaccino ovicaprini clostridiosi'",
 
-    # Gallina ovaiola
     "NULL",
-    "NULL",
-    "'GAL-NEWCASTLE'",
+    "'Vaccino ovicaprini clostridiosi'",
 
-    # Quaglia giapponese
     "NULL",
-    "'QUA-NEWCASTLE'",
+    "'Vaccino suini mal rosso'",
 
-    # Anatra domestica
     "NULL",
-    "'ANA-PASTEURELLOSI'",
+    "'Vaccino bovini respiratorio'",
+    "'Vaccino bovini clostridiosi'",
 
-    # Maiale nano
     "NULL",
-    "'MAI-BASE-RESP'",
-    "NULL",
-
-    # Trota iridea
-    "NULL",
-    "'TRO-SETTICEMIA'",
-
-    # Tilapia nilotica
-    "NULL",
-    "'TIL-STREPTOCOCCOSI'",
-
-    # Tacchino nano
-    "NULL",
-    "'TAC-NEWCASTLE'",
-
-    # Oca domestica
-    "NULL",
-    "'OCA-PASTEURELLOSI'"
+    "'Vaccino pollame Newcastle'"
 ]
 
 NOME_STADIO_CRESCITA_PROPEDEUTICO = [
-    # Bovino nano
-    "NULL",
-    "'Vitello'",
-    "NULL",
-
-    # Capra nana
-    "NULL",
-    "'Capretto'",
-    "NULL",
-
-    # Pecora compatta
-    "NULL",
-    "'Agnello'",
-    "NULL",
-
-    # Coniglio europeo
-    "NULL",
-    "'Cucciolo'",
-    "NULL",
-
-    # Gallina ovaiola
-    "NULL",
-    "NULL",
-    "'Pollastra'",
-
-    # Quaglia giapponese
     "NULL",
     "'Pulcino'",
-
-    # Anatra domestica
-    "NULL",
-    "'Anatroccolo'",
-
-    # Maiale nano
-    "NULL",
-    "'Suinetto'",
     "NULL",
 
-    # Trota iridea
     "NULL",
-    "'Avannotto'",
+    "'Svezzamento'",
 
-    # Tilapia nilotica
     "NULL",
-    "'Avannotto'",
+    "'Svezzamento'",
 
-    # Tacchino nano
     "NULL",
-    "'Pulcino'",
+    "'Svezzamento'",
 
-    # Oca domestica
     "NULL",
-    "'Papero'"
+    "'Accrescimento'",
+
+    "NULL",
+    "'Svezzamento'",
+    "'Giovane'",
+
+    "NULL",
+    "'Pulcino'"
 ]
 
 NOME_TIPO_ANIMALE_PROPEDEUTICO = [
-    # Bovino nano
     "NULL",
-    "'Bovino nano'",
-    "NULL",
-
-    # Capra nana
-    "NULL",
-    "'Capra nana'",
+    "'Gallina'",
     "NULL",
 
-    # Pecora compatta
     "NULL",
-    "'Pecora compatta'",
-    "NULL",
+    "'Coniglio'",
 
-    # Coniglio europeo
     "NULL",
-    "'Coniglio europeo'",
-    "NULL",
+    "'Capra'",
 
-    # Gallina ovaiola
     "NULL",
-    "NULL",
-    "'Gallina ovaiola'",
+    "'Pecora'",
 
-    # Quaglia giapponese
     "NULL",
-    "'Quaglia giapponese'",
+    "'Maiale'",
 
-    # Anatra domestica
     "NULL",
-    "'Anatra domestica'",
+    "'Bovino'",
+    "'Bovino'",
 
-    # Maiale nano
     "NULL",
-    "'Maiale nano'",
-    "NULL",
-
-    # Trota iridea
-    "NULL",
-    "'Trota iridea'",
-
-    # Tilapia nilotica
-    "NULL",
-    "'Tilapia nilotica'",
-
-    # Tacchino nano
-    "NULL",
-    "'Tacchino nano'",
-
-    # Oca domestica
-    "NULL",
-    "'Oca domestica'"
+    "'Tacchino'"
 ]
 
 IS_VACCINO_OBBLIGATORIO = [
-    # Bovino nano
-    1,
-    1,
-    1,
-
-    # Capra nana
-    1,
-    1,
-    1,
-
-    # Pecora compatta
-    1,
-    1,
-    1,
-
-    # Coniglio europeo
     1,
     1,
     0,
 
-    # Gallina ovaiola
-    1,
-    1,
-    1,
-
-    # Quaglia giapponese
     1,
     1,
 
-    # Anatra domestica
     1,
     1,
 
-    # Maiale nano
-    1,
-    1,
-    1,
-
-    # Trota iridea
     1,
     1,
 
-    # Tilapia nilotica
     1,
     1,
 
-    # Tacchino nano
     1,
     1,
+    0,
 
-    # Oca domestica
     1,
-    1
+    0
 ]
 
 ETA_MINIMA_MESI = [
-    # Bovino nano
+    0,
     1,
+    0,
+
+    1,
+    2,
+
+    3,
     6,
-    2,
 
-    # Capra nana
-    1,
-    4,
-    2,
-
-    # Pecora compatta
-    1,
-    4,
-    2,
-
-    # Coniglio europeo
-    1,
-    2,
-    1,
-
-    # Gallina ovaiola
-    0,
-    2,
-    5,
-
-    # Quaglia giapponese
-    0,
-    1,
-
-    # Anatra domestica
-    1,
-    2,
-
-    # Maiale nano
-    1,
     3,
-    2,
+    6,
 
-    # Trota iridea
-    0,
     3,
+    8,
 
-    # Tilapia nilotica
+    3,
+    12,
+    24,
+
     0,
-    2,
-
-    # Tacchino nano
-    0,
-    2,
-
-    # Oca domestica
-    1,
-    3
+    2
 ]
 
 DOSE_ML = [
-    # Bovino nano
-    2.00,
-    2.00,
-    1.50,
+    0.05,
+    0.05,
+    0.05,
 
-    # Capra nana
-    1.00,
-    1.00,
-    1.00,
-
-    # Pecora compatta
-    1.00,
-    1.00,
-    1.00,
-
-    # Coniglio europeo
     0.50,
     0.50,
-    0.30,
 
-    # Gallina ovaiola
-    0.20,
-    0.30,
-    0.30,
+    2.00,
+    2.00,
 
-    # Quaglia giapponese
-    0.10,
-    0.10,
+    2.00,
+    2.00,
 
-    # Anatra domestica
-    0.30,
-    0.30,
+    2.00,
+    2.00,
 
-    # Maiale nano
-    1.50,
-    1.50,
-    1.00,
+    2.00,
+    2.00,
+    2.00,
 
-    # Trota iridea
     0.05,
-    0.05,
-
-    # Tilapia nilotica
-    0.05,
-    0.05,
-
-    # Tacchino nano
-    0.30,
-    0.30,
-
-    # Oca domestica
-    0.40,
-    0.40
+    0.05
 ]
 
 theList=list(zip(NOME_VACCINO, NOME_TIPO_ANIMALE, NOME_STADIO_CRESCITA, NOME_VACCINO_PROPEDEUTICO, NOME_STADIO_CRESCITA_PROPEDEUTICO, NOME_TIPO_ANIMALE_PROPEDEUTICO, IS_VACCINO_OBBLIGATORIO, ETA_MINIMA_MESI, DOSE_ML))

@@ -15,176 +15,202 @@ from make_DML.core.utils.make_DML import make_DML
 
 #TIPO_PRODOTTO:NOME_PRODOTTO ALCOL FIBRE PROTEINE GRASSI CARBOIDRATI UNITA_MISURA IS_EDIBILE 
 
+
 NOME_PRODOTTO = [
-    # Alimentari
-    "'Latte bovino liofilizzato'",
-    "'Uova in polvere'",
-    "'Farina di grano idroponico'",
-    "'Lattuga idroponica'",
-    "'Pomodoro idroponico'",
-    "'Patata coltivata in serra'",
-    "'Soia essiccata'",
-    "'Mais essiccato'",
-    "'Carota idroponica'",
-    "'Fragola idroponica'",
-    "'Funghi coltivati'",
-    "'Yogurt liofilizzato'",
+    "'Latte bovino'", "'Latte caprino'", "'Latte ovino'", "'Uova di gallina'", "'Uova di quaglia'",
+    "'Carne bovina'", "'Carne suina'", "'Carne ovina'", "'Carne caprina'", "'Carne di pollo'",
+    "'Carne di tacchino'", "'Carne di coniglio'", "'Miele'", "'Formaggio fresco'", "'Yogurt naturale'",
+    "'Burro'", "'Panna'",
 
-    # Farmaci per animali
-    "'Antibiotico veterinario base'",
-    "'Antiparassitario veterinario'",
-    "'Vaccino bovino standard'",
-    "'Integratore minerale per animali'",
-    "'Disinfettante per stalla'",
+    "'Grano duro'", "'Farina di grano'", "'Mais'", "'Riso'", "'Patata'", "'Pomodoro'", "'Lattuga'",
+    "'Spinacio'", "'Carota'", "'Zucchina'", "'Cetriolo'", "'Melanzana'", "'Peperone'",
+    "'Fagiolo'", "'Ceci'", "'Lenticchie'", "'Piselli'", "'Soia'", "'Fragola'", "'Mela'", "'Pera'",
+    "'Uva'", "'Erbe aromatiche miste'", "'Funghi coltivati'", "'Alghe alimentari'",
 
-    # Soluzioni nutritive per piante
-    "'Soluzione nutritiva idroponica universale'",
-    "'Soluzione nutritiva azotata'",
-    "'Soluzione nutritiva fosfo-potassica'",
-    "'Correttore PH per colture'",
-    "'Chelato di ferro per piante'",
+    "'Semi di grano duro'", "'Semi di mais'", "'Semi di riso'", "'Semi di pomodoro'", "'Semi di lattuga'",
+    "'Semi di spinacio'", "'Semi di carota'", "'Semi di zucchina'", "'Semi di cetriolo'", "'Semi di peperone'",
+    "'Semi di fagiolo'", "'Semi di ceci'", "'Semi di lenticchie'", "'Semi di soia'",
+    "'Spore di funghi coltivati'", "'Talee di patata'",
 
-    # Semi
-    "'Semi di lattuga'",
-    "'Semi di pomodoro'",
-    "'Semi di grano'",
-    "'Semi di soia'",
-    "'Semi di mais'",
-    "'Semi di carota'",
-    "'Semi di fragola'"
-]
+    "'Soluzione nutritiva idroponica base'", "'Soluzione nutritiva concentrata'",
+    "'Correttore pH acido'", "'Correttore pH basico'",
+    "'Substrato in fibra di cocco'", "'Lana di roccia agricola'", "'Compost sterile'",
+    "'Biofertilizzante microbico'",
 
-ALCOL = [
-    # Alimentari
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    "'Fieno essiccato'", "'Paglia'", "'Mangime bovini crescita'", "'Mangime bovini lattazione'",
+    "'Mangime ovicaprini'", "'Mangime suini'", "'Mangime pollame ovaiole'",
+    "'Mangime pollame ingrasso'", "'Mangime conigli'", "'Sale minerale zootecnico'",
 
-    # Farmaci
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "'Antibiotico veterinario bovini'", "'Antibiotico veterinario ovicaprini'",
+    "'Antibiotico veterinario suini'", "'Antibiotico veterinario pollame'",
+    "'Antiparassitario bovini'", "'Antiparassitario ovicaprini'",
+    "'Antiparassitario suini'", "'Antiparassitario pollame'",
+    "'Antinfiammatorio veterinario'", "'Disinfettante ferite animali'",
+    "'Integratore vitaminico veterinario'", "'Reidratante orale veterinario'",
+    "'Probiotico veterinario'", "'Pomata cicatrizzante veterinaria'",
 
-    # Soluzioni nutritive
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "'Vaccino bovini respiratorio'", "'Vaccino bovini clostridiosi'", "'Vaccino bovini mastite'",
+    "'Vaccino ovicaprini clostridiosi'", "'Vaccino ovicaprini enterotossiemia'",
+    "'Vaccino suini parvovirosi'", "'Vaccino suini mal rosso'",
+    "'Vaccino pollame Newcastle'", "'Vaccino pollame bronchite infettiva'",
+    "'Vaccino pollame coccidiosi'", "'Vaccino conigli mixomatosi'",
+    "'Vaccino conigli malattia emorragica'",
 
-    # Semi
-    "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"
+    "'Lana ovina'", "'Pelle bovina'", "'Letame bovino'", "'Letame ovino'",
+    "'Letame suino'", "'Pollina'", "'Piume di pollame'", "'Cera d api'"
 ]
 
 FIBRE = [
-    # Alimentari
-    0, 0, 3.4, 1.3, 1.2, 2.2, 9.3, 7.3, 2.8, 2.0, 2.5, 0,
+    0,0,0,0,0,0,0,0,0,0,
+    0,0,0.2,0,0,0,0,
 
-    # Farmaci
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    10.0,2.7,7.3,1.3,2.2,1.2,1.3,2.2,2.8,1.1,
+    0.5,3.0,2.1,6.4,7.6,7.9,5.1,6.0,2.0,2.4,
+    3.1,0.9,4.0,2.5,3.5,
 
-    # Soluzioni nutritive
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL",
 
-    # Semi
-    "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL"
 ]
 
 PROTEINE = [
-    # Alimentari
-    26.0, 48.0, 12.0, 1.4, 0.9, 2.0, 36.0, 9.0, 0.9, 0.7, 3.1, 35.0,
+    3.2,3.6,5.4,12.6,13.1,26.0,25.0,25.0,27.0,27.0,
+    29.0,21.0,0.3,11.0,3.8,0.8,2.1,
 
-    # Farmaci
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    13.0,10.0,9.4,7.1,2.0,0.9,1.4,2.9,0.9,1.2,
+    0.7,1.0,1.0,21.0,19.0,25.0,5.4,36.0,0.7,0.3,
+    0.4,0.7,3.0,3.1,8.0,
 
-    # Soluzioni nutritive
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL",
 
-    # Semi
-    "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL"
 ]
 
 GRASSI = [
-    # Alimentari
-    27.0, 40.0, 1.5, 0.2, 0.2, 0.1, 20.0, 4.7, 0.2, 0.3, 0.3, 20.0,
+    3.6,4.1,6.0,10.6,11.1,15.0,20.0,17.0,10.0,14.0,
+    7.0,8.0,0,20.0,3.3,81.0,35.0,
 
-    # Farmaci
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    2.5,1.0,4.7,0.7,0.1,0.2,0.2,0.4,0.2,0.3,
+    0.1,0.2,0.3,1.2,6.0,1.1,0.4,20.0,0.3,0.2,
+    0.1,0.2,1.0,0.3,1.5,
 
-    # Soluzioni nutritive
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL",
 
-    # Semi
-    "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL"
 ]
 
 CARBOIDRATI = [
-    # Alimentari
-    38.0, 2.0, 72.0, 2.9, 3.9, 17.0, 30.0, 74.0, 9.6, 7.7, 3.3, 38.0,
+    4.8,4.5,5.1,1.1,0.4,0,0,0,0,0,
+    0,0,82.0,2.0,4.7,0.1,3.0,
 
-    # Farmaci
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    71.0,76.0,74.0,80.0,17.0,3.9,2.9,3.6,9.6,3.1,
+    3.6,5.9,6.0,47.0,61.0,60.0,14.0,30.0,7.7,14.0,
+    15.0,18.0,8.0,3.3,10.0,
 
-    # Soluzioni nutritive
-    "NULL", "NULL", "NULL", "NULL", "NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL","NULL","NULL",
 
-    # Semi
-    "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL","NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL",
+    "NULL","NULL",
+
+    "NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL"
 ]
 
 UNITA_MISURA = [
-    # Alimentari
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
+    "'L'", "'L'", "'L'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
 
-    # Farmaci
-    "'ml'",
-    "'ml'",
-    "'dose'",
-    "'kg'",
-    "'l'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
 
-    # Soluzioni nutritive
-    "'l'",
-    "'l'",
-    "'l'",
-    "'l'",
-    "'kg'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
 
-    # Semi
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'",
-    "'kg'"
+    "'L'", "'L'", "'L'", "'L'", "'kg'", "'kg'", "'kg'", "'L'",
+
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'",
+
+    "'mL'", "'mL'", "'mL'", "'mg'", "'mL'", "'mL'", "'mL'", "'mg'",
+    "'mL'", "'mL'", "'mg'", "'g'", "'g'", "'g'",
+
+    "'mL'", "'mL'", "'mL'", "'mL'", "'mL'", "'mL'", "'mL'", "'mL'", "'mL'", "'mL'",
+    "'mL'", "'mL'",
+
+    "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'", "'kg'"
 ]
 
 IS_EDIBILE = [
-    # Alimentari
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1,1,1,1,1,1,1,1,1,1,
+    1,1,1,1,1,1,1,
 
-    # Farmaci
-    0, 0, 0, 0, 0,
+    1,1,1,1,1,1,1,1,1,1,
+    1,1,1,1,1,1,1,1,1,1,
+    1,1,1,1,1,
 
-    # Soluzioni nutritive
-    0, 0, 0, 0, 0,
+    0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,
 
-    # Semi
-    0, 0, 0, 0, 0, 0, 0
+    0,0,0,0,0,0,0,0,
+
+    0,0,0,0,0,0,0,0,0,0,
+
+    0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,
+
+    0,0,0,0,0,0,0,0,0,0,
+    0,0,
+
+    0,0,0,0,0,0,0,0
 ]
 
+theList=list(zip(NOME_PRODOTTO, FIBRE, PROTEINE, GRASSI, CARBOIDRATI, UNITA_MISURA, IS_EDIBILE))
 
-theList=list(zip(NOME_PRODOTTO, ALCOL, FIBRE, PROTEINE, GRASSI, CARBOIDRATI, UNITA_MISURA, IS_EDIBILE))
-
-keys = ["NOME_PRODOTTO", "ALCOL", "FIBRE", "PROTEINE", "GRASSI", "CARBOIDRATI", "UNITA_MISURA", "IS_EDIBILE"]
+keys = ["NOME_PRODOTTO", "FIBRE", "PROTEINE", "GRASSI", "CARBOIDRATI", "UNITA_MISURA", "IS_EDIBILE"]
 
 theJsonList=[dict(zip(keys, row)) for row in theList]
 
-lines="--NOME_PRODOTTO, ALCOL, FIBRE, PROTEINE, GRASSI, CARBOIDRATI, UNITA_MISURA, IS_EDIBILE\n"
+lines="--NOME_PRODOTTO, FIBRE, PROTEINE, GRASSI, CARBOIDRATI, UNITA_MISURA, IS_EDIBILE\n"
 for i in range(len(theList)):
   lines+=make_DML_line("TIPO_PRODOTTO", theList[i])+"\n"
 

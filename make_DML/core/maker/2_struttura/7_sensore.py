@@ -15,196 +15,77 @@ from make_DML.core.utils.make_DML import make_DML
 
 #SENSORE:SERIALE NOME_PRODUTTORE NOME_MODELLO CODICE_AREA NOME_STRUTTURA 
 
-SERIALE = [
-    "'SEN000001'",
-    "'SEN000002'",
-    "'SEN000003'",
-    "'SEN000004'",
-    "'SEN000005'",
-    "'SEN000006'",
-    "'SEN000007'",
-    "'SEN000008'",
-    "'SEN000009'",
-    "'SEN000010'",
-    "'SEN000011'",
-    "'SEN000012'",
-    "'SEN000013'",
-    "'SEN000014'",
-    "'SEN000015'",
-    "'SEN000016'",
-    "'SEN000017'",
-    "'SEN000018'",
-    "'SEN000019'",
-    "'SEN000020'",
-    "'SEN000021'",
-    "'SEN000022'",
-    "'SEN000023'",
-    "'SEN000024'",
-    "'SEN000025'",
-    "'SEN000026'",
-    "'SEN000027'",
-    "'SEN000028'",
-    "'SEN000029'",
-    "'SEN000030'",
-    "'SEN000031'",
-    "'SEN000032'"
+AREE = [
+    # PRIMO MODULO
+    ("'A00A'", "'Primo Modulo'"),
+    ("'A00B'", "'Primo Modulo'"),
+
+    # STRUTTURA AGRICOLA
+    ("'A00A'", "'Struttura Agricola'"),
+    ("'A00B'", "'Struttura Agricola'"),
+    ("'A00C'", "'Struttura Agricola'"),
+
+    # STRUTTURA STOCCAGGIO
+    ("'A00A'", "'Struttura Stoccaggio'"),
+    ("'A00B'", "'Struttura Stoccaggio'"),
+    ("'A00C'", "'Struttura Stoccaggio'"),
+    ("'A00D'", "'Struttura Stoccaggio'"),
+    ("'A00E'", "'Struttura Stoccaggio'"),
+    ("'A00F'", "'Struttura Stoccaggio'"),
+    ("'A00G'", "'Struttura Stoccaggio'"),
+    ("'A00H'", "'Struttura Stoccaggio'"),
+    ("'A00I'", "'Struttura Stoccaggio'"),
+    ("'A00J'", "'Struttura Stoccaggio'"),
+    ("'A00K'", "'Struttura Stoccaggio'"),
+    ("'A00L'", "'Struttura Stoccaggio'"),
+
+    # STRUTTURA ZOOTECNICA
+    ("'A00A'", "'Struttura Zootecnica'"),
+    ("'A00B'", "'Struttura Zootecnica'"),
+    ("'A00C'", "'Struttura Zootecnica'"),
+    ("'A00D'", "'Struttura Zootecnica'"),
+
+    # STRUTTURA AGRICOLA II
+    ("'A00A'", "'Struttura Agricola II'"),
+    ("'A00B'", "'Struttura Agricola II'")
 ]
 
-NOME_PRODUTTORE = [
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
 
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'BioFarm Analytics'",
-    "'BioFarm Analytics'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'AstraControl Sensors'",
-    "'AstraControl Sensors'",
-    "'AgriMoon Devices'",
-
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'SeleneTech Instruments'",
-    "'SeleneTech Instruments'",
-
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'Orbitron Instruments'",
-    "'SeleneTech Instruments'",
-    "'AstraControl Sensors'",
-    "'NovaHab Monitoring'"
+TIPI_SENSORI = [
+    {
+        "prefisso": "T",
+        "produttore": "'EnviroSense'",
+        "modello": "'TEMP-K100'"
+    },
+    {
+        "prefisso": "H",
+        "produttore": "'EnviroSense'",
+        "modello": "'HUM-RH100'"
+    },
+    {
+        "prefisso": "P",
+        "produttore": "'PowerGrid Systems'",
+        "modello": "'PWR-A5000'"
+    }
 ]
 
-NOME_MODELLO = [
-    "'LS-TEMP-100'",
-    "'LS-HUM-120'",
-    "'LS-PRESS-200'",
-    "'ORB-CO2-310'",
-    "'ORB-O2-320'",
-    "'ORB-NH3-330'",
 
-    "'LS-TEMP-100'",
-    "'LS-HUM-120'",
-    "'BFA-BIO-TEMP-10'",
-    "'BFA-BIO-HUM-20'",
-    "'ORB-CO2-310'",
-    "'ORB-NH3-330'",
+SERIALE = []
+NOME_PRODUTTORE = []
+NOME_MODELLO = []
+CODICE_AREA = []
+NOME_STRUTTURA = []
 
-    "'HSL-PH-400'",
-    "'HSL-EC-410'",
-    "'HSL-LIQ-TEMP-420'",
-    "'ACS-LUX-500'",
-    "'ACS-PAR-510'",
-    "'AMD-MOIST-700'",
 
-    "'HSL-PH-400'",
-    "'HSL-EC-410'",
-    "'NHM-LEVEL-810'",
-    "'NHM-MASS-800'",
-    "'ST-FLOW-620'",
-    "'ST-ENERGY-610'",
+for i, area in enumerate(AREE, start=1):
+    codice_area, nome_struttura = area
 
-    "'NHM-MASS-800'",
-    "'NHM-LEVEL-810'",
-    "'LS-TEMP-100'",
-    "'LS-HUM-120'",
-    "'ORB-O2-320'",
-    "'ST-VIB-600'",
-    "'ACS-UV-520'",
-    "'NHM-RAD-820'"
-]
-
-CODICE_AREA = [
-    "'A01A'",
-    "'A01A'",
-    "'A01A'",
-    "'A03A'",
-    "'A03A'",
-    "'A03A'",
-
-    "'A04A'",
-    "'A04A'",
-    "'A08A'",
-    "'A08A'",
-    "'A16A'",
-    "'A16A'",
-
-    "'A05A'",
-    "'A05A'",
-    "'A05A'",
-    "'A05A'",
-    "'A05A'",
-    "'A05A'",
-
-    "'A06A'",
-    "'A06A'",
-    "'A12A'",
-    "'A12A'",
-    "'A12A'",
-    "'A13A'",
-
-    "'A09A'",
-    "'A09A'",
-    "'A10A'",
-    "'A10A'",
-    "'A14A'",
-    "'A13A'",
-    "'A15A'",
-    "'A14A'"
-]
-
-NOME_STRUTTURA = [
-    "'Modulo Agricolo Alfa'",
-    "'Modulo Agricolo Alfa'",
-    "'Modulo Agricolo Alfa'",
-    "'Modulo Zootecnico Beta'",
-    "'Modulo Zootecnico Beta'",
-    "'Modulo Zootecnico Beta'",
-
-    "'Modulo Zootecnico Beta'",
-    "'Modulo Zootecnico Beta'",
-    "'Laboratorio Biologico Delta'",
-    "'Laboratorio Biologico Delta'",
-    "'Modulo Quarantena Lambda'",
-    "'Modulo Quarantena Lambda'",
-
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Area Serbatoi Eta'",
-    "'Area Serbatoi Eta'",
-    "'Area Serbatoi Eta'",
-    "'Modulo Energia Theta'",
-
-    "'Deposito Alimentare Epsilon'",
-    "'Deposito Alimentare Epsilon'",
-    "'Deposito Alimentare Epsilon'",
-    "'Deposito Alimentare Epsilon'",
-    "'Centro Controllo Iota'",
-    "'Modulo Energia Theta'",
-    "'Cupola Osservazione Kappa'",
-    "'Centro Controllo Iota'"
-]
+    for sensore in TIPI_SENSORI:
+        SERIALE.append(f"'{sensore['prefisso']}{i:03d}'")
+        NOME_PRODUTTORE.append(sensore["produttore"])
+        NOME_MODELLO.append(sensore["modello"])
+        CODICE_AREA.append(codice_area)
+        NOME_STRUTTURA.append(nome_struttura)
 
 
 theList=list(zip(SERIALE, NOME_PRODUTTORE, NOME_MODELLO, CODICE_AREA, NOME_STRUTTURA))

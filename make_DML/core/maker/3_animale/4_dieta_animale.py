@@ -14,129 +14,52 @@ from make_DML.core.utils.make_DML import make_DML
 
 
 #DIETA_ANIMALE:NOME_DIETA OBIETTIVO_DIETA 
+
 NOME_DIETA = [
-    # Bovino nano
-    "'Dieta vitello bovino nano'",
-    "'Dieta giovane bovino nano'",
-    "'Dieta adulto bovino nano'",
+    # GALLINA
+    "'Dieta Gallina Pulcino'",
+    "'Dieta Gallina Giovane'",
+    "'Dieta Gallina Uova'",
+    "'Dieta Gallina Adulta'",
 
-    # Capra nana
-    "'Dieta capretto capra nana'",
-    "'Dieta giovane capra nana'",
-    "'Dieta adulto capra nana'",
+    # CONIGLIO
+    "'Dieta Coniglio Cucciolo'",
+    "'Dieta Coniglio Svezz'",
+    "'Dieta Coniglio Giovane'",
+    "'Dieta Coniglio Adulto'",
 
-    # Pecora compatta
-    "'Dieta agnello pecora compatta'",
-    "'Dieta giovane pecora compatta'",
-    "'Dieta adulto pecora compatta'",
+    # CAPRA
+    "'Dieta Capra Capretto'",
+    "'Dieta Capra Svezz'",
+    "'Dieta Capra Giovane'",
+    "'Dieta Capra Adulta'",
 
-    # Coniglio europeo
-    "'Dieta cucciolo coniglio europeo'",
-    "'Dieta giovane coniglio europeo'",
-    "'Dieta adulto coniglio europeo'",
+    # PECORA
+    "'Dieta Pecora Agnello'",
+    "'Dieta Pecora Svezz'",
+    "'Dieta Pecora Giovane'",
+    "'Dieta Pecora Adulta'",
 
-    # Gallina ovaiola
-    "'Dieta pulcino gallina ovaiola'",
-    "'Dieta pollastra gallina ovaiola'",
-    "'Dieta adulto gallina ovaiola'",
+    # MAIALE
+    "'Dieta Maiale Suinetto'",
+    "'Dieta Maiale Svezz'",
+    "'Dieta Maiale Ingrasso'",
+    "'Dieta Maiale Adulto'",
 
-    # Quaglia giapponese
-    "'Dieta pulcino quaglia giapponese'",
-    "'Dieta giovane quaglia giapponese'",
-    "'Dieta adulto quaglia giapponese'",
+    # BOVINO
+    "'Dieta Bovino Vitello'",
+    "'Dieta Bovino Svezz'",
+    "'Dieta Bovino Giovane'",
+    "'Dieta Bovino Adulto'",
 
-    # Anatra domestica
-    "'Dieta anatroccolo anatra domestica'",
-    "'Dieta giovane anatra domestica'",
-    "'Dieta adulto anatra domestica'",
-
-    # Maiale nano
-    "'Dieta suinetto maiale nano'",
-    "'Dieta giovane maiale nano'",
-    "'Dieta adulto maiale nano'",
-
-    # Trota iridea
-    "'Dieta avannotto trota iridea'",
-    "'Dieta giovane trota iridea'",
-    "'Dieta adulto trota iridea'",
-
-    # Tilapia nilotica
-    "'Dieta avannotto tilapia nilotica'",
-    "'Dieta giovane tilapia nilotica'",
-    "'Dieta adulto tilapia nilotica'",
-
-    # Tacchino nano
-    "'Dieta pulcino tacchino nano'",
-    "'Dieta giovane tacchino nano'",
-    "'Dieta adulto tacchino nano'",
-
-    # Oca domestica
-    "'Dieta papero oca domestica'",
-    "'Dieta giovane oca domestica'",
-    "'Dieta adulto oca domestica'"
+    # TACCHINO
+    "'Dieta Tacchino Pulcino'",
+    "'Dieta Tacchino Giovane'",
+    "'Dieta Tacchino Ingrasso'",
+    "'Dieta Tacchino Adulto'"
 ]
 
-OBIETTIVO_DIETA = [
-    # Bovino nano
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'MANTENIMENTO'",
-
-    # Capra nana
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'MANTENIMENTO'",
-
-    # Pecora compatta
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'MANTENIMENTO'",
-
-    # Coniglio europeo
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'MANTENIMENTO'",
-
-    # Gallina ovaiola
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'RIPRODUZIONE'",
-
-    # Quaglia giapponese
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'RIPRODUZIONE'",
-
-    # Anatra domestica
-    "'CRESCITA'",
-    "'CRESCITA'",
-    "'RIPRODUZIONE'",
-
-    # Maiale nano
-    "'CRESCITA'",
-    "'INGRASSO'",
-    "'MANTENIMENTO'",
-
-    # Trota iridea
-    "'CRESCITA'",
-    "'INGRASSO'",
-    "'MANTENIMENTO'",
-
-    # Tilapia nilotica
-    "'CRESCITA'",
-    "'INGRASSO'",
-    "'MANTENIMENTO'",
-
-    # Tacchino nano
-    "'CRESCITA'",
-    "'INGRASSO'",
-    "'MANTENIMENTO'",
-
-    # Oca domestica
-    "'CRESCITA'",
-    "'INGRASSO'",
-    "'MANTENIMENTO'"
-]
+OBIETTIVO_DIETA = []
 
 
 theList=list(zip(NOME_DIETA, OBIETTIVO_DIETA))

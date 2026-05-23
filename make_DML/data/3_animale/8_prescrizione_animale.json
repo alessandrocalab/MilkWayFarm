@@ -1,128 +1,20 @@
 [
     {
-        "NOME_FARMACO": "'Terapia respiratoria bovina 2025'",
-        "ETICHETTA_ANIMALE": "'10000003'",
-        "DATA_VISITA": "DATE '2024-02-10'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
+        "NOME_FARMACO": "'Integratore ingresso bovino'",
+        "ETICHETTA_ANIMALE": "'0000000001'",
+        "DATA_VISITA": "DATE '2025-02-26'",
+        "NOME_PRODOTTO": "'Integratore vitaminico veterinario'",
+        "UNITA_MISURA": "'mL'",
         "DURATA_GIORNI": 5,
-        "QUANTITA_GIORNALIERA": 12.0
+        "QUANTITA_GIORNALIERA": 20.0
     },
     {
-        "NOME_FARMACO": "'Terapia enterica bovina 2023'",
-        "ETICHETTA_ANIMALE": "'10000003'",
-        "DATA_VISITA": "DATE '2024-02-10'",
-        "NOME_PRODOTTO": "'Integratore minerale per animali'",
-        "UNITA_MISURA": "'kg'",
-        "DURATA_GIORNI": 10,
-        "QUANTITA_GIORNALIERA": 0.15
-    },
-    {
-        "NOME_FARMACO": "'Terapia caprina preventiva 2025'",
-        "ETICHETTA_ANIMALE": "'10000006'",
-        "DATA_VISITA": "DATE '2025-01-12'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 4,
-        "QUANTITA_GIORNALIERA": 5.0
-    },
-    {
-        "NOME_FARMACO": "'Terapia clostridi caprina 2025'",
-        "ETICHETTA_ANIMALE": "'10000006'",
-        "DATA_VISITA": "DATE '2025-01-12'",
-        "NOME_PRODOTTO": "'Antiparassitario veterinario'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 3,
-        "QUANTITA_GIORNALIERA": 3.0
-    },
-    {
-        "NOME_FARMACO": "'Terapia ovina respiratoria 2024'",
-        "ETICHETTA_ANIMALE": "'10000009'",
-        "DATA_VISITA": "DATE '2025-02-18'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 5,
-        "QUANTITA_GIORNALIERA": 5.0
-    },
-    {
-        "NOME_FARMACO": "'Terapia coniglio enterite 2025'",
-        "ETICHETTA_ANIMALE": "'10000012'",
-        "DATA_VISITA": "DATE '2025-04-10'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 4,
-        "QUANTITA_GIORNALIERA": 1.5
-    },
-    {
-        "NOME_FARMACO": "'Terapia avicola biosicurezza 2025'",
-        "ETICHETTA_ANIMALE": "'10000015'",
-        "DATA_VISITA": "DATE '2025-07-01'",
-        "NOME_PRODOTTO": "'Disinfettante per stalla'",
-        "UNITA_MISURA": "'l'",
-        "DURATA_GIORNI": 2,
-        "QUANTITA_GIORNALIERA": 0.3
-    },
-    {
-        "NOME_FARMACO": "'Terapia quaglia osservazione 2025'",
-        "ETICHETTA_ANIMALE": "'10000018'",
-        "DATA_VISITA": "DATE '2025-10-22'",
-        "NOME_PRODOTTO": "'Integratore minerale per animali'",
-        "UNITA_MISURA": "'kg'",
+        "NOME_FARMACO": "'Terapia pollame biosicurezza'",
+        "ETICHETTA_ANIMALE": "'0000000036'",
+        "DATA_VISITA": "DATE '2025-03-10'",
+        "NOME_PRODOTTO": "'Antibiotico veterinario pollame'",
+        "UNITA_MISURA": "'mL'",
         "DURATA_GIORNI": 7,
-        "QUANTITA_GIORNALIERA": 0.02
-    },
-    {
-        "NOME_FARMACO": "'Terapia anatra biosicurezza 2025'",
-        "ETICHETTA_ANIMALE": "'10000021'",
-        "DATA_VISITA": "DATE '2025-09-18'",
-        "NOME_PRODOTTO": "'Disinfettante per stalla'",
-        "UNITA_MISURA": "'l'",
-        "DURATA_GIORNI": 2,
-        "QUANTITA_GIORNALIERA": 0.25
-    },
-    {
-        "NOME_FARMACO": "'Terapia suino respiratoria 2024'",
-        "ETICHETTA_ANIMALE": "'10000024'",
-        "DATA_VISITA": "DATE '2025-01-25'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 6,
-        "QUANTITA_GIORNALIERA": 8.0
-    },
-    {
-        "NOME_FARMACO": "'Terapia trota acquacoltura 2025'",
-        "ETICHETTA_ANIMALE": "'10000025'",
-        "DATA_VISITA": "DATE '2025-02-15'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 5,
         "QUANTITA_GIORNALIERA": 0.5
-    },
-    {
-        "NOME_FARMACO": "'Terapia tilapia acquacoltura 2025'",
-        "ETICHETTA_ANIMALE": "'10000027'",
-        "DATA_VISITA": "DATE '2025-11-03'",
-        "NOME_PRODOTTO": "'Antibiotico veterinario base'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 5,
-        "QUANTITA_GIORNALIERA": 0.5
-    },
-    {
-        "NOME_FARMACO": "'Terapia tacchino routine 2024'",
-        "ETICHETTA_ANIMALE": "'10000029'",
-        "DATA_VISITA": "DATE '2024-09-10'",
-        "NOME_PRODOTTO": "'Antiparassitario veterinario'",
-        "UNITA_MISURA": "'ml'",
-        "DURATA_GIORNI": 3,
-        "QUANTITA_GIORNALIERA": 2.0
-    },
-    {
-        "NOME_FARMACO": "'Terapia oca routine 2024'",
-        "ETICHETTA_ANIMALE": "'10000030'",
-        "DATA_VISITA": "DATE '2024-09-15'",
-        "NOME_PRODOTTO": "'Integratore minerale per animali'",
-        "UNITA_MISURA": "'kg'",
-        "DURATA_GIORNI": 8,
-        "QUANTITA_GIORNALIERA": 0.05
     }
 ]

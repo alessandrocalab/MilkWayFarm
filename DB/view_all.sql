@@ -1,1 +1,2 @@
-select * from struttura;
+SELECT *
+FROM VACCINAZIONE

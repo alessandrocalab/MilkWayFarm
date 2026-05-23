@@ -1,474 +1,66 @@
 [
     {
-        "ETICHETTA_ANIMALE": "'10000001'",
-        "NOME_VACCINO": "'BOV-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
-        "NOME_STADIO_CRESCITA": "'Vitello'",
-        "DATA_VACCINAZIONE": "DATE '2018-12-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
+        "ETICHETTA_ANIMALE": "'0000000032'",
+        "NOME_VACCINO": "'mixomatosi'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "DATA_VACCINAZIONE": "DATE '2025-02-28'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000001'",
-        "NOME_VACCINO": "'BOV-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
+        "ETICHETTA_ANIMALE": "'0000000032'",
+        "NOME_VACCINO": "'malattia emorragica'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
         "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2019-05-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
+        "DATA_VACCINAZIONE": "DATE '2025-03-10'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000002'",
-        "NOME_VACCINO": "'BOV-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
-        "NOME_STADIO_CRESCITA": "'Vitello'",
-        "DATA_VACCINAZIONE": "DATE '2019-07-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
+        "ETICHETTA_ANIMALE": "'0000000007'",
+        "NOME_VACCINO": "'clostridiosi'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "DATA_VACCINAZIONE": "DATE '2025-02-27'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000002'",
-        "NOME_VACCINO": "'BOV-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
+        "ETICHETTA_ANIMALE": "'0000000007'",
+        "NOME_VACCINO": "'enterotossiemia'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
         "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2020-01-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
+        "DATA_VACCINAZIONE": "DATE '2025-03-15'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000003'",
-        "NOME_VACCINO": "'BOV-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
-        "NOME_STADIO_CRESCITA": "'Vitello'",
-        "DATA_VACCINAZIONE": "DATE '2023-11-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
+        "ETICHETTA_ANIMALE": "'0000000010'",
+        "NOME_VACCINO": "'clostridiosi'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "DATA_VACCINAZIONE": "DATE '2025-02-27'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000003'",
-        "NOME_VACCINO": "'BOV-ENTERICO'",
-        "NOME_TIPO_ANIMALE": "'Bovino nano'",
-        "NOME_STADIO_CRESCITA": "'Vitello'",
-        "DATA_VACCINAZIONE": "DATE '2023-12-05'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000004'",
-        "NOME_VACCINO": "'CAP-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
-        "NOME_STADIO_CRESCITA": "'Capretto'",
-        "DATA_VACCINAZIONE": "DATE '2019-04-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000004'",
-        "NOME_VACCINO": "'CAP-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
+        "ETICHETTA_ANIMALE": "'0000000010'",
+        "NOME_VACCINO": "'enterotossiemia'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
         "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2019-08-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
+        "DATA_VACCINAZIONE": "DATE '2025-04-15'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009002'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000005'",
-        "NOME_VACCINO": "'CAP-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
-        "NOME_STADIO_CRESCITA": "'Capretto'",
-        "DATA_VACCINAZIONE": "DATE '2020-08-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
+        "ETICHETTA_ANIMALE": "'0000000015'",
+        "NOME_VACCINO": "'mal rosso'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
+        "NOME_STADIO_CRESCITA": "'Accrescimento'",
+        "DATA_VACCINAZIONE": "DATE '2025-03-05'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009001'"
     },
     {
-        "ETICHETTA_ANIMALE": "'10000005'",
-        "NOME_VACCINO": "'CAP-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2021-01-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000006'",
-        "NOME_VACCINO": "'CAP-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
-        "NOME_STADIO_CRESCITA": "'Capretto'",
-        "DATA_VACCINAZIONE": "DATE '2025-01-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000006'",
-        "NOME_VACCINO": "'CAP-CLOSTRIDI'",
-        "NOME_TIPO_ANIMALE": "'Capra nana'",
-        "NOME_STADIO_CRESCITA": "'Capretto'",
-        "DATA_VACCINAZIONE": "DATE '2025-02-05'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000007'",
-        "NOME_VACCINO": "'PEC-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Agnello'",
-        "DATA_VACCINAZIONE": "DATE '2018-12-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000007'",
-        "NOME_VACCINO": "'PEC-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2019-05-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000008'",
-        "NOME_VACCINO": "'PEC-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Agnello'",
-        "DATA_VACCINAZIONE": "DATE '2019-09-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000008'",
-        "NOME_VACCINO": "'PEC-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2020-02-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000009'",
-        "NOME_VACCINO": "'PEC-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Agnello'",
-        "DATA_VACCINAZIONE": "DATE '2024-03-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000009'",
-        "NOME_VACCINO": "'PEC-CLOSTRIDI'",
-        "NOME_TIPO_ANIMALE": "'Pecora compatta'",
-        "NOME_STADIO_CRESCITA": "'Agnello'",
-        "DATA_VACCINAZIONE": "DATE '2024-03-28'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000010'",
-        "NOME_VACCINO": "'CON-MIXO'",
-        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
-        "NOME_STADIO_CRESCITA": "'Cucciolo'",
-        "DATA_VACCINAZIONE": "DATE '2020-10-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000010'",
-        "NOME_VACCINO": "'CON-RICHIAMO-MIXO'",
-        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2020-12-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000011'",
-        "NOME_VACCINO": "'CON-MIXO'",
-        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
-        "NOME_STADIO_CRESCITA": "'Cucciolo'",
-        "DATA_VACCINAZIONE": "DATE '2021-12-05'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000011'",
-        "NOME_VACCINO": "'CON-RICHIAMO-MIXO'",
-        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2022-01-25'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000012'",
-        "NOME_VACCINO": "'CON-ENTERITE'",
-        "NOME_TIPO_ANIMALE": "'Coniglio europeo'",
-        "NOME_STADIO_CRESCITA": "'Cucciolo'",
-        "DATA_VACCINAZIONE": "DATE '2025-04-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000013'",
-        "NOME_VACCINO": "'GAL-MAREK'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2021-04-05'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000013'",
-        "NOME_VACCINO": "'GAL-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
-        "NOME_STADIO_CRESCITA": "'Pollastra'",
-        "DATA_VACCINAZIONE": "DATE '2021-06-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000014'",
-        "NOME_VACCINO": "'GAL-MAREK'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2021-04-05'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000014'",
-        "NOME_VACCINO": "'GAL-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
-        "NOME_STADIO_CRESCITA": "'Pollastra'",
-        "DATA_VACCINAZIONE": "DATE '2021-06-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000015'",
-        "NOME_VACCINO": "'GAL-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
-        "NOME_STADIO_CRESCITA": "'Pollastra'",
-        "DATA_VACCINAZIONE": "DATE '2025-08-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000015'",
-        "NOME_VACCINO": "'GAL-RICHIAMO-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Gallina ovaiola'",
+        "ETICHETTA_ANIMALE": "'0000000015'",
+        "NOME_VACCINO": "'parvovirosi'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
         "NOME_STADIO_CRESCITA": "'Adulto'",
-        "DATA_VACCINAZIONE": "DATE '2025-11-30'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000016'",
-        "NOME_VACCINO": "'QUA-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2022-06-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000016'",
-        "NOME_VACCINO": "'QUA-RICHIAMO-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2022-07-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000017'",
-        "NOME_VACCINO": "'QUA-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2022-06-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000017'",
-        "NOME_VACCINO": "'QUA-RICHIAMO-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2022-07-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000018'",
-        "NOME_VACCINO": "'QUA-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2025-10-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000018'",
-        "NOME_VACCINO": "'QUA-RICHIAMO-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Quaglia giapponese'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2025-12-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000019'",
-        "NOME_VACCINO": "'ANA-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Anatroccolo'",
-        "DATA_VACCINAZIONE": "DATE '2020-06-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000019'",
-        "NOME_VACCINO": "'ANA-RICHIAMO-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2020-08-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000020'",
-        "NOME_VACCINO": "'ANA-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Anatroccolo'",
-        "DATA_VACCINAZIONE": "DATE '2021-06-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000020'",
-        "NOME_VACCINO": "'ANA-RICHIAMO-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2021-08-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000021'",
-        "NOME_VACCINO": "'ANA-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Anatroccolo'",
-        "DATA_VACCINAZIONE": "DATE '2025-09-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000021'",
-        "NOME_VACCINO": "'ANA-RICHIAMO-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Anatra domestica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2025-11-01'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000022'",
-        "NOME_VACCINO": "'MAI-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Suinetto'",
-        "DATA_VACCINAZIONE": "DATE '2019-03-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000022'",
-        "NOME_VACCINO": "'MAI-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2019-06-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET001'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000023'",
-        "NOME_VACCINO": "'MAI-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Suinetto'",
-        "DATA_VACCINAZIONE": "DATE '2020-04-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000023'",
-        "NOME_VACCINO": "'MAI-RICHIAMO-RESP'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2020-07-10'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET002'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000024'",
-        "NOME_VACCINO": "'MAI-BASE-RESP'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Suinetto'",
-        "DATA_VACCINAZIONE": "DATE '2024-09-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000024'",
-        "NOME_VACCINO": "'MAI-ENTERICO'",
-        "NOME_TIPO_ANIMALE": "'Maiale nano'",
-        "NOME_STADIO_CRESCITA": "'Suinetto'",
-        "DATA_VACCINAZIONE": "DATE '2024-10-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET003'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000025'",
-        "NOME_VACCINO": "'TRO-SETTICEMIA'",
-        "NOME_TIPO_ANIMALE": "'Trota iridea'",
-        "NOME_STADIO_CRESCITA": "'Avannotto'",
-        "DATA_VACCINAZIONE": "DATE '2024-08-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000025'",
-        "NOME_VACCINO": "'TRO-RICHIAMO-SETTICEMIA'",
-        "NOME_TIPO_ANIMALE": "'Trota iridea'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2024-11-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000026'",
-        "NOME_VACCINO": "'TRO-SETTICEMIA'",
-        "NOME_TIPO_ANIMALE": "'Trota iridea'",
-        "NOME_STADIO_CRESCITA": "'Avannotto'",
-        "DATA_VACCINAZIONE": "DATE '2024-08-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000026'",
-        "NOME_VACCINO": "'TRO-RICHIAMO-SETTICEMIA'",
-        "NOME_TIPO_ANIMALE": "'Trota iridea'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2024-11-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000027'",
-        "NOME_VACCINO": "'TIL-STREPTOCOCCOSI'",
-        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'",
-        "NOME_STADIO_CRESCITA": "'Avannotto'",
-        "DATA_VACCINAZIONE": "DATE '2025-10-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000027'",
-        "NOME_VACCINO": "'TIL-RICHIAMO-STREPTOCOCCOSI'",
-        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2026-01-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000028'",
-        "NOME_VACCINO": "'TIL-STREPTOCOCCOSI'",
-        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'",
-        "NOME_STADIO_CRESCITA": "'Avannotto'",
-        "DATA_VACCINAZIONE": "DATE '2025-10-15'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000028'",
-        "NOME_VACCINO": "'TIL-RICHIAMO-STREPTOCOCCOSI'",
-        "NOME_TIPO_ANIMALE": "'Tilapia nilotica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2026-01-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET006'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000029'",
-        "NOME_VACCINO": "'TAC-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Tacchino nano'",
-        "NOME_STADIO_CRESCITA": "'Pulcino'",
-        "DATA_VACCINAZIONE": "DATE '2023-01-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000029'",
-        "NOME_VACCINO": "'TAC-RICHIAMO-NEWCASTLE'",
-        "NOME_TIPO_ANIMALE": "'Tacchino nano'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2023-04-20'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET005'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000030'",
-        "NOME_VACCINO": "'OCA-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Oca domestica'",
-        "NOME_STADIO_CRESCITA": "'Papero'",
-        "DATA_VACCINAZIONE": "DATE '2022-02-25'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
-    },
-    {
-        "ETICHETTA_ANIMALE": "'10000030'",
-        "NOME_VACCINO": "'OCA-RICHIAMO-PASTEURELLOSI'",
-        "NOME_TIPO_ANIMALE": "'Oca domestica'",
-        "NOME_STADIO_CRESCITA": "'Giovane'",
-        "DATA_VACCINAZIONE": "DATE '2022-05-25'",
-        "MATRICOLA_SOMMINISTRATORE": "'VET004'"
+        "DATA_VACCINAZIONE": "DATE '2025-05-15'",
+        "MATRICOLA_SOMMINISTRATORE": "'0000009001'"
     }
 ]

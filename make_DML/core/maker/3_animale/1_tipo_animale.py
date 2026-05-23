@@ -16,125 +16,84 @@ from make_DML.core.utils.make_DML import make_DML
 #TIPO_ANIMALE:NOME_TIPO_ANIMALE SPECIE VITA_MEDIA_ANNI MODALITA_RIPRODUZIONE GIORNI_GESTAZIONE UMIDITA_IDEALE SPAZIO_MINIMO_MQ TEMPERATURA_IDEALE 
 
 NOME_TIPO_ANIMALE = [
-    "'Bovino nano'",
-    "'Capra nana'",
-    "'Pecora compatta'",
-    "'Coniglio europeo'",
-    "'Gallina ovaiola'",
-    "'Quaglia giapponese'",
-    "'Anatra domestica'",
-    "'Maiale nano'",
-    "'Trota iridea'",
-    "'Tilapia nilotica'",
-    "'Tacchino nano'",
-    "'Oca domestica'"
+    "'Gallina'",
+    "'Coniglio'",
+    "'Capra'",
+    "'Pecora'",
+    "'Maiale'",
+    "'Bovino'",
+    "'Tacchino'"
 ]
 
 SPECIE = [
-    "'Bos taurus'",
+    "'Gallus gallus domesticus'",
+    "'Oryctolagus cuniculus'",
     "'Capra hircus'",
     "'Ovis aries'",
-    "'Oryctolagus cuniculus'",
-    "'Gallus gallus domesticus'",
-    "'Coturnix japonica'",
-    "'Anas platyrhynchos domesticus'",
     "'Sus scrofa domesticus'",
-    "'Oncorhynchus mykiss'",
-    "'Oreochromis niloticus'",
-    "'Meleagris gallopavo'",
-    "'Anser anser domesticus'"
+    "'Bos taurus'",
+    "'Meleagris gallopavo'"
 ]
 
 VITA_MEDIA_ANNI = [
-    18,
-    12,
-    11,
-    8,
-    7,
-    3,
-    8,
-    12,
-    6,
-    8,
-    6,
-    15
+    6.00,
+    8.00,
+    12.00,
+    12.00,
+    10.00,
+    15.00,
+    6.00
 ]
 
 MODALITA_RIPRODUZIONE = [
+    "'OVIPARA'",
+    "'VIVIPARA'",
     "'VIVIPARA'",
     "'VIVIPARA'",
     "'VIVIPARA'",
     "'VIVIPARA'",
-    "'OVIPARA'",
-    "'OVIPARA'",
-    "'OVIPARA'",
-    "'VIVIPARA'",
-    "'OVIPARA'",
-    "'OVIPARA'",
-    "'OVIPARA'",
     "'OVIPARA'"
 ]
 
 GIORNI_GESTAZIONE = [
-    283,
+    21,
+    31,
     150,
     147,
-    31,
-    "NULL",
-    "NULL",
-    "NULL",
     114,
-    "NULL",
-    "NULL",
-    "NULL",
-    "NULL"
+    283,
+    28
 ]
 
 UMIDITA_IDEALE = [
-    60,
+    55,
+    50,
     55,
     55,
     60,
-    60,
     55,
-    65,
-    60,
-    95,
-    95,
-    60,
-    65
+    55
 ]
 
 SPAZIO_MINIMO_MQ = [
-    8.00,
-    2.00,
-    2.00,
-    0.80,
-    0.25,
-    0.08,
-    0.50,
+    0.30,
+    0.70,
     3.00,
-    0.15,
-    0.12,
-    0.40,
-    0.70
+    2.50,
+    2.00,
+    8.00,
+    0.80
 ]
 
 TEMPERATURA_IDEALE = [
-    291.15,  # 18°C
-    290.15,  # 17°C
-    289.15,  # 16°C
-    293.15,  # 20°C
-    294.15,  # 21°C
-    295.15,  # 22°C
-    293.15,  # 20°C
-    294.15,  # 21°C
-    285.15,  # 12°C
-    300.15,  # 27°C
-    293.15,  # 20°C
-    292.15   # 19°C
+    294,
+    291,
+    290,
+    290,
+    293,
+    289,
+    294
 ]
-
 
 theList=list(zip(NOME_TIPO_ANIMALE, SPECIE, VITA_MEDIA_ANNI, MODALITA_RIPRODUZIONE, GIORNI_GESTAZIONE, UMIDITA_IDEALE, SPAZIO_MINIMO_MQ, TEMPERATURA_IDEALE))
 

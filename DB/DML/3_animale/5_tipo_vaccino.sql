@@ -1,31 +1,26 @@
 --NOME_VACCINO, NOME_TIPO_ANIMALE, NOME_STADIO_CRESCITA, NOME_VACCINO_PROPEDEUTICO, NOME_STADIO_CRESCITA_PROPEDEUTICO, NOME_TIPO_ANIMALE_PROPEDEUTICO, IS_VACCINO_OBBLIGATORIO, ETA_MINIMA_MESI, DOSE_ML
-INSERT INTO VACCINO VALUES ('BOV-BASE-RESP', 'Bovino nano', 'Vitello', NULL, NULL, NULL, 1, 1, 2.0);
-INSERT INTO VACCINO VALUES ('BOV-RICHIAMO-RESP', 'Bovino nano', 'Giovane', 'BOV-BASE-RESP', 'Vitello', 'Bovino nano', 1, 6, 2.0);
-INSERT INTO VACCINO VALUES ('BOV-ENTERICO', 'Bovino nano', 'Vitello', NULL, NULL, NULL, 1, 2, 1.5);
-INSERT INTO VACCINO VALUES ('CAP-BASE-RESP', 'Capra nana', 'Capretto', NULL, NULL, NULL, 1, 1, 1.0);
-INSERT INTO VACCINO VALUES ('CAP-RICHIAMO-RESP', 'Capra nana', 'Giovane', 'CAP-BASE-RESP', 'Capretto', 'Capra nana', 1, 4, 1.0);
-INSERT INTO VACCINO VALUES ('CAP-CLOSTRIDI', 'Capra nana', 'Capretto', NULL, NULL, NULL, 1, 2, 1.0);
-INSERT INTO VACCINO VALUES ('PEC-BASE-RESP', 'Pecora compatta', 'Agnello', NULL, NULL, NULL, 1, 1, 1.0);
-INSERT INTO VACCINO VALUES ('PEC-RICHIAMO-RESP', 'Pecora compatta', 'Giovane', 'PEC-BASE-RESP', 'Agnello', 'Pecora compatta', 1, 4, 1.0);
-INSERT INTO VACCINO VALUES ('PEC-CLOSTRIDI', 'Pecora compatta', 'Agnello', NULL, NULL, NULL, 1, 2, 1.0);
-INSERT INTO VACCINO VALUES ('CON-MIXO', 'Coniglio europeo', 'Cucciolo', NULL, NULL, NULL, 1, 1, 0.5);
-INSERT INTO VACCINO VALUES ('CON-RICHIAMO-MIXO', 'Coniglio europeo', 'Giovane', 'CON-MIXO', 'Cucciolo', 'Coniglio europeo', 1, 2, 0.5);
-INSERT INTO VACCINO VALUES ('CON-ENTERITE', 'Coniglio europeo', 'Cucciolo', NULL, NULL, NULL, 0, 1, 0.3);
-INSERT INTO VACCINO VALUES ('GAL-MAREK', 'Gallina ovaiola', 'Pulcino', NULL, NULL, NULL, 1, 0, 0.2);
-INSERT INTO VACCINO VALUES ('GAL-NEWCASTLE', 'Gallina ovaiola', 'Pollastra', NULL, NULL, NULL, 1, 2, 0.3);
-INSERT INTO VACCINO VALUES ('GAL-RICHIAMO-NEWCASTLE', 'Gallina ovaiola', 'Adulto', 'GAL-NEWCASTLE', 'Pollastra', 'Gallina ovaiola', 1, 5, 0.3);
-INSERT INTO VACCINO VALUES ('QUA-NEWCASTLE', 'Quaglia giapponese', 'Pulcino', NULL, NULL, NULL, 1, 0, 0.1);
-INSERT INTO VACCINO VALUES ('QUA-RICHIAMO-NEWCASTLE', 'Quaglia giapponese', 'Giovane', 'QUA-NEWCASTLE', 'Pulcino', 'Quaglia giapponese', 1, 1, 0.1);
-INSERT INTO VACCINO VALUES ('ANA-PASTEURELLOSI', 'Anatra domestica', 'Anatroccolo', NULL, NULL, NULL, 1, 1, 0.3);
-INSERT INTO VACCINO VALUES ('ANA-RICHIAMO-PASTEURELLOSI', 'Anatra domestica', 'Giovane', 'ANA-PASTEURELLOSI', 'Anatroccolo', 'Anatra domestica', 1, 2, 0.3);
-INSERT INTO VACCINO VALUES ('MAI-BASE-RESP', 'Maiale nano', 'Suinetto', NULL, NULL, NULL, 1, 1, 1.5);
-INSERT INTO VACCINO VALUES ('MAI-RICHIAMO-RESP', 'Maiale nano', 'Giovane', 'MAI-BASE-RESP', 'Suinetto', 'Maiale nano', 1, 3, 1.5);
-INSERT INTO VACCINO VALUES ('MAI-ENTERICO', 'Maiale nano', 'Suinetto', NULL, NULL, NULL, 1, 2, 1.0);
-INSERT INTO VACCINO VALUES ('TRO-SETTICEMIA', 'Trota iridea', 'Avannotto', NULL, NULL, NULL, 1, 0, 0.05);
-INSERT INTO VACCINO VALUES ('TRO-RICHIAMO-SETTICEMIA', 'Trota iridea', 'Giovane', 'TRO-SETTICEMIA', 'Avannotto', 'Trota iridea', 1, 3, 0.05);
-INSERT INTO VACCINO VALUES ('TIL-STREPTOCOCCOSI', 'Tilapia nilotica', 'Avannotto', NULL, NULL, NULL, 1, 0, 0.05);
-INSERT INTO VACCINO VALUES ('TIL-RICHIAMO-STREPTOCOCCOSI', 'Tilapia nilotica', 'Giovane', 'TIL-STREPTOCOCCOSI', 'Avannotto', 'Tilapia nilotica', 1, 2, 0.05);
-INSERT INTO VACCINO VALUES ('TAC-NEWCASTLE', 'Tacchino nano', 'Pulcino', NULL, NULL, NULL, 1, 0, 0.3);
-INSERT INTO VACCINO VALUES ('TAC-RICHIAMO-NEWCASTLE', 'Tacchino nano', 'Giovane', 'TAC-NEWCASTLE', 'Pulcino', 'Tacchino nano', 1, 2, 0.3);
-INSERT INTO VACCINO VALUES ('OCA-PASTEURELLOSI', 'Oca domestica', 'Papero', NULL, NULL, NULL, 1, 1, 0.4);
-INSERT INTO VACCINO VALUES ('OCA-RICHIAMO-PASTEURELLOSI', 'Oca domestica', 'Giovane', 'OCA-PASTEURELLOSI', 'Papero', 'Oca domestica', 1, 3, 0.4);
+INSERT INTO VACCINO VALUES ('Newcastle', 'Gallina', 'Pulcino', NULL, NULL, NULL, 1, 0, 0.05);
+INSERT INTO VACCINO VALUES ('bronchite infettiva', 'Gallina', 'Giovane', 'Newcastle', 'Pulcino', 'Gallina', 1, 1, 0.05);
+INSERT INTO VACCINO VALUES ('coccidiosi', 'Gallina', 'Pulcino', NULL, NULL, NULL, 0, 0, 0.05);
+
+INSERT INTO VACCINO VALUES ('mixomatosi', 'Coniglio', 'Svezzamento', NULL, NULL, NULL, 1, 1, 0.5);
+INSERT INTO VACCINO VALUES ('malattia emorragica', 'Coniglio', 'Giovane', 'mixomatosi', 'Svezzamento', 'Coniglio', 1, 2, 0.5);
+
+INSERT INTO VACCINO VALUES ('clostridiosi', 'Capra', 'Svezzamento', NULL, NULL, NULL, 1, 3, 2.0);
+INSERT INTO VACCINO VALUES ('enterotossiemia', 'Capra', 'Giovane', 'clostridiosi', 'Svezzamento', 'Capra', 1, 6, 2.0);
+
+INSERT INTO VACCINO VALUES ('clostridiosi', 'Pecora', 'Svezzamento', NULL, NULL, NULL, 1, 3, 2.0);
+INSERT INTO VACCINO VALUES ('enterotossiemia', 'Pecora', 'Giovane', 'clostridiosi', 'Svezzamento', 'Pecora', 1, 6, 2.0);
+
+INSERT INTO VACCINO VALUES ('mal rosso', 'Maiale', 'Accrescimento', NULL, NULL, NULL, 1, 3, 2.0);
+INSERT INTO VACCINO VALUES ('parvovirosi', 'Maiale', 'Adulto', 'mal rosso', 'Accrescimento', 'Maiale', 1, 8, 2.0);
+
+INSERT INTO VACCINO VALUES ('respiratorio', 'Bovino', 'Svezzamento', NULL, NULL, NULL, 1, 3, 2.0);
+INSERT INTO VACCINO VALUES ('clostridiosi', 'Bovino', 'Giovane', 'respiratorio', 'Svezzamento', 'Bovino', 1, 12, 2.0);
+INSERT INTO VACCINO VALUES ('mastite', 'Bovino', 'Adulto', 'clostridiosi', 'Giovane', 'Bovino', 0, 24, 2.0);
+
+INSERT INTO VACCINO VALUES ('Newcastle', 'Tacchino', 'Pulcino', NULL, NULL, NULL, 1, 0, 0.05);
+
+COMMIT;
+
+COMMIT;

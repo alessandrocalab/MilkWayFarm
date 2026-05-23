@@ -10,12 +10,22 @@
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Proteine del latte'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Albumina'",
+        "NOME_SOSTANZA": "'Albumina sierica bovina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine dell uovo'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Ovoalbumina'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
@@ -30,12 +40,27 @@
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Frumento'",
+        "NOME_SOSTANZA": "'Gliadina'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Soia'",
+        "NOME_SOSTANZA": "'Glutenina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Fruttani'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine del mais'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della soia'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
@@ -45,18 +70,38 @@
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Mais'",
+        "NOME_SOSTANZA": "'Proteine dei legumi'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Solanina'",
+        "NOME_SOSTANZA": "'Vicilina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Convicilina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Lectine vegetali'",
         "IS_POTENZIALE_ALLERGENE": 0,
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Nichel'",
-        "IS_POTENZIALE_ALLERGENE": 1,
+        "NOME_SOSTANZA": "'Galatto oligosaccaridi'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Raffinosio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Stachiosio'",
+        "IS_POTENZIALE_ALLERGENE": 0,
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
@@ -65,7 +110,22 @@
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Saccarosio'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Ossalati'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Solanina'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Capsaicina'",
         "IS_POTENZIALE_ALLERGENE": 0,
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
@@ -75,28 +135,78 @@
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Beta-glucani'",
+        "NOME_SOSTANZA": "'Nichel alimentare'",
         "IS_POTENZIALE_ALLERGENE": 0,
-        "IS_POTENZIALE_INTOLLERANTE": 0
+        "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Chitina'",
+        "NOME_SOSTANZA": "'Glucosinolati'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Inulina'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Purine'",
+        "IS_POTENZIALE_ALLERGENE": 0,
+        "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine fungine'",
         "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Acido citrico'",
-        "IS_POTENZIALE_ALLERGENE": 0,
+        "NOME_SOSTANZA": "'Chitina fungina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 1
     },
     {
-        "NOME_SOSTANZA": "'Potassio'",
-        "IS_POTENZIALE_ALLERGENE": 0,
+        "NOME_SOSTANZA": "'Ficocianina algale'",
+        "IS_POTENZIALE_ALLERGENE": 1,
         "IS_POTENZIALE_INTOLLERANTE": 0
     },
     {
-        "NOME_SOSTANZA": "'Fibre vegetali'",
+        "NOME_SOSTANZA": "'Iodio algale'",
         "IS_POTENZIALE_ALLERGENE": 0,
         "IS_POTENZIALE_INTOLLERANTE": 1
+    },
+    {
+        "NOME_SOSTANZA": "'Alfa gal'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne bovina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne suina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne ovina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne caprina'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne avicola'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
+    },
+    {
+        "NOME_SOSTANZA": "'Proteine della carne di coniglio'",
+        "IS_POTENZIALE_ALLERGENE": 1,
+        "IS_POTENZIALE_INTOLLERANTE": 0
     }
 ]

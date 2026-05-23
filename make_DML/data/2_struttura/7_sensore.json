@@ -1,226 +1,485 @@
 [
     {
-        "SERIALE": "'SEN000001'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-TEMP-100'",
-        "CODICE_AREA": "'A01A'",
-        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+        "SERIALE": "'T001'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000002'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-HUM-120'",
-        "CODICE_AREA": "'A01A'",
-        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+        "SERIALE": "'H001'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000003'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-PRESS-200'",
-        "CODICE_AREA": "'A01A'",
-        "NOME_STRUTTURA": "'Modulo Agricolo Alfa'"
+        "SERIALE": "'P001'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000004'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-CO2-310'",
-        "CODICE_AREA": "'A03A'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+        "SERIALE": "'T002'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000005'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-O2-320'",
-        "CODICE_AREA": "'A03A'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+        "SERIALE": "'H002'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000006'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-NH3-330'",
-        "CODICE_AREA": "'A03A'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+        "SERIALE": "'P002'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Primo Modulo'"
     },
     {
-        "SERIALE": "'SEN000007'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-TEMP-100'",
-        "CODICE_AREA": "'A04A'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+        "SERIALE": "'T003'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000008'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-HUM-120'",
-        "CODICE_AREA": "'A04A'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'"
+        "SERIALE": "'H003'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000009'",
-        "NOME_PRODUTTORE": "'BioFarm Analytics'",
-        "NOME_MODELLO": "'BFA-BIO-TEMP-10'",
-        "CODICE_AREA": "'A08A'",
-        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'"
+        "SERIALE": "'P003'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000010'",
-        "NOME_PRODUTTORE": "'BioFarm Analytics'",
-        "NOME_MODELLO": "'BFA-BIO-HUM-20'",
-        "CODICE_AREA": "'A08A'",
-        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'"
+        "SERIALE": "'T004'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000011'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-CO2-310'",
-        "CODICE_AREA": "'A16A'",
-        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'"
+        "SERIALE": "'H004'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000012'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-NH3-330'",
-        "CODICE_AREA": "'A16A'",
-        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'"
+        "SERIALE": "'P004'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000013'",
-        "NOME_PRODUTTORE": "'HydroSpace Lab'",
-        "NOME_MODELLO": "'HSL-PH-400'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'T005'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000014'",
-        "NOME_PRODUTTORE": "'HydroSpace Lab'",
-        "NOME_MODELLO": "'HSL-EC-410'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'H005'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000015'",
-        "NOME_PRODUTTORE": "'HydroSpace Lab'",
-        "NOME_MODELLO": "'HSL-LIQ-TEMP-420'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'P005'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Agricola'"
     },
     {
-        "SERIALE": "'SEN000016'",
-        "NOME_PRODUTTORE": "'AstraControl Sensors'",
-        "NOME_MODELLO": "'ACS-LUX-500'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'T006'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000017'",
-        "NOME_PRODUTTORE": "'AstraControl Sensors'",
-        "NOME_MODELLO": "'ACS-PAR-510'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'H006'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000018'",
-        "NOME_PRODUTTORE": "'AgriMoon Devices'",
-        "NOME_MODELLO": "'AMD-MOIST-700'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'P006'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000019'",
-        "NOME_PRODUTTORE": "'HydroSpace Lab'",
-        "NOME_MODELLO": "'HSL-PH-400'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'T007'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000020'",
-        "NOME_PRODUTTORE": "'HydroSpace Lab'",
-        "NOME_MODELLO": "'HSL-EC-410'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'"
+        "SERIALE": "'H007'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000021'",
-        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
-        "NOME_MODELLO": "'NHM-LEVEL-810'",
-        "CODICE_AREA": "'A12A'",
-        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+        "SERIALE": "'P007'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000022'",
-        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
-        "NOME_MODELLO": "'NHM-MASS-800'",
-        "CODICE_AREA": "'A12A'",
-        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+        "SERIALE": "'T008'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000023'",
-        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
-        "NOME_MODELLO": "'ST-FLOW-620'",
-        "CODICE_AREA": "'A12A'",
-        "NOME_STRUTTURA": "'Area Serbatoi Eta'"
+        "SERIALE": "'H008'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000024'",
-        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
-        "NOME_MODELLO": "'ST-ENERGY-610'",
-        "CODICE_AREA": "'A13A'",
-        "NOME_STRUTTURA": "'Modulo Energia Theta'"
+        "SERIALE": "'P008'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000025'",
-        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
-        "NOME_MODELLO": "'NHM-MASS-800'",
-        "CODICE_AREA": "'A09A'",
-        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+        "SERIALE": "'T009'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000026'",
-        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
-        "NOME_MODELLO": "'NHM-LEVEL-810'",
-        "CODICE_AREA": "'A09A'",
-        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+        "SERIALE": "'H009'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000027'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-TEMP-100'",
-        "CODICE_AREA": "'A10A'",
-        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+        "SERIALE": "'P009'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000028'",
-        "NOME_PRODUTTORE": "'LunaSense Systems'",
-        "NOME_MODELLO": "'LS-HUM-120'",
-        "CODICE_AREA": "'A10A'",
-        "NOME_STRUTTURA": "'Deposito Alimentare Epsilon'"
+        "SERIALE": "'T010'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00E'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000029'",
-        "NOME_PRODUTTORE": "'Orbitron Instruments'",
-        "NOME_MODELLO": "'ORB-O2-320'",
-        "CODICE_AREA": "'A14A'",
-        "NOME_STRUTTURA": "'Centro Controllo Iota'"
+        "SERIALE": "'H010'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00E'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000030'",
-        "NOME_PRODUTTORE": "'SeleneTech Instruments'",
-        "NOME_MODELLO": "'ST-VIB-600'",
-        "CODICE_AREA": "'A13A'",
-        "NOME_STRUTTURA": "'Modulo Energia Theta'"
+        "SERIALE": "'P010'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00E'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000031'",
-        "NOME_PRODUTTORE": "'AstraControl Sensors'",
-        "NOME_MODELLO": "'ACS-UV-520'",
-        "CODICE_AREA": "'A15A'",
-        "NOME_STRUTTURA": "'Cupola Osservazione Kappa'"
+        "SERIALE": "'T011'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00F'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
     },
     {
-        "SERIALE": "'SEN000032'",
-        "NOME_PRODUTTORE": "'NovaHab Monitoring'",
-        "NOME_MODELLO": "'NHM-RAD-820'",
-        "CODICE_AREA": "'A14A'",
-        "NOME_STRUTTURA": "'Centro Controllo Iota'"
+        "SERIALE": "'H011'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00F'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P011'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00F'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T012'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00G'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H012'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00G'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P012'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00G'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T013'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H013'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P013'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T014'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00I'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H014'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00I'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P014'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00I'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T015'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00J'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H015'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00J'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P015'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00J'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T016'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H016'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P016'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T017'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'H017'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'P017'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'"
+    },
+    {
+        "SERIALE": "'T018'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'H018'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'P018'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'T019'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'H019'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'P019'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'T020'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'H020'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'P020'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'T021'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'H021'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'P021'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'"
+    },
+    {
+        "SERIALE": "'T022'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
+    },
+    {
+        "SERIALE": "'H022'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
+    },
+    {
+        "SERIALE": "'P022'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
+    },
+    {
+        "SERIALE": "'T023'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'TEMP-K100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
+    },
+    {
+        "SERIALE": "'H023'",
+        "NOME_PRODUTTORE": "'EnviroSense'",
+        "NOME_MODELLO": "'HUM-RH100'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
+    },
+    {
+        "SERIALE": "'P023'",
+        "NOME_PRODUTTORE": "'PowerGrid Systems'",
+        "NOME_MODELLO": "'PWR-A5000'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'"
     }
 ]

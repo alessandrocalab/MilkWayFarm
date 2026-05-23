@@ -16,41 +16,33 @@ from make_DML.core.utils.make_DML import make_DML
 #AREA_ST:CODICE_AREA NOME_STRUTTURA DATA_TERMINAZIONE TEMPERATURA_MIN TEMPERATURA_MAX UMIDITA_MIN UMIDITA_MAX LIVELLO_SICUREZZA PRESSIONE_PA VOLUME_M3 SUPERFICIE_MQ DATA_ATTIVAZIONE 
 
 CODICE_AREA = [
-    "'A01A'",
-    "'A02A'",
-    "'A03A'",
-    "'A04A'",
-    "'A05A'",
-    "'A06A'",
-    "'A07A'",
-    "'A08A'",
-    "'A09A'",
-    "'A10A'",
-    "'A11A'",
-    "'A12A'",
-    "'A13A'",
-    "'A14A'",
-    "'A15A'",
-    "'A16A'"
+    "'A00A'",  # Ambiente secco controllato
+    "'A00B'",  # Ambiente fresco controllato
+    "'A00C'",  # Refrigerazione standard
+    "'A00D'",  # Congelamento standard
+    "'A00E'",  # Catena del freddo sanitaria
+    "'A00F'",  # Conservazione semi breve termine
+    "'A00G'",  # Conservazione semi lungo termine
+    "'A00H'",  # Conservazione tuberi e radici
+    "'A00I'",  # Conservazione verdure fresche
+    "'A00J'",  # Conservazione mangimi secchi
+    "'A00K'",  # Conservazione biomasse organiche
+    "'A00L'"   # Conservazione soluzioni agricole
 ]
 
 NOME_STRUTTURA = [
-    "'Modulo Agricolo Alfa'",
-    "'Modulo Agricolo Alfa'",
-    "'Modulo Zootecnico Beta'",
-    "'Modulo Zootecnico Beta'",
-    "'Serra Idroponica Gamma'",
-    "'Serra Idroponica Gamma'",
-    "'Laboratorio Biologico Delta'",
-    "'Laboratorio Biologico Delta'",
-    "'Deposito Alimentare Epsilon'",
-    "'Deposito Alimentare Epsilon'",
-    "'Deposito Tecnico Zeta'",
-    "'Area Serbatoi Eta'",
-    "'Modulo Energia Theta'",
-    "'Centro Controllo Iota'",
-    "'Cupola Osservazione Kappa'",
-    "'Modulo Quarantena Lambda'"
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'",
+    "'Struttura Stoccaggio'"
 ]
 
 DATA_TERMINAZIONE = [
@@ -64,185 +56,141 @@ DATA_TERMINAZIONE = [
     "NULL",
     "NULL",
     "NULL",
-    "DATE '2025-10-30'",
-    "NULL",
-    "NULL",
-    "NULL",
     "NULL",
     "NULL"
 ]
-
 TEMPERATURA_MIN = [
-    291.15,  # 18°C
-    288.15,  # 15°C
-    289.15,  # 16°C
-    291.15,  # 18°C
-    293.15,  # 20°C
-    291.15,  # 18°C
-    291.15,  # 18°C
-    287.15,  # 14°C
-    275.15,  # 2°C
-    283.15,  # 10°C
-    278.15,  # 5°C
-    278.15,  # 5°C
-    285.15,  # 12°C
-    291.15,  # 18°C
-    289.15,  # 16°C
-    291.15   # 18°C
+    288.15,  # Ambiente secco controllato
+    281.15,  # Ambiente fresco controllato
+    273.15,  # Refrigerazione standard
+    253.15,  # Congelamento standard
+    275.15,  # Catena del freddo sanitaria
+    277.15,  # Semi breve termine
+    273.15,  # Semi lungo termine
+    277.15,  # Tuberi e radici
+    274.15,  # Verdure fresche
+    283.15,  # Mangimi secchi
+    278.15,  # Biomasse organiche
+    278.15   # Soluzioni agricole
 ]
 
 TEMPERATURA_MAX = [
-    299.15,  # 26°C
-    296.15,  # 23°C
-    298.15,  # 25°C
-    297.15,  # 24°C
-    301.15,  # 28°C
-    299.15,  # 26°C
-    295.15,  # 22°C
-    291.15,  # 18°C
-    281.15,  # 8°C
-    298.15,  # 25°C
-    298.15,  # 25°C
-    298.15,  # 25°C
-    303.15,  # 30°C
-    296.15,  # 23°C
-    295.15,  # 22°C
-    296.15   # 23°C
+    298.15,
+    288.15,
+    277.15,
+    255.15,
+    281.15,
+    283.15,
+    278.15,
+    285.15,
+    277.15,
+    298.15,
+    298.15,
+    298.15
 ]
 
 UMIDITA_MIN = [
-    45,
+    25,
     35,
-    50,
-    55,
     70,
-    75,
-    35,
     30,
-    50,
-    20,
-    20,
-    20,
-    20,
     35,
+    20,
+    15,
+    85,
+    90,
+    25,
     30,
-    40
+    30
 ]
 
 UMIDITA_MAX = [
-    70,
-    60,
-    75,
-    80,
+    55,
+    65,
     90,
+    60,
+    65,
+    45,
+    35,
     95,
+    98,
     60,
-    50,
-    80,
-    50,
-    60,
-    60,
-    55,
-    60,
-    55,
-    65
+    70,
+    60
 ]
-
 LIVELLO_SICUREZZA = [
-    "'L1'",  # A01A - area agricola
-    "'L1'",  # A02A - area agricola
-    "'L2'",  # A03A - area zootecnica
-    "'L2'",  # A04A - area zootecnica
-    "'L1'",  # A05A - idroponica
-    "'L1'",  # A06A - idroponica
-    "'L3'",  # A07A - laboratorio biologico
-    "'L3'",  # A08A - laboratorio biologico/osservazione
-    "'L1'",  # A09A - deposito alimentare
-    "'L1'",  # A10A - deposito secco
-    "'L2'",  # A11A - deposito tecnico
-    "'L2'",  # A12A - area serbatoi
-    "'L3'",  # A13A - energia
-    "'L2'",  # A14A - centro controllo
-    "'L0'",  # A15A - osservazione
-    "'L3'"   # A16A - quarantena
+    "'L2'",  # secco
+    "'L2'",  # fresco
+    "'L3'",  # refrigerato
+    "'L4'",  # congelato
+    "'L5'",  # vaccini/farmaci sensibili
+    "'L3'",  # semi breve
+    "'L4'",  # semi lungo termine
+    "'L2'",  # tuberi/radici
+    "'L3'",  # verdure fresche
+    "'L2'",  # mangimi
+    "'L4'",  # biomasse organiche
+    "'L3'"   # soluzioni agricole
 ]
 
 PRESSIONE_PA = [
-    101325,
-    95000,
-    101325,
-    101325,
-    90000,
-    90000,
-    101325,
-    101325,
-    101325,
-    95000,
-    95000,
-    90000,
-    85000,
-    101325,
-    95000,
-    101325
+    98000,
+    98000,
+    98500,
+    99000,
+    99500,
+    98000,
+    98500,
+    98000,
+    98500,
+    98000,
+    99000,
+    98500
 ]
 
 VOLUME_M3 = [
-    1800,
-    1200,
-    1500,
-    1300,
-    2200,
-    1800,
-    900,
-    700,
-    1100,
-    900,
-    1000,
-    1600,
-    1800,
-    850,
-    600,
-    750
+    75,
+    45,
+    55,
+    40,
+    25,
+    35,
+    30,
+    55,
+    35,
+    70,
+    60,
+    45
 ]
-
 SUPERFICIE_MQ = [
-    520,
-    380,
-    450,
-    400,
-    700,
-    620,
-    280,
-    220,
-    350,
-    300,
-    340,
-    500,
-    600,
-    260,
-    180,
-    240
+    22,
+    15,
+    18,
+    12,
+    8,
+    12,
+    10,
+    16,
+    12,
+    20,
+    18,
+    14
 ]
 
 DATA_ATTIVAZIONE = [
-    "DATE '2018-02-10'",  # Modulo Agricolo Alfa
-    "DATE '2018-03-05'",  # Modulo Agricolo Alfa
-    "DATE '2018-10-01'",  # Modulo Zootecnico Beta
-    "DATE '2018-11-15'",  # Modulo Zootecnico Beta
-    "DATE '2019-05-01'",  # Serra Idroponica Gamma
-    "DATE '2019-06-10'",  # Serra Idroponica Gamma
-    "DATE '2020-03-01'",  # Laboratorio Biologico Delta
-    "DATE '2020-03-20'",  # Laboratorio Biologico Delta
-    "DATE '2020-12-15'",  # Deposito Alimentare Epsilon
-    "DATE '2021-01-10'",  # Deposito Alimentare Epsilon
-    "DATE '2021-07-05'",  # Deposito Tecnico Zeta
-    "DATE '2022-04-01'",  # Area Serbatoi Eta
-    "DATE '2023-01-10'",  # Modulo Energia Theta
-    "DATE '2023-08-01'",  # Centro Controllo Iota
-    "DATE '2024-06-01'",  # Cupola Osservazione Kappa
-    "DATE '2025-03-01'"   # Modulo Quarantena Lambda
+    "DATE '2023-08-05'",
+    "DATE '2023-08-05'",
+    "DATE '2023-08-06'",
+    "DATE '2023-08-07'",
+    "DATE '2023-08-07'",
+    "DATE '2023-08-08'",
+    "DATE '2023-08-08'",
+    "DATE '2023-08-09'",
+    "DATE '2023-08-09'",
+    "DATE '2023-08-10'",
+    "DATE '2023-08-10'",
+    "DATE '2023-08-11'"
 ]
-
 
 theList=list(zip(CODICE_AREA, NOME_STRUTTURA, DATA_TERMINAZIONE, TEMPERATURA_MIN, TEMPERATURA_MAX, UMIDITA_MIN, UMIDITA_MAX, LIVELLO_SICUREZZA, PRESSIONE_PA, VOLUME_M3, SUPERFICIE_MQ, DATA_ATTIVAZIONE))
 
@@ -258,4 +206,4 @@ os.makedirs("make_DML/data/2_struttura", exist_ok=True)
 with open("make_DML/data/2_struttura/2_area_st.json", "w", encoding="utf-8") as f:
    json.dump(theJsonList, f, indent=4, ensure_ascii=False)
 
-make_DML("DB/DML/2_struttura/2_area_st.sql", lines)
+make_DML("DB/DML/2_struttura/2_area_st.sql", lines,"a")

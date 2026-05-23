@@ -55,7 +55,6 @@ SET SQLBLANKLINES ON
 @6_associazioni/3_prodotto_contiene_sostanza.sql
 @6_associazioni/4_stadio_crescita_intollerante_sostanza.sql
 @6_associazioni/5_animale_allergico_sostanza.sql
-@6_associazioni/6_animale_prevede_dieta_speciale.sql
 @6_associazioni/7_prodotto_da_stadio_crescita.sql
 @6_associazioni/8_prodotto_prevede_mod_cons.sql
 @6_associazioni/9_animale_allocato_blocco.sql

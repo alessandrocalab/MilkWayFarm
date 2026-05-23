@@ -16,252 +16,183 @@ from make_DML.core.utils.make_DML import make_DML
 #STADIO_CRESCITA:NOME_STADIO_CRESCITA NOME_TIPO_ANIMALE LIVELLO_BIOSICUREZZA_MINIMO ETA_MINIMA_MESI 
 
 NOME_STADIO_CRESCITA = [
-    # Bovino nano
-    "'Vitello'",
+    # GALLINA
+    "'Pulcino'",
     "'Giovane'",
+    "'Ovodeposizione'",
     "'Adulto'",
 
-    # Capra nana
-    "'Capretto'",
-    "'Giovane'",
-    "'Adulto'",
-
-    # Pecora compatta
-    "'Agnello'",
-    "'Giovane'",
-    "'Adulto'",
-
-    # Coniglio europeo
+    # CONIGLIO
     "'Cucciolo'",
+    "'Svezzamento'",
     "'Giovane'",
     "'Adulto'",
 
-    # Gallina ovaiola
-    "'Pulcino'",
-    "'Pollastra'",
-    "'Adulto'",
-
-    # Quaglia giapponese
-    "'Pulcino'",
+    # CAPRA
+    "'Capretto'",
+    "'Svezzamento'",
     "'Giovane'",
     "'Adulto'",
 
-    # Anatra domestica
-    "'Anatroccolo'",
+    # PECORA
+    "'Agnello'",
+    "'Svezzamento'",
     "'Giovane'",
     "'Adulto'",
 
-    # Maiale nano
+    # MAIALE
     "'Suinetto'",
+    "'Svezzamento'",
+    "'Accrescimento'",
+    "'Adulto'",
+
+    # BOVINO
+    "'Vitello'",
+    "'Svezzamento'",
     "'Giovane'",
     "'Adulto'",
 
-    # Trota iridea
-    "'Avannotto'",
-    "'Giovane'",
-    "'Adulto'",
-
-    # Tilapia nilotica
-    "'Avannotto'",
-    "'Giovane'",
-    "'Adulto'",
-
-    # Tacchino nano
+    # TACCHINO
     "'Pulcino'",
     "'Giovane'",
-    "'Adulto'",
-
-    # Oca domestica
-    "'Papero'",
-    "'Giovane'",
+    "'Ingrasso'",
     "'Adulto'"
 ]
 
 NOME_TIPO_ANIMALE = [
-    # Bovino nano
-    "'Bovino nano'",
-    "'Bovino nano'",
-    "'Bovino nano'",
+    # GALLINA
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
+    "'Gallina'",
 
-    # Capra nana
-    "'Capra nana'",
-    "'Capra nana'",
-    "'Capra nana'",
+    # CONIGLIO
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
+    "'Coniglio'",
 
-    # Pecora compatta
-    "'Pecora compatta'",
-    "'Pecora compatta'",
-    "'Pecora compatta'",
+    # CAPRA
+    "'Capra'",
+    "'Capra'",
+    "'Capra'",
+    "'Capra'",
 
-    # Coniglio europeo
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
-    "'Coniglio europeo'",
+    # PECORA
+    "'Pecora'",
+    "'Pecora'",
+    "'Pecora'",
+    "'Pecora'",
 
-    # Gallina ovaiola
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
-    "'Gallina ovaiola'",
+    # MAIALE
+    "'Maiale'",
+    "'Maiale'",
+    "'Maiale'",
+    "'Maiale'",
 
-    # Quaglia giapponese
-    "'Quaglia giapponese'",
-    "'Quaglia giapponese'",
-    "'Quaglia giapponese'",
+    # BOVINO
+    "'Bovino'",
+    "'Bovino'",
+    "'Bovino'",
+    "'Bovino'",
 
-    # Anatra domestica
-    "'Anatra domestica'",
-    "'Anatra domestica'",
-    "'Anatra domestica'",
-
-    # Maiale nano
-    "'Maiale nano'",
-    "'Maiale nano'",
-    "'Maiale nano'",
-
-    # Trota iridea
-    "'Trota iridea'",
-    "'Trota iridea'",
-    "'Trota iridea'",
-
-    # Tilapia nilotica
-    "'Tilapia nilotica'",
-    "'Tilapia nilotica'",
-    "'Tilapia nilotica'",
-
-    # Tacchino nano
-    "'Tacchino nano'",
-    "'Tacchino nano'",
-    "'Tacchino nano'",
-
-    # Oca domestica
-    "'Oca domestica'",
-    "'Oca domestica'",
-    "'Oca domestica'"
+    # TACCHINO
+    "'Tacchino'",
+    "'Tacchino'",
+    "'Tacchino'",
+    "'Tacchino'"
 ]
 
 LIVELLO_BIOSICUREZZA_MINIMO = [
-    # Bovino nano
+    # GALLINA
+    "'ALTO'",
     "'MEDIO'",
     "'MEDIO'",
-    "'MEDIO'",
-
-    # Capra nana
-    "'MEDIO'",
-    "'MEDIO'",
-    "'MEDIO'",
-
-    # Pecora compatta
-    "'MEDIO'",
-    "'MEDIO'",
-    "'MEDIO'",
-
-    # Coniglio europeo
-    "'BASSO'",
-    "'BASSO'",
     "'BASSO'",
 
-    # Gallina ovaiola
-    "'MEDIO'",
-    "'MEDIO'",
-    "'MEDIO'",
-
-    # Quaglia giapponese
-    "'BASSO'",
-    "'BASSO'",
-    "'BASSO'",
-
-    # Anatra domestica
-    "'MEDIO'",
-    "'MEDIO'",
-    "'MEDIO'",
-
-    # Maiale nano
+    # CONIGLIO
     "'ALTO'",
     "'ALTO'",
+    "'MEDIO'",
+    "'BASSO'",
+
+    # CAPRA
     "'ALTO'",
+    "'MEDIO'",
+    "'MEDIO'",
+    "'BASSO'",
 
-    # Trota iridea
+    # PECORA
+    "'ALTO'",
     "'MEDIO'",
     "'MEDIO'",
-    "'MEDIO'",
+    "'BASSO'",
 
-    # Tilapia nilotica
+    # MAIALE
+    "'ALTO'",
+    "'ALTO'",
     "'MEDIO'",
-    "'MEDIO'",
-    "'MEDIO'",
+    "'BASSO'",
 
-    # Tacchino nano
+    # BOVINO
+    "'ALTO'",
     "'MEDIO'",
     "'MEDIO'",
-    "'MEDIO'",
+    "'BASSO'",
 
-    # Oca domestica
+    # TACCHINO
+    "'ALTO'",
     "'MEDIO'",
     "'MEDIO'",
-    "'MEDIO'"
+    "'BASSO'"
 ]
 
 ETA_MINIMA_MESI = [
-    # Bovino nano
-    0,
-    6,
-    24,
+    # GALLINA
+    0,   # pulcino
+    1,   # giovane
+    5,   # ovodeposizione
+    12,  # adulto
 
-    # Capra nana
-    0,
-    4,
-    12,
+    # CONIGLIO
+    0,   # cucciolo
+    1,   # svezzamento
+    2,   # giovane
+    5,   # adulto
 
-    # Pecora compatta
-    0,
-    4,
-    12,
+    # CAPRA
+    0,   # capretto
+    3,   # svezzamento
+    6,   # giovane
+    12,  # adulto
 
-    # Coniglio europeo
-    0,
-    2,
-    6,
+    # PECORA
+    0,   # agnello
+    3,   # svezzamento
+    6,   # giovane
+    12,  # adulto
 
-    # Gallina ovaiola
-    0,
-    2,
-    5,
+    # MAIALE
+    0,   # suinetto
+    1,   # svezzamento
+    3,   # accrescimento
+    8,   # adulto
 
-    # Quaglia giapponese
-    0,
-    1,
-    2,
+    # BOVINO
+    0,   # vitello
+    3,   # svezzamento
+    12,  # giovane
+    24,  # adulto
 
-    # Anatra domestica
-    0,
-    2,
-    5,
-
-    # Maiale nano
-    0,
-    3,
-    8,
-
-    # Trota iridea
-    0,
-    3,
-    12,
-
-    # Tilapia nilotica
-    0,
-    2,
-    6,
-
-    # Tacchino nano
-    0,
-    2,
-    6,
-
-    # Oca domestica
-    0,
-    3,
-    9
+    # TACCHINO
+    0,   # pulcino
+    2,   # giovane
+    4,   # ingrasso
+    7    # adulto
 ]
+
+
+
 
 theList=list(zip(NOME_STADIO_CRESCITA, NOME_TIPO_ANIMALE, LIVELLO_BIOSICUREZZA_MINIMO, ETA_MINIMA_MESI))
 

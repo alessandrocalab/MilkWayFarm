@@ -109,6 +109,7 @@ if __name__=="__main__":
     DDL_PATH="./DB/DDL/"
 
     DDL_dirs=os.listdir(DDL_PATH)
+    DDL_dirs.remove('main.sql')
     DDL_dirs=sorted(DDL_dirs, key=lambda x: int(x.split("_")[0])) #ordinamento rispetto i numeri prima del primo trattino
 
     for dir in DDL_dirs:

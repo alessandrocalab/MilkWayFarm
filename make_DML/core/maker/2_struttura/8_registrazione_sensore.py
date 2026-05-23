@@ -15,282 +15,137 @@ from make_DML.core.utils.make_DML import make_DML
 
 #REGISTRAZIONE_SENSORE:SERIALE DATA_SECONDI NOME_PRODUTTORE MISURAZIONE 
 
-SERIALE = [
-    "'SEN000001'",
-    "'SEN000001'",
-    "'SEN000002'",
-    "'SEN000002'",
-    "'SEN000003'",
-    "'SEN000003'",
+import random
 
-    "'SEN000004'",
-    "'SEN000004'",
-    "'SEN000005'",
-    "'SEN000005'",
-    "'SEN000006'",
-    "'SEN000006'",
+random.seed(42)
 
-    "'SEN000007'",
-    "'SEN000007'",
-    "'SEN000008'",
-    "'SEN000008'",
-    "'SEN000009'",
-    "'SEN000009'",
-    "'SEN000010'",
-    "'SEN000010'",
+AREE = [
+    # codice_area, nome_struttura, temp_min, temp_max, um_min, um_max, pressione_pa, volume_m3
+    ("A00A", "Primo Modulo", 288.15, 298.15, 25, 55, 98000, 75),
+    ("A00B", "Primo Modulo", 288.15, 298.15, 25, 55, 98000, 30),
 
-    "'SEN000013'",
-    "'SEN000013'",
-    "'SEN000014'",
-    "'SEN000014'",
-    "'SEN000015'",
-    "'SEN000015'",
-    "'SEN000016'",
-    "'SEN000016'",
-    "'SEN000017'",
-    "'SEN000017'",
-    "'SEN000018'",
-    "'SEN000018'",
+    ("A00A", "Struttura Agricola", 288.15, 298.15, 25, 55, 98000, 100),
+    ("A00B", "Struttura Agricola", 288.15, 298.15, 25, 55, 98000, 40),
+    ("A00C", "Struttura Agricola", 288.15, 298.15, 25, 55, 98000, 60),
 
-    "'SEN000019'",
-    "'SEN000019'",
-    "'SEN000020'",
-    "'SEN000020'",
-    "'SEN000021'",
-    "'SEN000021'",
-    "'SEN000022'",
-    "'SEN000022'",
-    "'SEN000023'",
-    "'SEN000023'",
+    ("A00A", "Struttura Stoccaggio", 288.15, 298.15, 25, 55, 98000, 75),
+    ("A00B", "Struttura Stoccaggio", 281.15, 288.15, 35, 65, 98000, 45),
+    ("A00C", "Struttura Stoccaggio", 273.15, 277.15, 70, 90, 98500, 55),
+    ("A00D", "Struttura Stoccaggio", 253.15, 255.15, 30, 60, 99000, 40),
+    ("A00E", "Struttura Stoccaggio", 275.15, 281.15, 35, 65, 99500, 25),
+    ("A00F", "Struttura Stoccaggio", 277.15, 283.15, 20, 45, 98000, 35),
+    ("A00G", "Struttura Stoccaggio", 273.15, 278.15, 15, 35, 98500, 30),
+    ("A00H", "Struttura Stoccaggio", 277.15, 285.15, 85, 95, 98000, 55),
+    ("A00I", "Struttura Stoccaggio", 274.15, 277.15, 90, 98, 98500, 35),
+    ("A00J", "Struttura Stoccaggio", 283.15, 298.15, 25, 60, 98000, 70),
+    ("A00K", "Struttura Stoccaggio", 278.15, 298.15, 30, 70, 99000, 60),
+    ("A00L", "Struttura Stoccaggio", 278.15, 298.15, 30, 60, 98500, 45),
 
-    "'SEN000024'",
-    "'SEN000024'",
-    "'SEN000025'",
-    "'SEN000025'",
-    "'SEN000026'",
-    "'SEN000026'",
-    "'SEN000027'",
-    "'SEN000027'",
-    "'SEN000028'",
-    "'SEN000028'",
+    ("A00A", "Struttura Zootecnica", 288, 298, 25, 55, 103000, 60),
+    ("A00B", "Struttura Zootecnica", 278, 308, 0, 100, 98000, 1120),
+    ("A00C", "Struttura Zootecnica", 298, 308, 80, 100, 99000, 240),
+    ("A00D", "Struttura Zootecnica", 278, 308, 0, 100, 101000, 210),
 
-    "'SEN000029'",
-    "'SEN000029'",
-    "'SEN000030'",
-    "'SEN000030'",
-    "'SEN000031'",
-    "'SEN000031'",
-    "'SEN000032'",
-    "'SEN000032'"
+    ("A00A", "Struttura Agricola II", 281.15, 298.15, 55, 75, 101000, 200),
+    ("A00B", "Struttura Agricola II", 283.15, 300.15, 60, 80, 101000, 350),
 ]
 
-DATA_SECONDI = [
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
+SERIALE = []
+DATA_SECONDI = []
+NOME_PRODUTTORE = []
+MISURAZIONE = []
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
+def valore_normale(min_val, max_val, rumore):
+    medio = (min_val + max_val) / 2
+    valore = medio + random.uniform(-rumore, rumore)
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
+    # tengo il valore dentro i limiti, tranne nei casi di anomalia
+    if valore < min_val:
+        valore = min_val + random.uniform(0, rumore)
+    if valore > max_val:
+        valore = max_val - random.uniform(0, rumore)
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
+    return round(valore, 2)
 
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'",
-    "DATE '2026-05-10'",
-    "DATE '2026-05-11'"
-]
 
-NOME_PRODUTTORE = [
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
+def potenza_area(volume_m3, nome_struttura, codice_area):
+    base = 200 + volume_m3 * 6
 
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
+    if nome_struttura == "Struttura Stoccaggio":
+        if codice_area in ["A00C", "A00D", "A00E", "A00I"]:
+            base += 900  # refrigerazione, congelamento, sanitario
+        else:
+            base += 250
 
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'BioFarm Analytics'",
-    "'BioFarm Analytics'",
-    "'BioFarm Analytics'",
-    "'BioFarm Analytics'",
+    elif nome_struttura == "Struttura Agricola":
+        base += 1200  # luci, pompe, controllo coltivazione
 
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'AstraControl Sensors'",
-    "'AstraControl Sensors'",
-    "'AstraControl Sensors'",
-    "'AstraControl Sensors'",
-    "'AgriMoon Devices'",
-    "'AgriMoon Devices'",
+    elif nome_struttura == "Struttura Agricola II":
+        base += 1500
 
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'HydroSpace Lab'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'SeleneTech Instruments'",
-    "'SeleneTech Instruments'",
+    elif nome_struttura == "Struttura Zootecnica":
+        base += 900
 
-    "'SeleneTech Instruments'",
-    "'SeleneTech Instruments'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
-    "'LunaSense Systems'",
+    else:
+        base += 300
 
-    "'Orbitron Instruments'",
-    "'Orbitron Instruments'",
-    "'SeleneTech Instruments'",
-    "'SeleneTech Instruments'",
-    "'AstraControl Sensors'",
-    "'AstraControl Sensors'",
-    "'NovaHab Monitoring'",
-    "'NovaHab Monitoring'"
-]
+    return round(base + random.uniform(-120, 120), 2)
 
-MISURAZIONE = [
-    295.45,    # SEN000001 temperatura area agricola
-    295.80,
-    58.20,     # SEN000002 umidità area agricola
-    57.40,
-    94980,     # SEN000003 pressione area agricola
-    95020,
 
-    820,       # SEN000004 CO2 zootecnia
-    870,
-    20.70,     # SEN000005 O2 zootecnia
-    20.60,
-    18.50,     # SEN000006 NH3 zootecnia
-    21.30,
+# 3 registrazioni per ogni sensore
+# 0 secondi, 3600 secondi, 7200 secondi
+TEMPI = [0, 3600, 7200]
 
-    294.20,    # SEN000007 temperatura area zootecnica
-    294.60,
-    66.50,     # SEN000008 umidità area zootecnica
-    67.10,
-    310.25,    # SEN000009 temperatura biologica laboratorio
-    310.10,
-    45.80,     # SEN000010 umidità laboratorio
-    46.20,
 
-    6.20,      # SEN000013 pH soluzione idroponica
-    6.35,
-    1.80,      # SEN000014 conducibilità elettrica
-    1.95,
-    293.40,    # SEN000015 temperatura liquido
-    293.70,
-    42000,     # SEN000016 lux
-    43500,
-    650,       # SEN000017 PAR
-    675,
-    72.30,     # SEN000018 umidità substrato
-    73.10,
+for indice_area, area in enumerate(AREE, start=1):
+    codice_area, nome_struttura, t_min, t_max, u_min, u_max, pressione, volume = area
 
-    6.10,      # SEN000019 pH seconda area idroponica
-    6.25,
-    2.10,      # SEN000020 EC seconda area idroponica
-    2.05,
-    68.50,     # SEN000021 livello serbatoio
-    66.80,
-    1250.50,   # SEN000022 massa serbatoio
-    1242.00,
-    42.30,     # SEN000023 portata liquido
-    41.90,
+    seriale_temp = f"'T{indice_area:03d}'"
+    seriale_umid = f"'H{indice_area:03d}'"
+    seriale_pot = f"'P{indice_area:03d}'"
 
-    18500,     # SEN000024 potenza elettrica
-    19200,
-    820.50,    # SEN000025 massa scaffale deposito
-    818.30,
-    74.20,     # SEN000026 livello scaffale/deposito
-    73.80,
-    286.20,    # SEN000027 temperatura deposito secco
-    286.60,
-    36.40,     # SEN000028 umidità deposito secco
-    37.10,
+    for t in TEMPI:
 
-    20.80,     # SEN000029 ossigeno centro controllo
-    20.70,
-    0.35,      # SEN000030 vibrazione modulo energia
-    0.42,
-    2.10,      # SEN000031 UV cupola osservazione
-    2.40,
-    0.18,      # SEN000032 radiazione centro controllo
-    0.21
-]
+        # -------------------------
+        # TEMPERATURA
+        # -------------------------
+        SERIALE.append(seriale_temp)
+        DATA_SECONDI.append(t)
+        NOME_PRODUTTORE.append("'EnviroSense'")
 
+        if nome_struttura == "Struttura Agricola" and codice_area == "A00B" and t == 3600:
+            # anomalia rara: surriscaldamento coltivazione
+            MISURAZIONE.append(round(t_max + 4.80, 2))
+        else:
+            MISURAZIONE.append(valore_normale(t_min, t_max, 1.20))
+
+        # -------------------------
+        # UMIDITA
+        # -------------------------
+        SERIALE.append(seriale_umid)
+        DATA_SECONDI.append(t)
+        NOME_PRODUTTORE.append("'EnviroSense'")
+
+        if nome_struttura == "Struttura Agricola" and codice_area == "A00B" and t == 3600:
+            # anomalia rara: calo umidità
+            MISURAZIONE.append(round(u_min - 9.00, 2))
+        else:
+            MISURAZIONE.append(valore_normale(u_min, u_max, 4.00))
+
+        # -------------------------
+        # POTENZA ELETTRICA
+        # -------------------------
+        SERIALE.append(seriale_pot)
+        DATA_SECONDI.append(t)
+        NOME_PRODUTTORE.append("'PowerGrid Systems'")
+
+        if nome_struttura == "Struttura Agricola" and codice_area == "A00B" and t == 3600:
+            # anomalia rara: picco elettrico pompe/luci
+            MISURAZIONE.append(4870.00)
+        else:
+            MISURAZIONE.append(potenza_area(volume, nome_struttura, codice_area))
 
 theList=list(zip(SERIALE, DATA_SECONDI, NOME_PRODUTTORE, MISURAZIONE))
 

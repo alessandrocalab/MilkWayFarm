@@ -1,110 +1,74 @@
 [
     {
-        "CODICE_CELLA_IDR": "'-001A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "CODICE_CELLA_IDR": "'001A'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
         "SISTEMA_IDROPONICO": "'NFT'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-05-15'",
-        "MAX_COLTURE": 120
+        "DATA_MONTAGGIO": "DATE '2026-04-02'",
+        "MAX_COLTURE": 8
     },
     {
-        "CODICE_CELLA_IDR": "'-002A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "CODICE_CELLA_IDR": "'001B'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
+        "SISTEMA_IDROPONICO": "'DWC'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2026-04-02'",
+        "MAX_COLTURE": 6
+    },
+    {
+        "CODICE_CELLA_IDR": "'001C'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
+        "SISTEMA_IDROPONICO": "'Letto a substrato'",
+        "DATA_SMONTAGGIO": "NULL",
+        "DATA_MONTAGGIO": "DATE '2026-04-03'",
+        "MAX_COLTURE": 5
+    },
+    {
+        "CODICE_CELLA_IDR": "'002A'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
         "SISTEMA_IDROPONICO": "'NFT'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-05-18'",
-        "MAX_COLTURE": 120
+        "DATA_MONTAGGIO": "DATE '2026-05-24'",
+        "MAX_COLTURE": 12
     },
     {
-        "CODICE_CELLA_IDR": "'-003A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
+        "CODICE_CELLA_IDR": "'002B'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
         "SISTEMA_IDROPONICO": "'DWC'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-05-22'",
-        "MAX_COLTURE": 80
+        "DATA_MONTAGGIO": "DATE '2026-05-24'",
+        "MAX_COLTURE": 10
     },
     {
-        "CODICE_CELLA_IDR": "'-004A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'DWC'",
+        "CODICE_CELLA_IDR": "'002C'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
+        "SISTEMA_IDROPONICO": "'Aeroponica'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-05-25'",
-        "MAX_COLTURE": 80
+        "DATA_MONTAGGIO": "DATE '2026-05-25'",
+        "MAX_COLTURE": 8
     },
     {
-        "CODICE_CELLA_IDR": "'-005A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'AEROPONICO'",
+        "CODICE_CELLA_IDR": "'002D'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
+        "SISTEMA_IDROPONICO": "'Letto a substrato'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-06-01'",
-        "MAX_COLTURE": 60
+        "DATA_MONTAGGIO": "DATE '2026-05-25'",
+        "MAX_COLTURE": 8
     },
     {
-        "CODICE_CELLA_IDR": "'-006A'",
-        "CODICE_AREA": "'A05A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'GOCCIA'",
+        "CODICE_CELLA_IDR": "'002E'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Agricola II'",
+        "SISTEMA_IDROPONICO": "'Flusso e riflusso'",
         "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-06-05'",
-        "MAX_COLTURE": 50
-    },
-    {
-        "CODICE_CELLA_IDR": "'-007A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'NFT'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-06-20'",
-        "MAX_COLTURE": 100
-    },
-    {
-        "CODICE_CELLA_IDR": "'-008A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'DWC'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-06-23'",
-        "MAX_COLTURE": 75
-    },
-    {
-        "CODICE_CELLA_IDR": "'-009A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'AEROPONICO'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-06-28'",
-        "MAX_COLTURE": 55
-    },
-    {
-        "CODICE_CELLA_IDR": "'-010A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'GOCCIA'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-07-02'",
-        "MAX_COLTURE": 45
-    },
-    {
-        "CODICE_CELLA_IDR": "'-011A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'SUBSTRATO_INERTE'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-07-08'",
-        "MAX_COLTURE": 65
-    },
-    {
-        "CODICE_CELLA_IDR": "'-012A'",
-        "CODICE_AREA": "'A06A'",
-        "NOME_STRUTTURA": "'Serra Idroponica Gamma'",
-        "SISTEMA_IDROPONICO": "'SUBSTRATO_INERTE'",
-        "DATA_SMONTAGGIO": "NULL",
-        "DATA_MONTAGGIO": "DATE '2019-07-12'",
-        "MAX_COLTURE": 65
+        "DATA_MONTAGGIO": "DATE '2026-05-26'",
+        "MAX_COLTURE": 6
     }
 ]

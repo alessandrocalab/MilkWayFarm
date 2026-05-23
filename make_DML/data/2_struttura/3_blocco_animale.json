@@ -1,74 +1,20 @@
 [
     {
         "NUMERO_BLOCCO": "'0001'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'",
-        "CODICE_AREA": "'AREA-ZOO-01'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'",
+        "CODICE_AREA": "'A00D'",
         "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 120,
-        "LIMITE_ALLOCAZIONE": 12,
-        "DATA_MONTAGGIO": "DATE '2018-10-10'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0002'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'",
-        "CODICE_AREA": "'AREA-ZOO-01'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 95,
-        "LIMITE_ALLOCAZIONE": 24,
-        "DATA_MONTAGGIO": "DATE '2018-10-15'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0001'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'",
-        "CODICE_AREA": "'AREA-ZOO-02'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 80,
-        "LIMITE_ALLOCAZIONE": 80,
-        "DATA_MONTAGGIO": "DATE '2018-11-25'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0002'",
-        "NOME_STRUTTURA": "'Modulo Zootecnico Beta'",
-        "CODICE_AREA": "'AREA-ZOO-02'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 70,
-        "LIMITE_ALLOCAZIONE": 20,
-        "DATA_MONTAGGIO": "DATE '2018-12-05'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0001'",
-        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
-        "CODICE_AREA": "'AREA-QUA-01'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 60,
-        "LIMITE_ALLOCAZIONE": 4,
-        "DATA_MONTAGGIO": "DATE '2025-03-10'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0002'",
-        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
-        "CODICE_AREA": "'AREA-QUA-01'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 45,
-        "LIMITE_ALLOCAZIONE": 8,
-        "DATA_MONTAGGIO": "DATE '2025-03-12'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0003'",
-        "NOME_STRUTTURA": "'Modulo Quarantena Lambda'",
-        "CODICE_AREA": "'AREA-QUA-01'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 35,
-        "LIMITE_ALLOCAZIONE": 25,
-        "DATA_MONTAGGIO": "DATE '2025-03-15'"
-    },
-    {
-        "NUMERO_BLOCCO": "'0001'",
-        "NOME_STRUTTURA": "'Laboratorio Biologico Delta'",
-        "CODICE_AREA": "'AREA-LAB-02'",
-        "DATA_SMONTAGGIO": "NULL",
-        "SUPERFICIE_MQ": 40,
+        "SUPERFICIE_MQ": 18,
         "LIMITE_ALLOCAZIONE": 6,
-        "DATA_MONTAGGIO": "DATE '2020-04-01'"
+        "DATA_MONTAGGIO": "DATE '2025-05-04'"
+    },
+    {
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA": "'Struttura Zootecnica'",
+        "CODICE_AREA": "'A00D'",
+        "DATA_SMONTAGGIO": "NULL",
+        "SUPERFICIE_MQ": 16,
+        "LIMITE_ALLOCAZIONE": 4,
+        "DATA_MONTAGGIO": "DATE '2025-05-04'"
     }
 ]
