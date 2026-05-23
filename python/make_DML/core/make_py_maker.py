@@ -1,5 +1,14 @@
 #inserire il path DDL e creerà un file python per costruire il corrispettivo DML
+import os
+import sys
+import json
 
+dir = os.getcwd()
+while os.path.basename(dir) != "MilkWayFarm":
+    os.chdir("..")
+    dir = os.getcwd()
+
+sys.path.append(dir)
 import os
 from python.make_DML.core.utils.get_table_data import getTableData
 

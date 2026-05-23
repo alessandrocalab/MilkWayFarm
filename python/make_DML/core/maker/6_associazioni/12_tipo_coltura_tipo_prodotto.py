@@ -14,12 +14,63 @@ from python.make_DML.core.utils.make_DML import make_DML
 
 
 #TIPO_COLTURA_TIPO_PRODOTTO:NOME_TIPO_COLTURA NOME_PRODOTTO 
+NOME_TIPO_COLTURA = [
+    "'Grano duro'",
+    "'Grano duro'",
 
-NOME_TIPO_COLTURA = []
+    "'Mais'",
+    "'Mais'",
 
-NOME_PRODOTTO = []
+    "'Patata'",
+    "'Patata'",
 
+    "'Pomodoro'",
+    "'Pomodoro'",
 
+    "'Lattuga'",
+    "'Lattuga'",
+
+    "'Carota'",
+    "'Carota'",
+
+    "'Zucchina'",
+    "'Zucchina'",
+
+    "'Fagiolo'",
+    "'Fagiolo'",
+
+    "'Soia'",
+    "'Soia'"
+]
+
+NOME_PRODOTTO = [
+    "'Grano duro'",
+    "'Semi di grano duro'",
+
+    "'Mais'",
+    "'Semi di mais'",
+
+    "'Patata'",
+    "'Talee di patata'",
+
+    "'Pomodoro'",
+    "'Semi di pomodoro'",
+
+    "'Lattuga'",
+    "'Semi di lattuga'",
+
+    "'Carota'",
+    "'Semi di carota'",
+
+    "'Zucchina'",
+    "'Semi di zucchina'",
+
+    "'Fagiolo'",
+    "'Semi di fagiolo'",
+
+    "'Soia'",
+    "'Semi di soia'"
+]
 theList=list(zip(NOME_TIPO_COLTURA, NOME_PRODOTTO))
 
 keys = ["NOME_TIPO_COLTURA", "NOME_PRODOTTO"]

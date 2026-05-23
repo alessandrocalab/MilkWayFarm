@@ -1,0 +1,101 @@
+[
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Letame bovino'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 52.04
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00C'",
+        "NOME_PRODOTTO": "'Pollina'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 0.07
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Letame ovino'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 3.34
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-27'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Letame bovino'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 61.3
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-27'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00C'",
+        "NOME_PRODOTTO": "'Pollina'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 0.09
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-03-09'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00C'",
+        "NOME_PRODOTTO": "'Pollina'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 0.12
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-03-09'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Letame ovino'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 3.26
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-06-18'",
+        "NUMERO_BLOCCO": "'0003'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Letame suino'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 19.97
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-06-18'",
+        "NUMERO_BLOCCO": "'0004'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Pollina'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 0.16
+    }
+]

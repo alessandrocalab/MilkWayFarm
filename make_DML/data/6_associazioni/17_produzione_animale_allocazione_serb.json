@@ -1,0 +1,134 @@
+[
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-24'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00A'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 1.8
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-25'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00A'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 2.02
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00A'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 2.47
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 48.4
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 5.27
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-26'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 3.03
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-27'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00A'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 3.21
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-27'",
+        "NUMERO_BLOCCO": "'0001'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 42.97
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-02-27'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 4.46
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-03-09'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 4.69
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-03-09'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00B'",
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 2.95
+    },
+    {
+        "DATA_PRODUZIONE": "DATE '2025-03-09'",
+        "NUMERO_BLOCCO": "'0002'",
+        "NOME_STRUTTURA_BLOCCO": "'Struttura Zootecnica'",
+        "CODICE_AREA_BLOCCO": "'A00C'",
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NUMERO_SERBATOIO": "'S001'",
+        "CODICE_AREA_SERB": "'A00C'",
+        "NOME_STRUTTURA_SERB": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 0.91
+    }
+]

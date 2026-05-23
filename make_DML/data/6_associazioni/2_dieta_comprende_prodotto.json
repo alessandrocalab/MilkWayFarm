@@ -1,0 +1,497 @@
+[
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Gallina Pulcino'",
+        "QUANTITA": 0.25
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Gallina Pulcino'",
+        "QUANTITA": 0.035
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Gallina Giovane'",
+        "QUANTITA": 0.35
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Gallina Giovane'",
+        "QUANTITA": 0.07
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Gallina Giovane'",
+        "QUANTITA": 0.015
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Gallina Uova'",
+        "QUANTITA": 0.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ovaiole'",
+        "NOME_DIETA": "'Dieta Gallina Uova'",
+        "QUANTITA": 0.12
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Gallina Uova'",
+        "QUANTITA": 0.02
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Gallina Uova'",
+        "QUANTITA": 0.002
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Gallina Adulta'",
+        "QUANTITA": 0.45
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ovaiole'",
+        "NOME_DIETA": "'Dieta Gallina Adulta'",
+        "QUANTITA": 0.1
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Gallina Adulta'",
+        "QUANTITA": 0.015
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Coniglio Cucciolo'",
+        "QUANTITA": 0.15
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime conigli'",
+        "NOME_DIETA": "'Dieta Coniglio Cucciolo'",
+        "QUANTITA": 0.03
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Coniglio Cucciolo'",
+        "QUANTITA": 0.02
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Coniglio Svezz'",
+        "QUANTITA": 0.3
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime conigli'",
+        "NOME_DIETA": "'Dieta Coniglio Svezz'",
+        "QUANTITA": 0.06
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Coniglio Svezz'",
+        "QUANTITA": 0.08
+    },
+    {
+        "NOME_PRODOTTO": "'Carota'",
+        "NOME_DIETA": "'Dieta Coniglio Svezz'",
+        "QUANTITA": 0.02
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Coniglio Giovane'",
+        "QUANTITA": 0.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime conigli'",
+        "NOME_DIETA": "'Dieta Coniglio Giovane'",
+        "QUANTITA": 0.09
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Coniglio Giovane'",
+        "QUANTITA": 0.15
+    },
+    {
+        "NOME_PRODOTTO": "'Lattuga'",
+        "NOME_DIETA": "'Dieta Coniglio Giovane'",
+        "QUANTITA": 0.03
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Coniglio Adulto'",
+        "QUANTITA": 0.7
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime conigli'",
+        "NOME_DIETA": "'Dieta Coniglio Adulto'",
+        "QUANTITA": 0.12
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Coniglio Adulto'",
+        "QUANTITA": 0.25
+    },
+    {
+        "NOME_PRODOTTO": "'Carota'",
+        "NOME_DIETA": "'Dieta Coniglio Adulto'",
+        "QUANTITA": 0.04
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Capra Capretto'",
+        "QUANTITA": 1.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Capra Capretto'",
+        "QUANTITA": 0.25
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Capra Capretto'",
+        "QUANTITA": 0.3
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Capra Svezz'",
+        "QUANTITA": 2.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Capra Svezz'",
+        "QUANTITA": 0.5
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Capra Svezz'",
+        "QUANTITA": 0.8
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Capra Svezz'",
+        "QUANTITA": 0.008
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Capra Giovane'",
+        "QUANTITA": 4.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Capra Giovane'",
+        "QUANTITA": 0.8
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Capra Giovane'",
+        "QUANTITA": 1.5
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Capra Giovane'",
+        "QUANTITA": 0.012
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Capra Adulta'",
+        "QUANTITA": 6.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Capra Adulta'",
+        "QUANTITA": 1.0
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Capra Adulta'",
+        "QUANTITA": 2.5
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Capra Adulta'",
+        "QUANTITA": 0.018
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Pecora Agnello'",
+        "QUANTITA": 1.2
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Pecora Agnello'",
+        "QUANTITA": 0.2
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Pecora Agnello'",
+        "QUANTITA": 0.25
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Pecora Svezz'",
+        "QUANTITA": 2.2
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Pecora Svezz'",
+        "QUANTITA": 0.45
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Pecora Svezz'",
+        "QUANTITA": 0.7
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Pecora Svezz'",
+        "QUANTITA": 0.007
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Pecora Giovane'",
+        "QUANTITA": 3.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Pecora Giovane'",
+        "QUANTITA": 0.7
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Pecora Giovane'",
+        "QUANTITA": 1.3
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Pecora Giovane'",
+        "QUANTITA": 0.01
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Pecora Adulta'",
+        "QUANTITA": 5.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_DIETA": "'Dieta Pecora Adulta'",
+        "QUANTITA": 0.9
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Pecora Adulta'",
+        "QUANTITA": 2.2
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Pecora Adulta'",
+        "QUANTITA": 0.015
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Maiale Suinetto'",
+        "QUANTITA": 1.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime suini'",
+        "NOME_DIETA": "'Dieta Maiale Suinetto'",
+        "QUANTITA": 0.4
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Maiale Suinetto'",
+        "QUANTITA": 0.1
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Maiale Svezz'",
+        "QUANTITA": 2.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime suini'",
+        "NOME_DIETA": "'Dieta Maiale Svezz'",
+        "QUANTITA": 0.9
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Maiale Svezz'",
+        "QUANTITA": 0.2
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_DIETA": "'Dieta Maiale Svezz'",
+        "QUANTITA": 0.08
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Maiale Ingrasso'",
+        "QUANTITA": 6.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime suini'",
+        "NOME_DIETA": "'Dieta Maiale Ingrasso'",
+        "QUANTITA": 2.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Maiale Ingrasso'",
+        "QUANTITA": 0.6
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_DIETA": "'Dieta Maiale Ingrasso'",
+        "QUANTITA": 0.2
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Maiale Adulto'",
+        "QUANTITA": 5.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime suini'",
+        "NOME_DIETA": "'Dieta Maiale Adulto'",
+        "QUANTITA": 1.8
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Maiale Adulto'",
+        "QUANTITA": 0.4
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_DIETA": "'Dieta Maiale Adulto'",
+        "QUANTITA": 0.15
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Bovino Vitello'",
+        "QUANTITA": 8.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime bovini crescita'",
+        "NOME_DIETA": "'Dieta Bovino Vitello'",
+        "QUANTITA": 1.2
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Bovino Vitello'",
+        "QUANTITA": 2.0
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Bovino Vitello'",
+        "QUANTITA": 0.02
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Bovino Svezz'",
+        "QUANTITA": 15.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime bovini crescita'",
+        "NOME_DIETA": "'Dieta Bovino Svezz'",
+        "QUANTITA": 2.5
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Bovino Svezz'",
+        "QUANTITA": 5.0
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Bovino Svezz'",
+        "QUANTITA": 0.035
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Bovino Giovane'",
+        "QUANTITA": 25.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime bovini crescita'",
+        "NOME_DIETA": "'Dieta Bovino Giovane'",
+        "QUANTITA": 4.0
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Bovino Giovane'",
+        "QUANTITA": 9.0
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Bovino Giovane'",
+        "QUANTITA": 0.05
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Bovino Adulto'",
+        "QUANTITA": 40.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime bovini lattazione'",
+        "NOME_DIETA": "'Dieta Bovino Adulto'",
+        "QUANTITA": 5.0
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_DIETA": "'Dieta Bovino Adulto'",
+        "QUANTITA": 12.0
+    },
+    {
+        "NOME_PRODOTTO": "'Sale minerale zootecnico'",
+        "NOME_DIETA": "'Dieta Bovino Adulto'",
+        "QUANTITA": 0.08
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Tacchino Pulcino'",
+        "QUANTITA": 0.3
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Tacchino Pulcino'",
+        "QUANTITA": 0.05
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Tacchino Giovane'",
+        "QUANTITA": 0.8
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Tacchino Giovane'",
+        "QUANTITA": 0.16
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Tacchino Giovane'",
+        "QUANTITA": 0.03
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Tacchino Ingrasso'",
+        "QUANTITA": 1.5
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Tacchino Ingrasso'",
+        "QUANTITA": 0.35
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Tacchino Ingrasso'",
+        "QUANTITA": 0.08
+    },
+    {
+        "NOME_PRODOTTO": "'Acqua potabile'",
+        "NOME_DIETA": "'Dieta Tacchino Adulto'",
+        "QUANTITA": 1.2
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ingrasso'",
+        "NOME_DIETA": "'Dieta Tacchino Adulto'",
+        "QUANTITA": 0.25
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_DIETA": "'Dieta Tacchino Adulto'",
+        "QUANTITA": 0.06
+    }
+]

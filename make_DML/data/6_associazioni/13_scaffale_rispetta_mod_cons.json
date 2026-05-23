@@ -1,0 +1,296 @@
+[
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Primo Modulo'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Primo Modulo'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Primo Modulo'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Primo Modulo'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Agricola'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0004'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente secco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0004'",
+        "CODICE_AREA": "'A00A'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente fresco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente fresco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Ambiente fresco controllato'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00B'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Refrigerazione standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Refrigerazione standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00C'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Refrigerazione standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Congelamento standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Congelamento standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00D'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Congelamento standard'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00E'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Catena del freddo sanitaria'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00E'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Catena del freddo sanitaria'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00F'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione semi breve termine'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00F'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione semi breve termine'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00G'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione semi lungo termine'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00G'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione semi lungo termine'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione tuberi e radici'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione tuberi e radici'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00H'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione tuberi e radici'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00I'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione verdure fresche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00I'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione verdure fresche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00J'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00J'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione mangimi secchi'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0004'",
+        "CODICE_AREA": "'A00K'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione soluzioni agricole'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione soluzioni agricole'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione soluzioni agricole'"
+    },
+    {
+        "NUMERO_SCAFFALE": "'0003'",
+        "CODICE_AREA": "'A00L'",
+        "NOME_STRUTTURA": "'Struttura Stoccaggio'",
+        "NOME_CONSERVAZIONE": "'Conservazione biomasse organiche'"
+    }
+]

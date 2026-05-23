@@ -15,24 +15,50 @@ from python.make_DML.core.utils.make_DML import make_DML
 
 #PRODUZIONE_ANIMALE_ALLOC_SERB:DATA_PRODUZIONE NUMERO_BLOCCO NOME_STRUTTURA_BLOCCO CODICE_AREA_BLOCCO NOME_PRODOTTO NUMERO_SERBATOIO CODICE_AREA_SERB NOME_STRUTTURA_SERB QUANTITA_ALLOCATA 
 
-DATA_PRODUZIONE = []
+RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO = [
+    # LATTE CAPRINO
+    ("DATE '2025-02-24'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 1.80),
+    ("DATE '2025-02-25'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.02),
+    ("DATE '2025-02-26'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.47),
 
-NUMERO_BLOCCO = []
+    # LATTE BOVINO
+    ("DATE '2025-02-26'", "'0001'", "'Struttura Zootecnica'", "'A00B'", "'Latte bovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 48.40),
 
-NOME_STRUTTURA_BLOCCO = []
+    # LATTE CAPRINO / OVINO
+    ("DATE '2025-02-26'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 5.27),
+    ("DATE '2025-02-26'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 3.03),
 
-CODICE_AREA_BLOCCO = []
+    # LATTE CAPRINO / BOVINO
+    ("DATE '2025-02-27'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 3.21),
+    ("DATE '2025-02-27'", "'0001'", "'Struttura Zootecnica'", "'A00B'", "'Latte bovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 42.97),
 
-NOME_PRODOTTO = []
+    # LATTE CAPRINO
+    ("DATE '2025-02-27'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 4.46),
 
-NUMERO_SERBATOIO = []
+    # LATTE CAPRINO / OVINO
+    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 4.69),
+    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.95),
 
-CODICE_AREA_SERB = []
+    # LATTE OVINO
+    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00C'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 0.91)
+]
+DATA_PRODUZIONE = [riga[0] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
 
-NOME_STRUTTURA_SERB = []
+NUMERO_BLOCCO = [riga[1] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
 
-QUANTITA_ALLOCATA = []
+NOME_STRUTTURA_BLOCCO = [riga[2] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
 
+CODICE_AREA_BLOCCO = [riga[3] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+
+NOME_PRODOTTO = [riga[4] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+
+NUMERO_SERBATOIO = [riga[5] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+
+CODICE_AREA_SERB = [riga[6] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+
+NOME_STRUTTURA_SERB = [riga[7] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+
+QUANTITA_ALLOCATA = [riga[8] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
 
 theList=list(zip(DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SERBATOIO, CODICE_AREA_SERB, NOME_STRUTTURA_SERB, QUANTITA_ALLOCATA))
 

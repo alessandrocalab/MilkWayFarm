@@ -1,0 +1,74 @@
+[
+    {
+        "NOME_TIPO_COLTURA": "'Grano duro'",
+        "NOME_PRODOTTO": "'Grano duro'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Grano duro'",
+        "NOME_PRODOTTO": "'Semi di grano duro'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Mais'",
+        "NOME_PRODOTTO": "'Mais'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Mais'",
+        "NOME_PRODOTTO": "'Semi di mais'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Patata'",
+        "NOME_PRODOTTO": "'Patata'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Patata'",
+        "NOME_PRODOTTO": "'Talee di patata'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Pomodoro'",
+        "NOME_PRODOTTO": "'Pomodoro'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Pomodoro'",
+        "NOME_PRODOTTO": "'Semi di pomodoro'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Lattuga'",
+        "NOME_PRODOTTO": "'Lattuga'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Lattuga'",
+        "NOME_PRODOTTO": "'Semi di lattuga'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Carota'",
+        "NOME_PRODOTTO": "'Carota'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Carota'",
+        "NOME_PRODOTTO": "'Semi di carota'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Zucchina'",
+        "NOME_PRODOTTO": "'Zucchina'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Zucchina'",
+        "NOME_PRODOTTO": "'Semi di zucchina'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Fagiolo'",
+        "NOME_PRODOTTO": "'Fagiolo'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Fagiolo'",
+        "NOME_PRODOTTO": "'Semi di fagiolo'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Soia'",
+        "NOME_PRODOTTO": "'Soia'"
+    },
+    {
+        "NOME_TIPO_COLTURA": "'Soia'",
+        "NOME_PRODOTTO": "'Semi di soia'"
+    }
+]

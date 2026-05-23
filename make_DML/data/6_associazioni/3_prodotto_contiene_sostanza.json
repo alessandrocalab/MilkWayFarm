@@ -1,0 +1,502 @@
+[
+    {
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte bovino'",
+        "NOME_SOSTANZA": "'Albumina sierica bovina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte caprino'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Latte ovino'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Formaggio fresco'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Formaggio fresco'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Formaggio fresco'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Yogurt naturale'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Yogurt naturale'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Yogurt naturale'",
+        "NOME_SOSTANZA": "'Proteine del siero del latte'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Burro'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'TRACCIA'"
+    },
+    {
+        "NOME_PRODOTTO": "'Burro'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'TRACCIA'"
+    },
+    {
+        "NOME_PRODOTTO": "'Panna'",
+        "NOME_SOSTANZA": "'Lattosio'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Panna'",
+        "NOME_SOSTANZA": "'Caseina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di gallina'",
+        "NOME_SOSTANZA": "'Proteine dell uovo'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di gallina'",
+        "NOME_SOSTANZA": "'Ovoalbumina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di gallina'",
+        "NOME_SOSTANZA": "'Ovomucoide'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di quaglia'",
+        "NOME_SOSTANZA": "'Proteine dell uovo'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di quaglia'",
+        "NOME_SOSTANZA": "'Ovoalbumina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uova di quaglia'",
+        "NOME_SOSTANZA": "'Ovomucoide'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Grano duro'",
+        "NOME_SOSTANZA": "'Glutine'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Grano duro'",
+        "NOME_SOSTANZA": "'Gliadina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Grano duro'",
+        "NOME_SOSTANZA": "'Glutenina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Grano duro'",
+        "NOME_SOSTANZA": "'Fruttani'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Farina di grano'",
+        "NOME_SOSTANZA": "'Glutine'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Farina di grano'",
+        "NOME_SOSTANZA": "'Gliadina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Farina di grano'",
+        "NOME_SOSTANZA": "'Glutenina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Farina di grano'",
+        "NOME_SOSTANZA": "'Fruttani'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Mais'",
+        "NOME_SOSTANZA": "'Proteine del mais'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Proteine dei legumi'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Vicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Lectine vegetali'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Galatto oligosaccaridi'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Raffinosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fagiolo'",
+        "NOME_SOSTANZA": "'Stachiosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Proteine dei legumi'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Vicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Convicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Galatto oligosaccaridi'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Raffinosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Ceci'",
+        "NOME_SOSTANZA": "'Stachiosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lenticchie'",
+        "NOME_SOSTANZA": "'Proteine dei legumi'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lenticchie'",
+        "NOME_SOSTANZA": "'Vicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lenticchie'",
+        "NOME_SOSTANZA": "'Convicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lenticchie'",
+        "NOME_SOSTANZA": "'Galatto oligosaccaridi'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lenticchie'",
+        "NOME_SOSTANZA": "'Raffinosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Piselli'",
+        "NOME_SOSTANZA": "'Proteine dei legumi'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Piselli'",
+        "NOME_SOSTANZA": "'Vicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Piselli'",
+        "NOME_SOSTANZA": "'Convicilina'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_SOSTANZA": "'Proteine della soia'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_SOSTANZA": "'Lecitina di soia'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_SOSTANZA": "'Nichel alimentare'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_SOSTANZA": "'Raffinosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Soia'",
+        "NOME_SOSTANZA": "'Stachiosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Patata'",
+        "NOME_SOSTANZA": "'Solanina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Pomodoro'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Pomodoro'",
+        "NOME_SOSTANZA": "'Istamina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Pomodoro'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Lattuga'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'TRACCIA'"
+    },
+    {
+        "NOME_PRODOTTO": "'Spinaci'",
+        "NOME_SOSTANZA": "'Ossalati'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Spinaci'",
+        "NOME_SOSTANZA": "'Nichel alimentare'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carota'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carota'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Zucchina'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'TRACCIA'"
+    },
+    {
+        "NOME_PRODOTTO": "'Cetriolo'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'TRACCIA'"
+    },
+    {
+        "NOME_PRODOTTO": "'Melanzana'",
+        "NOME_SOSTANZA": "'Solanina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Melanzana'",
+        "NOME_SOSTANZA": "'Istamina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Melanzana'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Peperone'",
+        "NOME_SOSTANZA": "'Capsaicina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Peperone'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fragola'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fragola'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Fragola'",
+        "NOME_SOSTANZA": "'Istamina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Mela'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Pera'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uva'",
+        "NOME_SOSTANZA": "'Fruttosio'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Uva'",
+        "NOME_SOSTANZA": "'Salicilati naturali'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Funghi coltivati'",
+        "NOME_SOSTANZA": "'Proteine fungine'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Funghi coltivati'",
+        "NOME_SOSTANZA": "'Chitina fungina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Funghi coltivati'",
+        "NOME_SOSTANZA": "'Purine'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Alghe alimentari'",
+        "NOME_SOSTANZA": "'Ficocianina algale'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Alghe alimentari'",
+        "NOME_SOSTANZA": "'Iodio algale'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne bovina'",
+        "NOME_SOSTANZA": "'Alfa gal'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne bovina'",
+        "NOME_SOSTANZA": "'Proteine della carne bovina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne bovina'",
+        "NOME_SOSTANZA": "'Albumina sierica bovina'",
+        "LIVELLO_PRESENZA": "'BASSO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne suina'",
+        "NOME_SOSTANZA": "'Alfa gal'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne suina'",
+        "NOME_SOSTANZA": "'Proteine della carne suina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne ovina'",
+        "NOME_SOSTANZA": "'Alfa gal'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne ovina'",
+        "NOME_SOSTANZA": "'Proteine della carne ovina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne caprina'",
+        "NOME_SOSTANZA": "'Alfa gal'",
+        "LIVELLO_PRESENZA": "'MEDIO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne caprina'",
+        "NOME_SOSTANZA": "'Proteine della carne caprina'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne di pollo'",
+        "NOME_SOSTANZA": "'Proteine della carne avicola'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne di tacchino'",
+        "NOME_SOSTANZA": "'Proteine della carne avicola'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    },
+    {
+        "NOME_PRODOTTO": "'Carne di coniglio'",
+        "NOME_SOSTANZA": "'Proteine della carne di coniglio'",
+        "LIVELLO_PRESENZA": "'ALTO'"
+    }
+]

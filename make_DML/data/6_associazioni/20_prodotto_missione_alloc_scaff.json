@@ -1,0 +1,130 @@
+[
+    {
+        "NOME_PRODOTTO": "'Semi di grano duro'",
+        "NOME_MISSIONE": "'Ares Supply 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 40.0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di mais'",
+        "NOME_MISSIONE": "'Ares Supply 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 35.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime bovini crescita'",
+        "NOME_MISSIONE": "'Ares Supply 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00J'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 750.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime pollame ovaiole'",
+        "NOME_MISSIONE": "'Ares Supply 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00J'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 300.0
+    },
+    {
+        "NOME_PRODOTTO": "'Lana di roccia agricola'",
+        "NOME_MISSIONE": "'Demetra Cargo 01'",
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA_SCAFF": "'A00A'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 250.0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di pomodoro'",
+        "NOME_MISSIONE": "'Demetra Cargo 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 8.0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di lattuga'",
+        "NOME_MISSIONE": "'Demetra Cargo 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 5.0
+    },
+    {
+        "NOME_PRODOTTO": "'Antibiotico veterinario pollame'",
+        "NOME_MISSIONE": "'Hermes BioLab 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00E'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 250.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime ovicaprini'",
+        "NOME_MISSIONE": "'Hermes BioLab 02'",
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA_SCAFF": "'A00J'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 500.0
+    },
+    {
+        "NOME_PRODOTTO": "'Mangime suini'",
+        "NOME_MISSIONE": "'Hermes BioLab 02'",
+        "NUMERO_SCAFFALE": "'0002'",
+        "CODICE_AREA_SCAFF": "'A00J'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 600.0
+    },
+    {
+        "NOME_PRODOTTO": "'Reidratante orale veterinario'",
+        "NOME_MISSIONE": "'Hermes BioLab 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00E'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 80.0
+    },
+    {
+        "NOME_PRODOTTO": "'Compost sterile'",
+        "NOME_MISSIONE": "'Atlas Storage 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00K'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 600.0
+    },
+    {
+        "NOME_PRODOTTO": "'Fieno essiccato'",
+        "NOME_MISSIONE": "'Atlas Storage 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00A'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 900.0
+    },
+    {
+        "NOME_PRODOTTO": "'Paglia'",
+        "NOME_MISSIONE": "'Atlas Storage 01'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00A'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 700.0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di carota'",
+        "NOME_MISSIONE": "'Atlas Storage 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 6.0
+    },
+    {
+        "NOME_PRODOTTO": "'Semi di zucchina'",
+        "NOME_MISSIONE": "'Atlas Storage 02'",
+        "NUMERO_SCAFFALE": "'0001'",
+        "CODICE_AREA_SCAFF": "'A00G'",
+        "NOME_STRUTTURA_SCAFF": "'Struttura Stoccaggio'",
+        "QUANTITA_ALLOCATA": 5.0
+    }
+]

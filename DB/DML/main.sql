@@ -44,8 +44,27 @@ SET SQLBLANKLINES ON
 
 --Sezione: 6_associazioni
 
+@6_associazioni/1_stadio_crescita_prevede_dieta.sql
+@6_associazioni/2_dieta_comprende_prodotto.sql
+@6_associazioni/3_prodotto_contiene_sostanza.sql
+@6_associazioni/4_stadio_crescita_intollerante_sostanza.sql
 @6_associazioni/7_prodotto_da_stadio_crescita.sql
+@6_associazioni/8_prodotto_prevede_mod_cons.sql
 @6_associazioni/9_animale_allocato_blocco.sql
+@6_associazioni/10_cella_idr_rispetta_mod_colt.sql
+@6_associazioni/11_tipo_colt_accetta_mod_colt.sql
+@6_associazioni/12_tipo_coltura_tipo_prodotto.SQL
+@6_associazioni/13_scaffale_rispetta_mod_cons.sql
+@6_associazioni/14_serb_rispetta_mod_cons.sql
+@6_associazioni/16_produzione_agricola_alloc_scaff.sql
+@6_associazioni/17_produzione_animale_allocazione_serb.sql
+@6_associazioni/18_produzione_animale_alloc_scaff.sql
+@6_associazioni/19_prodotto_missione_alloc_serb.sql
+@6_associazioni/20_prodotto_missione_alloc_scaff.sql
+@6_associazioni/21_dealloc_prod_ciclo_colt_serb.sql
+@6_associazioni/22_dealloc_prod_ciclo_colt_scaff.sql
+@6_associazioni/23_dealloc_prod_blocco_animale_serb.sql
+@6_associazioni/24_dealloc_prod_blocco_animale_scaff.sql
 
 
 COMMIT;

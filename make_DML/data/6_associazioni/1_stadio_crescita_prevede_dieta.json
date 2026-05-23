@@ -1,0 +1,198 @@
+[
+    {
+        "NOME_STADIO_CRESCITA": "'Pulcino'",
+        "NOME_TIPO_ANIMALE": "'Gallina'",
+        "NOME_DIETA": "'Dieta Gallina Pulcino'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Gallina'",
+        "NOME_DIETA": "'Dieta Gallina Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Ovodeposizione'",
+        "NOME_TIPO_ANIMALE": "'Gallina'",
+        "NOME_DIETA": "'Dieta Gallina Uova'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Gallina'",
+        "NOME_DIETA": "'Dieta Gallina Adulta'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Cucciolo'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
+        "NOME_DIETA": "'Dieta Coniglio Cucciolo'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
+        "NOME_DIETA": "'Dieta Coniglio Svezz'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
+        "NOME_DIETA": "'Dieta Coniglio Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Coniglio'",
+        "NOME_DIETA": "'Dieta Coniglio Adulto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Capretto'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
+        "NOME_DIETA": "'Dieta Capra Capretto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
+        "NOME_DIETA": "'Dieta Capra Svezz'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
+        "NOME_DIETA": "'Dieta Capra Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Capra'",
+        "NOME_DIETA": "'Dieta Capra Adulta'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Agnello'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
+        "NOME_DIETA": "'Dieta Pecora Agnello'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
+        "NOME_DIETA": "'Dieta Pecora Svezz'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
+        "NOME_DIETA": "'Dieta Pecora Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Pecora'",
+        "NOME_DIETA": "'Dieta Pecora Adulta'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Suinetto'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
+        "NOME_DIETA": "'Dieta Maiale Suinetto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
+        "NOME_DIETA": "'Dieta Maiale Svezz'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Accrescimento'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
+        "NOME_DIETA": "'Dieta Maiale Ingrasso'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Maiale'",
+        "NOME_DIETA": "'Dieta Maiale Adulto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Vitello'",
+        "NOME_TIPO_ANIMALE": "'Bovino'",
+        "NOME_DIETA": "'Dieta Bovino Vitello'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Svezzamento'",
+        "NOME_TIPO_ANIMALE": "'Bovino'",
+        "NOME_DIETA": "'Dieta Bovino Svezz'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Bovino'",
+        "NOME_DIETA": "'Dieta Bovino Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Bovino'",
+        "NOME_DIETA": "'Dieta Bovino Adulto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Pulcino'",
+        "NOME_TIPO_ANIMALE": "'Tacchino'",
+        "NOME_DIETA": "'Dieta Tacchino Pulcino'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Giovane'",
+        "NOME_TIPO_ANIMALE": "'Tacchino'",
+        "NOME_DIETA": "'Dieta Tacchino Giovane'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Ingrasso'",
+        "NOME_TIPO_ANIMALE": "'Tacchino'",
+        "NOME_DIETA": "'Dieta Tacchino Ingrasso'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    },
+    {
+        "NOME_STADIO_CRESCITA": "'Adulto'",
+        "NOME_TIPO_ANIMALE": "'Tacchino'",
+        "NOME_DIETA": "'Dieta Tacchino Adulto'",
+        "DATA_INIZIO": "DATE '2026-01-01'",
+        "DATA_FINE": "NULL"
+    }
+]

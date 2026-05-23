@@ -6,5 +6,7 @@ INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro lattuga rapida', 'Soluzione nutr
 INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro cucurbitacee', 'Soluzione nutritiva concentrata', 5.8, 6.8, 294, 301, 60, 80, 1, 'LED_FULL', 75.0, 16, 6.5);
 INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro legumi base', 'Biofertilizzante microbico', 6.0, 7.0, 291, 298, 55, 75, 1, 'LED_FULL', 55.0, 14, 4.5);
 INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro soia nutriente', 'Soluzione nutritiva concentrata', 6.0, 7.0, 292, 300, 55, 75, 1, 'LED_FULL', 60.0, 14, 5.0);
+INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro tuberi substrato', 'Soluzione nutritiva idroponica base', 5.5, 6.5, 289, 295, 60, 80, 0, 'LED_BIANCO', 55.0, 12, 4.5);
+INSERT INTO MODALITA_COLTIVAZIONE VALUES ('Idro radici substrato', 'Soluzione nutritiva idroponica base', 6.0, 6.8, 288, 294, 60, 80, 0, 'LED_BIANCO', 40.0, 13, 3.5);
 
 COMMIT;

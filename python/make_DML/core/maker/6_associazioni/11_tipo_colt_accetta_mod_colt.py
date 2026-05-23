@@ -15,10 +15,54 @@ from python.make_DML.core.utils.make_DML import make_DML
 
 #TIPO_COLT_ACCETTA_MOD_COLT:NOME_TIPO_COLTURA NOME_MODALITA_COLTIVAZIONE 
 
-NOME_TIPO_COLTURA = []
+NOME_TIPO_COLTURA = [
+    "'Grano duro'",
+    "'Mais'",
 
-NOME_MODALITA_COLTIVAZIONE = []
+    "'Pomodoro'",
+    "'Pomodoro'",
 
+    "'Lattuga'",
+
+    "'Zucchina'",
+
+    "'Fagiolo'",
+
+    "'Soia'",
+    "'Soia'"
+]
+NOME_TIPO_COLTURA = [
+    "'Grano duro'",
+    "'Mais'",
+
+    "'Pomodoro'",
+    "'Pomodoro'",
+
+    "'Lattuga'",
+
+    "'Zucchina'",
+
+    "'Fagiolo'",
+
+    "'Soia'",
+    "'Soia'"
+]
+NOME_MODALITA_COLTIVAZIONE = [
+    "'Idro cereali base'",
+    "'Idro cereali base'",
+
+    "'Idro pomodoro standard'",
+    "'Idro pomodoro intensivo'",
+
+    "'Idro lattuga rapida'",
+
+    "'Idro cucurbitacee'",
+
+    "'Idro legumi base'",
+
+    "'Idro soia nutriente'",
+    "'Idro legumi base'"
+]
 
 theList=list(zip(NOME_TIPO_COLTURA, NOME_MODALITA_COLTIVAZIONE))
 
