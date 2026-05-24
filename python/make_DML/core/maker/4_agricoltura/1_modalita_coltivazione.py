@@ -1,203 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'MODALITA_COLTIVAZIONE'
+ATTRIBUTES = ['NOME_MODALITA_COLTIVAZIONE', 'NOME_PRODOTTO', 'PH_MIN', 'PH_MAX', 'TEMPERATURA_MIN', 'TEMPERATURA_MAX', 'UMIDITA_MIN', 'UMIDITA_MAX', 'IMPOLLINAZIONE', 'SISTEMA_ILLUMINAZIONE', 'ACQUA_ML_ORA', 'ORE_LUCE_GIORNO', 'QUANTITA_SOLUZIONE_ML_ORA']
+
+JSON_PATH = Path('python/make_DML/data/4_agricoltura/1_modalita_coltivazione.json')
+DML_PATH = Path('DB/DML/4_agricoltura/1_modalita_coltivazione.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#MODALITA_COLTIVAZIONE:NOME_MODALITA_COLTIVAZIONE NOME_PRODOTTO PH_MIN PH_MAX TEMPERATURA_MIN TEMPERATURA_MAX UMIDITA_MIN UMIDITA_MAX IMPOLLINAZIONE SISTEMA_ILLUMINAZIONE ACQUA_ML_ORA ORE_LUCE_GIORNO SOLUZIONE_NUTRITIVA QUANTITA_SOLUZIONE_ML_ORA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
+
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
+
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
 
-NOME_MODALITA_COLTIVAZIONE = [
-    "'Idro cereali base'",
-    "'Idro riso sommerso'",
-    "'Idro tuberi substrato'",
-    "'Idro pomodoro standard'",
-    "'Idro pomodoro intensivo'",
-    "'Idro lattuga rapida'",
-    "'Idro radici substrato'",
-    "'Idro cucurbitacee'",
-    "'Idro legumi base'",
-    "'Idro soia nutriente'"
-]
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-NOME_PRODOTTO = [
-    "'Soluzione nutritiva idroponica base'",
-    "'Soluzione nutritiva idroponica base'",
-    "'Substrato in fibra di cocco'",
-    "'Soluzione nutritiva idroponica base'",
-    "'Soluzione nutritiva concentrata'",
-    "'Soluzione nutritiva idroponica base'",
-    "'Substrato in fibra di cocco'",
-    "'Soluzione nutritiva concentrata'",
-    "'Biofertilizzante microbico'",
-    "'Soluzione nutritiva concentrata'"
-]
+    if raw == "":
+        return "NULL"
 
-PH_MIN = [
-    6.0,
-    5.5,
-    5.5,
-    5.8,
-    5.8,
-    5.8,
-    6.0,
-    5.8,
-    6.0,
-    6.0
-]
+    upper = raw.upper()
 
-PH_MAX = [
-    7.0,
-    6.5,
-    6.5,
-    6.8,
-    6.8,
-    6.5,
-    6.8,
-    6.8,
-    7.0,
-    7.0
-]
+    if upper == "NULL":
+        return "NULL"
 
-TEMPERATURA_MIN = [
-    291,
-    295,
-    289,
-    293,
-    295,
-    289,
-    288,
-    294,
-    291,
-    292
-]
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-TEMPERATURA_MAX = [
-    297,
-    303,
-    295,
-    300,
-    303,
-    295,
-    294,
-    301,
-    298,
-    300
-]
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-UMIDITA_MIN = [
-    55,
-    70,
-    60,
-    60,
-    65,
-    65,
-    60,
-    60,
-    55,
-    55
-]
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-UMIDITA_MAX = [
-    75,
-    90,
-    80,
-    80,
-    85,
-    85,
-    80,
-    80,
-    75,
-    75
-]
+    if upper.startswith("TIMESTAMP "):
+        return raw
+
+    if upper.startswith("TO_DATE("):
+        return raw
+
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
+
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
+
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
+
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
 
-IMPOLLINAZIONE = [
-    0,  # cereali
-    0,  # riso
-    0,  # patata
-    1,  # pomodoro
-    1,  # pomodoro intensivo
-    0,  # lattuga
-    0,  # carota
-    1,  # zucchina
-    1,  # fagiolo
-    1   # soia
-]
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-SISTEMA_ILLUMINAZIONE = [
-    "'LED_FULL'",
-    "'LED_BIANCO'",
-    "'LED_BIANCO'",
-    "'LED_FULL'",
-    "'LED_VIOLA'",
-    "'LED_BIANCO'",
-    "'LED_BIANCO'",
-    "'LED_FULL'",
-    "'LED_FULL'",
-    "'LED_FULL'"
-]
-
-ACQUA_ML_ORA = [
-    45.00,
-    90.00,
-    55.00,
-    70.00,
-    85.00,
-    35.00,
-    40.00,
-    75.00,
-    55.00,
-    60.00
-]
-
-ORE_LUCE_GIORNO = [
-    14,
-    13,
-    12,
-    16,
-    18,
-    14,
-    13,
-    16,
-    14,
-    14
-]
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
 
-QUANTITA_SOLUZIONE_ML_ORA = [
-    4.00,
-    6.00,
-    4.50,
-    6.00,
-    7.50,
-    3.00,
-    3.50,
-    6.50,
-    4.50,
-    5.00
-]
-theList=list(zip(NOME_MODALITA_COLTIVAZIONE, NOME_PRODOTTO, PH_MIN, PH_MAX, TEMPERATURA_MIN, TEMPERATURA_MAX, UMIDITA_MIN, UMIDITA_MAX, IMPOLLINAZIONE, SISTEMA_ILLUMINAZIONE, ACQUA_ML_ORA, ORE_LUCE_GIORNO, QUANTITA_SOLUZIONE_ML_ORA))
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-keys = ["NOME_MODALITA_COLTIVAZIONE", "NOME_PRODOTTO", "PH_MIN", "PH_MAX", "TEMPERATURA_MIN", "TEMPERATURA_MAX", "UMIDITA_MIN", "UMIDITA_MAX", "IMPOLLINAZIONE", "SISTEMA_ILLUMINAZIONE", "ACQUA_ML_ORA", "ORE_LUCE_GIORNO", "QUANTITA_SOLUZIONE_ML_ORA"]
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-lines="--NOME_MODALITA_COLTIVAZIONE, NOME_PRODOTTO, PH_MIN, PH_MAX, TEMPERATURA_MIN, TEMPERATURA_MAX, UMIDITA_MIN, UMIDITA_MAX, IMPOLLINAZIONE, SISTEMA_ILLUMINAZIONE, ACQUA_ML_ORA, ORE_LUCE_GIORNO, QUANTITA_SOLUZIONE_ML_ORA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("MODALITA_COLTIVAZIONE", theList[i])+"\n"
+    rows = []
 
-os.makedirs("make_DML/data/4_agricoltura", exist_ok=True)
-with open("make_DML/data/4_agricoltura/1_modalita_coltivazione.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-make_DML("DB/DML/4_agricoltura/1_modalita_coltivazione.sql", lines)
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

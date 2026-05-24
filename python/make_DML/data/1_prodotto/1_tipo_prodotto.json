@@ -988,5 +988,23 @@
         "CARBOIDRATI": "NULL",
         "UNITA_MISURA": "'kg'",
         "IS_EDIBILE": 0
+    },
+    {
+        "NOME_PRODOTTO": "'Latte Bovino'",
+        "FIBRE": "0",
+        "PROTEINE": "0",
+        "GRASSI": "2",
+        "CARBOIDRATI": "1",
+        "UNITA_MISURA": "'ml'",
+        "IS_EDIBILE": "0"
+    },
+    {
+        "NOME_PRODOTTO": "'miele'",
+        "FIBRE": "0",
+        "PROTEINE": "0",
+        "GRASSI": "0",
+        "CARBOIDRATI": "0",
+        "UNITA_MISURA": "'litri'",
+        "IS_EDIBILE": "1"
     }
 ]

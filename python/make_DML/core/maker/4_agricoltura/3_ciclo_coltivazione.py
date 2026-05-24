@@ -1,210 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'CICLO_COLTIVAZIONE'
+ATTRIBUTES = ['DATA_INIZIO', 'CODICE_CELLA_IDR', 'CODICE_AREA', 'NOME_STRUTTURA', 'DATA_FINE_EFFETTIVA', 'QUANTITA_SEMI', 'NOME_MOD_COLTIVAZIONE', 'NOME_TIPO_COLTURA']
+
+JSON_PATH = Path('python/make_DML/data/4_agricoltura/3_ciclo_coltivazione.json')
+DML_PATH = Path('DB/DML/4_agricoltura/3_ciclo_coltivazione.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#CICLO_COLTIVAZIONE:DATA_INIZIO CODICE_CELLA_IDR CODICE_AREA NOME_STRUTTURA DATA_FINE_EFFETTIVA QUANTITA_SEMI NOME_MOD_COLTIVAZIONE NOME_TIPO_COLTURA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-DATA_INIZIO = [
-    "DATE '2023-07-01'",
-    "DATE '2024-03-01'",
-    "DATE '2025-06-01'",
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    "DATE '2023-07-05'",
-    "DATE '2024-01-15'",
-    "DATE '2025-01-10'",
-
-    "DATE '2023-08-01'",
-    "DATE '2024-04-01'",
-
-    "DATE '2023-07-10'",
-    "DATE '2024-02-01'",
-    "DATE '2025-05-10'",
-
-    "DATE '2026-04-05'",
-    "DATE '2026-05-21'",
-    "DATE '2026-04-05'",
-    "DATE '2026-04-04'"
-]
-
-CODICE_CELLA_IDR = [
-    "'000A'",
-    "'000A'",
-    "'000A'",
-
-    "'000B'",
-    "'000B'",
-    "'000B'",
-
-    "'000C'",
-    "'000C'",
-
-    "'000D'",
-    "'000D'",
-    "'000D'",
-
-    "'001A'",
-    "'001A'",
-    "'001B'",
-    "'001C'"
-]
-
-CODICE_AREA = [
-    "'A00A'",
-    "'A00A'",
-    "'A00A'",
-
-    "'A00A'",
-    "'A00A'",
-    "'A00A'",
-
-    "'A00B'",
-    "'A00B'",
-
-    "'A00C'",
-    "'A00C'",
-    "'A00C'",
-
-    "'A00A'",
-    "'A00A'",
-    "'A00A'",
-    "'A00A'"
-]
-
-NOME_STRUTTURA = [
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-    "'Struttura Agricola'",
-
-    "'Struttura Agricola II'",
-    "'Struttura Agricola II'",
-    "'Struttura Agricola II'",
-    "'Struttura Agricola II'"
-]
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
 
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
+
+    if raw == "":
+        return "NULL"
+
+    upper = raw.upper()
+
+    if upper == "NULL":
+        return "NULL"
+
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
+
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
+
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
+
+    if upper.startswith("TIMESTAMP "):
+        return raw
+
+    if upper.startswith("TO_DATE("):
+        return raw
+
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
+
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
+
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
+
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
 
-DATA_FINE_EFFETTIVA = [
-    "DATE '2023-12-28'",  # Grano duro, 180 giorni
-    "DATE '2024-05-30'",  # Pomodoro, 90 giorni
-    "DATE '2025-09-29'",  # Mais, 120 giorni
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-    "DATE '2023-11-02'",  # Mais, 120 giorni
-    "DATE '2024-05-14'",  # Soia, 120 giorni
-    "DATE '2025-02-24'",  # Lattuga, 45 giorni
-
-    "DATE '2023-10-27'",  # Pomodoro, 90 giorni
-    "DATE '2024-06-28'",  # Fagiolo, 90 giorni
-
-    "DATE '2023-10-18'",  # Patata, 100 giorni
-    "DATE '2024-04-21'",  # Carota, 80 giorni
-    "DATE '2025-07-04'",  # Zucchina, 55 giorni
-
-    "DATE '2026-05-20'",  # Lattuga, 45 giorni
-    "NULL",               # Fagiolo ancora aperto
-    "NULL",               # Mais ancora aperto
-    "NULL"                # Patata ancora aperta
-]
-QUANTITA_SEMI = [
-    0.6,  # kg Grano duro
-    0.3,   # kg Pomodoro
-    0.4,  # kg Mais
-
-    0.5,  # kg Mais
-    0.35,  # kg Soia
-    0.2,   # kg Lattuga
-
-    0.3,   # kg Pomodoro
-    0.2,  # kg Fagiolo
-
-    0.2,  # kg Patata/talee
-    0.8,   # kg Carota
-    0.4,   # kg Zucchina
-
-    0.3,   # kg Lattuga
-    0.3,  # kg Fagiolo
-    0.5,  # kg Mais
-    0.2   # kg Patata/talee
-]
-NOME_MOD_COLTIVAZIONE = [
-    "'Idro cereali base'",
-    "'Idro pomodoro standard'",
-    "'Idro cereali base'",
-
-    "'Idro cereali base'",
-    "'Idro soia nutriente'",
-    "'Idro lattuga rapida'",
-
-    "'Idro pomodoro intensivo'",
-    "'Idro legumi base'",
-
-    "'Idro tuberi substrato'",
-    "'Idro radici substrato'",
-    "'Idro cucurbitacee'",
-
-    "'Idro lattuga rapida'",
-    "'Idro legumi base'",
-    "'Idro cereali base'",
-    "'Idro tuberi substrato'"
-]
-
-NOME_TIPO_COLTURA = [
-    "'Grano duro'",
-    "'Pomodoro'",
-    "'Mais'",
-
-    "'Mais'",
-    "'Soia'",
-    "'Lattuga'",
-
-    "'Pomodoro'",
-    "'Fagiolo'",
-
-    "'Patata'",
-    "'Carota'",
-    "'Zucchina'",
-
-    "'Lattuga'",
-    "'Fagiolo'",
-    "'Mais'",
-    "'Patata'"
-]
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
 
-theList=list(zip(DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA))
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-keys = ["DATA_INIZIO", "CODICE_CELLA_IDR", "CODICE_AREA", "NOME_STRUTTURA", "DATA_FINE_EFFETTIVA", "QUANTITA_SEMI", "NOME_MOD_COLTIVAZIONE", "NOME_TIPO_COLTURA"]
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-lines="--DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA, NOME_STRUTTURA, DATA_FINE_EFFETTIVA, QUANTITA_SEMI, NOME_MOD_COLTIVAZIONE, NOME_TIPO_COLTURA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("CICLO_COLTIVAZIONE", theList[i])+"\n"
+    rows = []
 
-os.makedirs("make_DML/data/4_agricoltura", exist_ok=True)
-with open("make_DML/data/4_agricoltura/3_ciclo_coltivazione.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-make_DML("DB/DML/4_agricoltura/3_ciclo_coltivazione.sql", lines)
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

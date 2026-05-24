@@ -1,482 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'DIETA_COMPRENDE_PRODOTTO'
+ATTRIBUTES = ['NOME_PRODOTTO', 'NOME_DIETA', 'QUANTITA']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/2_dieta_comprende_prodotto.json')
+DML_PATH = Path('DB/DML/6_associazioni/2_dieta_comprende_prodotto.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
-
-
-#DIETA_COMPRENDE_PRODOTTO:NOME_PRODOTTO NOME_DIETA QUANTITA 
-
-NOME_PRODOTTO = [
-    # GALLINA - Pulcino
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-
-    # GALLINA - Giovane
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-    "'Mais'",
-
-    # GALLINA - Ovodeposizione
-    "'Acqua potabile'",
-    "'Mangime pollame ovaiole'",
-    "'Mais'",
-    "'Sale minerale zootecnico'",
-
-    # GALLINA - Adulto
-    "'Acqua potabile'",
-    "'Mangime pollame ovaiole'",
-    "'Mais'",
-
-    # CONIGLIO - Cucciolo
-    "'Acqua potabile'",
-    "'Mangime conigli'",
-    "'Fieno essiccato'",
-
-    # CONIGLIO - Svezzamento
-    "'Acqua potabile'",
-    "'Mangime conigli'",
-    "'Fieno essiccato'",
-    "'Carota'",
-
-    # CONIGLIO - Giovane
-    "'Acqua potabile'",
-    "'Mangime conigli'",
-    "'Fieno essiccato'",
-    "'Lattuga'",
-
-    # CONIGLIO - Adulto
-    "'Acqua potabile'",
-    "'Mangime conigli'",
-    "'Fieno essiccato'",
-    "'Carota'",
-
-    # CAPRA - Capretto
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-
-    # CAPRA - Svezzamento
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # CAPRA - Giovane
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # CAPRA - Adulto
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # PECORA - Agnello
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-
-    # PECORA - Svezzamento
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # PECORA - Giovane
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # PECORA - Adulto
-    "'Acqua potabile'",
-    "'Mangime ovicaprini'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # MAIALE - Suinetto
-    "'Acqua potabile'",
-    "'Mangime suini'",
-    "'Mais'",
-
-    # MAIALE - Svezzamento
-    "'Acqua potabile'",
-    "'Mangime suini'",
-    "'Mais'",
-    "'Soia'",
-
-    # MAIALE - Accrescimento
-    "'Acqua potabile'",
-    "'Mangime suini'",
-    "'Mais'",
-    "'Soia'",
-
-    # MAIALE - Adulto
-    "'Acqua potabile'",
-    "'Mangime suini'",
-    "'Mais'",
-    "'Soia'",
-
-    # BOVINO - Vitello
-    "'Acqua potabile'",
-    "'Mangime bovini crescita'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # BOVINO - Svezzamento
-    "'Acqua potabile'",
-    "'Mangime bovini crescita'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # BOVINO - Giovane
-    "'Acqua potabile'",
-    "'Mangime bovini crescita'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # BOVINO - Adulto
-    "'Acqua potabile'",
-    "'Mangime bovini lattazione'",
-    "'Fieno essiccato'",
-    "'Sale minerale zootecnico'",
-
-    # TACCHINO - Pulcino
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-
-    # TACCHINO - Giovane
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-    "'Mais'",
-
-    # TACCHINO - Ingrasso
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-    "'Mais'",
-
-    # TACCHINO - Adulto
-    "'Acqua potabile'",
-    "'Mangime pollame ingrasso'",
-    "'Mais'"
-]
-
-NOME_DIETA = [
-    # GALLINA
-    "'Dieta Gallina Pulcino'",
-    "'Dieta Gallina Pulcino'",
-
-    "'Dieta Gallina Giovane'",
-    "'Dieta Gallina Giovane'",
-    "'Dieta Gallina Giovane'",
-
-    "'Dieta Gallina Uova'",
-    "'Dieta Gallina Uova'",
-    "'Dieta Gallina Uova'",
-    "'Dieta Gallina Uova'",
-
-    "'Dieta Gallina Adulta'",
-    "'Dieta Gallina Adulta'",
-    "'Dieta Gallina Adulta'",
-
-    # CONIGLIO
-    "'Dieta Coniglio Cucciolo'",
-    "'Dieta Coniglio Cucciolo'",
-    "'Dieta Coniglio Cucciolo'",
-
-    "'Dieta Coniglio Svezz'",
-    "'Dieta Coniglio Svezz'",
-    "'Dieta Coniglio Svezz'",
-    "'Dieta Coniglio Svezz'",
-
-    "'Dieta Coniglio Giovane'",
-    "'Dieta Coniglio Giovane'",
-    "'Dieta Coniglio Giovane'",
-    "'Dieta Coniglio Giovane'",
-
-    "'Dieta Coniglio Adulto'",
-    "'Dieta Coniglio Adulto'",
-    "'Dieta Coniglio Adulto'",
-    "'Dieta Coniglio Adulto'",
-
-    # CAPRA
-    "'Dieta Capra Capretto'",
-    "'Dieta Capra Capretto'",
-    "'Dieta Capra Capretto'",
-
-    "'Dieta Capra Svezz'",
-    "'Dieta Capra Svezz'",
-    "'Dieta Capra Svezz'",
-    "'Dieta Capra Svezz'",
-
-    "'Dieta Capra Giovane'",
-    "'Dieta Capra Giovane'",
-    "'Dieta Capra Giovane'",
-    "'Dieta Capra Giovane'",
-
-    "'Dieta Capra Adulta'",
-    "'Dieta Capra Adulta'",
-    "'Dieta Capra Adulta'",
-    "'Dieta Capra Adulta'",
-
-    # PECORA
-    "'Dieta Pecora Agnello'",
-    "'Dieta Pecora Agnello'",
-    "'Dieta Pecora Agnello'",
-
-    "'Dieta Pecora Svezz'",
-    "'Dieta Pecora Svezz'",
-    "'Dieta Pecora Svezz'",
-    "'Dieta Pecora Svezz'",
-
-    "'Dieta Pecora Giovane'",
-    "'Dieta Pecora Giovane'",
-    "'Dieta Pecora Giovane'",
-    "'Dieta Pecora Giovane'",
-
-    "'Dieta Pecora Adulta'",
-    "'Dieta Pecora Adulta'",
-    "'Dieta Pecora Adulta'",
-    "'Dieta Pecora Adulta'",
-
-    # MAIALE
-    "'Dieta Maiale Suinetto'",
-    "'Dieta Maiale Suinetto'",
-    "'Dieta Maiale Suinetto'",
-
-    "'Dieta Maiale Svezz'",
-    "'Dieta Maiale Svezz'",
-    "'Dieta Maiale Svezz'",
-    "'Dieta Maiale Svezz'",
-
-    "'Dieta Maiale Ingrasso'",
-    "'Dieta Maiale Ingrasso'",
-    "'Dieta Maiale Ingrasso'",
-    "'Dieta Maiale Ingrasso'",
-
-    "'Dieta Maiale Adulto'",
-    "'Dieta Maiale Adulto'",
-    "'Dieta Maiale Adulto'",
-    "'Dieta Maiale Adulto'",
-
-    # BOVINO
-    "'Dieta Bovino Vitello'",
-    "'Dieta Bovino Vitello'",
-    "'Dieta Bovino Vitello'",
-    "'Dieta Bovino Vitello'",
-
-    "'Dieta Bovino Svezz'",
-    "'Dieta Bovino Svezz'",
-    "'Dieta Bovino Svezz'",
-    "'Dieta Bovino Svezz'",
-
-    "'Dieta Bovino Giovane'",
-    "'Dieta Bovino Giovane'",
-    "'Dieta Bovino Giovane'",
-    "'Dieta Bovino Giovane'",
-
-    "'Dieta Bovino Adulto'",
-    "'Dieta Bovino Adulto'",
-    "'Dieta Bovino Adulto'",
-    "'Dieta Bovino Adulto'",
-
-    # TACCHINO
-    "'Dieta Tacchino Pulcino'",
-    "'Dieta Tacchino Pulcino'",
-
-    "'Dieta Tacchino Giovane'",
-    "'Dieta Tacchino Giovane'",
-    "'Dieta Tacchino Giovane'",
-
-    "'Dieta Tacchino Ingrasso'",
-    "'Dieta Tacchino Ingrasso'",
-    "'Dieta Tacchino Ingrasso'",
-
-    "'Dieta Tacchino Adulto'",
-    "'Dieta Tacchino Adulto'",
-    "'Dieta Tacchino Adulto'"
-]
-
-QUANTITA = [
-    # GALLINA - Pulcino
-    0.250,
-    0.035,
-
-    # GALLINA - Giovane
-    0.350,
-    0.070,
-    0.015,
-
-    # GALLINA - Ovodeposizione
-    0.500,
-    0.120,
-    0.020,
-    0.002,
-
-    # GALLINA - Adulto
-    0.450,
-    0.100,
-    0.015,
-
-    # CONIGLIO - Cucciolo
-    0.150,
-    0.030,
-    0.020,
-
-    # CONIGLIO - Svezzamento
-    0.300,
-    0.060,
-    0.080,
-    0.020,
-
-    # CONIGLIO - Giovane
-    0.500,
-    0.090,
-    0.150,
-    0.030,
-
-    # CONIGLIO - Adulto
-    0.700,
-    0.120,
-    0.250,
-    0.040,
-
-    # CAPRA - Capretto
-    1.500,
-    0.250,
-    0.300,
-
-    # CAPRA - Svezzamento
-    2.500,
-    0.500,
-    0.800,
-    0.008,
-
-    # CAPRA - Giovane
-    4.000,
-    0.800,
-    1.500,
-    0.012,
-
-    # CAPRA - Adulto
-    6.000,
-    1.000,
-    2.500,
-    0.018,
-
-    # PECORA - Agnello
-    1.200,
-    0.200,
-    0.250,
-
-    # PECORA - Svezzamento
-    2.200,
-    0.450,
-    0.700,
-    0.007,
-
-    # PECORA - Giovane
-    3.500,
-    0.700,
-    1.300,
-    0.010,
-
-    # PECORA - Adulto
-    5.000,
-    0.900,
-    2.200,
-    0.015,
-
-    # MAIALE - Suinetto
-    1.000,
-    0.400,
-    0.100,
-
-    # MAIALE - Svezzamento
-    2.500,
-    0.900,
-    0.200,
-    0.080,
-
-    # MAIALE - Accrescimento
-    6.000,
-    2.500,
-    0.600,
-    0.200,
-
-    # MAIALE - Adulto
-    5.000,
-    1.800,
-    0.400,
-    0.150,
-
-    # BOVINO - Vitello
-    8.000,
-    1.200,
-    2.000,
-    0.020,
-
-    # BOVINO - Svezzamento
-    15.000,
-    2.500,
-    5.000,
-    0.035,
-
-    # BOVINO - Giovane
-    25.000,
-    4.000,
-    9.000,
-    0.050,
-
-    # BOVINO - Adulto
-    40.000,
-    5.000,
-    12.000,
-    0.080,
-
-    # TACCHINO - Pulcino
-    0.300,
-    0.050,
-
-    # TACCHINO - Giovane
-    0.800,
-    0.160,
-    0.030,
-
-    # TACCHINO - Ingrasso
-    1.500,
-    0.350,
-    0.080,
-
-    # TACCHINO - Adulto
-    1.200,
-    0.250,
-    0.060
-]
-
-theList=list(zip(NOME_PRODOTTO, NOME_DIETA, QUANTITA))
-
-keys = ["NOME_PRODOTTO", "NOME_DIETA", "QUANTITA"]
-
-theJsonList=[dict(zip(keys, row)) for row in theList]
-
-lines="--NOME_PRODOTTO, NOME_DIETA, QUANTITA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("DIETA_COMPRENDE_PRODOTTO", theList[i])+"\n"
-
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/2_dieta_comprende_prodotto.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
-
-make_DML("DB/DML/6_associazioni/2_dieta_comprende_prodotto.sql", lines)
+
+
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
+
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
+
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
+
+
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
+
+    if raw == "":
+        return "NULL"
+
+    upper = raw.upper()
+
+    if upper == "NULL":
+        return "NULL"
+
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
+
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
+
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
+
+    if upper.startswith("TIMESTAMP "):
+        return raw
+
+    if upper.startswith("TO_DATE("):
+        return raw
+
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
+
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
+
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
+
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
+
+
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
+
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
+
+
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
+
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
+
+    n = ask_int("Quante tuple vuoi inserire? ")
+
+    rows = []
+
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
+
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

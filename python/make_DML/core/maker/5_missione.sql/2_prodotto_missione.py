@@ -1,220 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'PRODOTTO_MISSIONE'
+ATTRIBUTES = ['NOME_PRODOTTO', 'NOME_MISSIONE', 'QUANTITA', 'DATA_PRODUZIONE']
+
+JSON_PATH = Path('python/make_DML/data/5_missione.sql/2_prodotto_missione.json')
+DML_PATH = Path('DB/DML/5_missione.sql/2_prodotto_missione.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#PRODOTTO_MISSIONE:NOME_PRODOTTO NOME_MISSIONE QUANTITA DATA_PRODUZIONE 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-NOME_PRODOTTO = [
-    # Ares Supply 01
-    "'Acqua potabile'",
-    "'Soluzione nutritiva idroponica base'",
-    "'Semi di grano duro'",
-    "'Semi di mais'",
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    # Ares Supply 02
-    "'Acqua potabile'",
-    "'Mangime bovini crescita'",
-    "'Mangime pollame ovaiole'",
-    "'Antiparassitario bovini'",
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    # Demetra Cargo 01
-    "'Substrato in fibra di cocco'",
-    "'Lana di roccia agricola'",
-    "'Biofertilizzante microbico'",
 
-    # Demetra Cargo 02
-    "'Acqua potabile'",
-    "'Semi di pomodoro'",
-    "'Semi di lattuga'",
-    "'Soluzione nutritiva concentrata'",
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    # Hermes BioLab 01
-    "'Vaccino bovini respiratorio'",
-    "'Vaccino pollame Newcastle'",
-    "'Antibiotico veterinario pollame'",
+    if raw == "":
+        return "NULL"
 
-    # Hermes BioLab 02
-    "'Mangime ovicaprini'",
-    "'Mangime suini'",
-    "'Reidratante orale veterinario'",
+    upper = raw.upper()
 
-    # Atlas Storage 01
-    "'Acqua potabile'",
-    "'Compost sterile'",
-    "'Fieno essiccato'",
-    "'Paglia'",
+    if upper == "NULL":
+        return "NULL"
 
-    # Atlas Storage 02
-    "'Acqua potabile'",
-    "'Semi di carota'",
-    "'Semi di zucchina'",
-    "'Correttore pH acido'",
-    "'Correttore pH basico'"
-]
-NOME_MISSIONE = [
-    # Ares Supply 01
-    "'Ares Supply 01'",
-    "'Ares Supply 01'",
-    "'Ares Supply 01'",
-    "'Ares Supply 01'",
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-    # Ares Supply 02
-    "'Ares Supply 02'",
-    "'Ares Supply 02'",
-    "'Ares Supply 02'",
-    "'Ares Supply 02'",
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-    # Demetra Cargo 01
-    "'Demetra Cargo 01'",
-    "'Demetra Cargo 01'",
-    "'Demetra Cargo 01'",
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-    # Demetra Cargo 02
-    "'Demetra Cargo 02'",
-    "'Demetra Cargo 02'",
-    "'Demetra Cargo 02'",
-    "'Demetra Cargo 02'",
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-    # Hermes BioLab 01
-    "'Hermes BioLab 01'",
-    "'Hermes BioLab 01'",
-    "'Hermes BioLab 01'",
+    if upper.startswith("TO_DATE("):
+        return raw
 
-    # Hermes BioLab 02
-    "'Hermes BioLab 02'",
-    "'Hermes BioLab 02'",
-    "'Hermes BioLab 02'",
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-    # Atlas Storage 01
-    "'Atlas Storage 01'",
-    "'Atlas Storage 01'",
-    "'Atlas Storage 01'",
-    "'Atlas Storage 01'",
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-    # Atlas Storage 02
-    "'Atlas Storage 02'",
-    "'Atlas Storage 02'",
-    "'Atlas Storage 02'",
-    "'Atlas Storage 02'",
-    "'Atlas Storage 02'"
-]
-QUANTITA = [
-    # Ares Supply 01
-    1200.00,  # L acqua
-    500.00,   # L soluzione nutritiva base
-    40.00,    # kg semi grano duro
-    35.00,    # kg semi mais
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-    # Ares Supply 02
-    1500.00,  # L acqua
-    750.00,   # kg mangime bovini crescita
-    300.00,   # kg mangime pollame ovaiole
-    65.00,    # mL antiparassitario bovini
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-    # Demetra Cargo 01
-    350.00,   # kg substrato fibra cocco
-    250.00,   # kg lana di roccia
-    180.00,   # L biofertilizzante
 
-    # Demetra Cargo 02
-    1000.00,  # L acqua
-    8.00,     # kg semi pomodoro
-    5.00,     # kg semi lattuga
-    350.00,   # L soluzione concentrata
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-    # Hermes BioLab 01
-    180.00,   # mL vaccino bovini respiratorio
-    90.00,    # mL vaccino pollame Newcastle
-    250.00,   # mg antibiotico pollame
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-    # Hermes BioLab 02
-    500.00,   # kg mangime ovicaprini
-    600.00,   # kg mangime suini
-    80.00,    # g reidratante orale
 
-    # Atlas Storage 01
-    1800.00,  # L acqua
-    600.00,   # kg compost sterile
-    900.00,   # kg fieno essiccato
-    700.00,   # kg paglia
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-    # Atlas Storage 02
-    1500.00,  # L acqua
-    6.00,     # kg semi carota
-    5.00,     # kg semi zucchina
-    120.00,   # L correttore pH acido
-    100.00    # L correttore pH basico
-]
-DATA_PRODUZIONE = [
-    # Ares Supply 01
-    "DATE '2023-05-25'",
-    "DATE '2023-05-20'",
-    "DATE '2023-05-10'",
-    "DATE '2023-05-12'",
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-    # Ares Supply 02
-    "DATE '2023-08-12'",
-    "DATE '2023-08-05'",
-    "DATE '2023-08-07'",
-    "DATE '2023-08-10'",
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-    # Demetra Cargo 01
-    "DATE '2023-12-20'",
-    "DATE '2023-12-18'",
-    "DATE '2024-01-02'",
+    rows = []
 
-    # Demetra Cargo 02
-    "DATE '2024-06-28'",
-    "DATE '2024-06-15'",
-    "DATE '2024-06-17'",
-    "DATE '2024-06-25'",
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-    # Hermes BioLab 01
-    "DATE '2025-01-28'",
-    "DATE '2025-01-30'",
-    "DATE '2025-02-01'",
+        row = []
 
-    # Hermes BioLab 02
-    "DATE '2025-09-01'",
-    "DATE '2025-09-02'",
-    "DATE '2025-09-05'",
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
 
-    # Atlas Storage 01
-    "DATE '2025-12-27'",
-    "DATE '2025-12-20'",
-    "DATE '2025-12-22'",
-    "DATE '2025-12-23'",
+        rows.append(tuple(row))
 
-    # Atlas Storage 02
-    "DATE '2026-03-08'",
-    "DATE '2026-03-01'",
-    "DATE '2026-03-03'",
-    "DATE '2026-03-05'",
-    "DATE '2026-03-05'"
-]
-theList=list(zip(NOME_PRODOTTO, NOME_MISSIONE, QUANTITA, DATA_PRODUZIONE))
+    return rows
 
-keys = ["NOME_PRODOTTO", "NOME_MISSIONE", "QUANTITA", "DATA_PRODUZIONE"]
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
 
-lines="--NOME_PRODOTTO, NOME_MISSIONE, QUANTITA, DATA_PRODUZIONE\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("PRODOTTO_MISSIONE", theList[i])+"\n"
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-os.makedirs("make_DML/data/5_missione.sql", exist_ok=True)
-with open("make_DML/data/5_missione.sql/2_prodotto_missione.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
 
-make_DML("DB/DML/5_missione.sql/2_prodotto_missione.sql", lines)
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

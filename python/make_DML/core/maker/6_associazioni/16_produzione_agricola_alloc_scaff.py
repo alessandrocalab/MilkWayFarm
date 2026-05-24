@@ -1,127 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'PRODUZIONE_AGRICOLA_ALLOC_SCAFF'
+ATTRIBUTES = ['DATA_PRODUZIONE_AGRICOLA', 'DATA_INIZIO_CICLO_COLTIVAZIONE', 'CODICE_CELLA_IDR', 'CODICE_AREA_CELLA', 'NOME_STRUTTURA_CELLA', 'NOME_PRODOTTO', 'NUMERO_SCAFFALE', 'CODICE_AREA_SCAFF', 'NOME_STRUTTURA_SCAFF', 'QUANTITA_ALLOCATA']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/16_produzione_agricola_alloc_scaff.json')
+DML_PATH = Path('DB/DML/6_associazioni/16_produzione_agricola_alloc_scaff.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#PRODUZIONE_AGRICOLA_ALLOC_SCAFF:DATA_PRODUZIONE_AGRICOLA DATA_INIZIO_CICLO_COLTIVAZIONE CODICE_CELLA_IDR CODICE_AREA_CELLA NOME_STRUTTURA_CELLA NOME_PRODOTTO NUMERO_SCAFFALE CODICE_AREA_SCAFF NOME_STRUTTURA_SCAFF QUANTITA_ALLOCATA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE = [
-    # GRANO DURO - ambiente secco controllato
-    ("DATE '2023-12-28'", "DATE '2023-07-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Grano duro'", "'0001'", "'A00A'", "'Struttura Stoccaggio'", 8.40),
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    # SEMI GRANO - conservazione semi lungo termine
-    ("DATE '2023-12-28'", "DATE '2023-07-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Semi di grano duro'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.80),
-
-    # POMODORO - conservazione verdure fresche
-    ("DATE '2024-05-30'", "DATE '2024-03-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Pomodoro'", "'0001'", "'A00I'", "'Struttura Stoccaggio'", 18.00),
-
-    # SEMI POMODORO
-    ("DATE '2024-05-30'", "DATE '2024-03-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Semi di pomodoro'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.10),
-
-    # MAIS
-    ("DATE '2025-09-29'", "DATE '2025-06-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Mais'", "'0001'", "'A00A'", "'Struttura Stoccaggio'", 14.00),
-
-    # SEMI MAIS
-    ("DATE '2025-09-29'", "DATE '2025-06-01'", "'000A'", "'A00A'", "'Struttura Agricola'", "'Semi di mais'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 1.00),
-
-    # MAIS
-    ("DATE '2023-11-02'", "DATE '2023-07-05'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Mais'", "'0001'", "'A00A'", "'Struttura Stoccaggio'", 17.50),
-
-    # SEMI MAIS
-    ("DATE '2023-11-02'", "DATE '2023-07-05'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Semi di mais'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 1.20),
-
-    # SOIA
-    ("DATE '2024-05-14'", "DATE '2024-01-15'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Soia'", "'0001'", "'A00A'", "'Struttura Stoccaggio'", 8.75),
-
-    # SEMI SOIA
-    ("DATE '2024-05-14'", "DATE '2024-01-15'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Semi di soia'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.80),
-
-    # LATTUGA
-    ("DATE '2025-02-24'", "DATE '2025-01-10'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Lattuga'", "'0001'", "'A00I'", "'Struttura Stoccaggio'", 7.00),
-
-    # SEMI LATTUGA
-    ("DATE '2025-02-24'", "DATE '2025-01-10'", "'000B'", "'A00A'", "'Struttura Agricola'", "'Semi di lattuga'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.05),
-
-    # POMODORO
-    ("DATE '2023-10-27'", "DATE '2023-08-01'", "'000C'", "'A00B'", "'Struttura Agricola'", "'Pomodoro'", "'0001'", "'A00I'", "'Struttura Stoccaggio'", 21.00),
-
-    # SEMI POMODORO
-    ("DATE '2023-10-27'", "DATE '2023-08-01'", "'000C'", "'A00B'", "'Struttura Agricola'", "'Semi di pomodoro'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.12),
-
-    # FAGIOLO
-    ("DATE '2024-06-28'", "DATE '2024-04-01'", "'000C'", "'A00B'", "'Struttura Agricola'", "'Fagiolo'", "'0002'", "'A00A'", "'Struttura Stoccaggio'", 5.00),
-
-    # SEMI FAGIOLO
-    ("DATE '2024-06-28'", "DATE '2024-04-01'", "'000C'", "'A00B'", "'Struttura Agricola'", "'Semi di fagiolo'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.45),
-
-    # PATATA - tuberi e radici
-    ("DATE '2023-10-18'", "DATE '2023-07-10'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Patata'", "'0001'", "'A00H'", "'Struttura Stoccaggio'", 6.00),
-
-    # TALEE PATATA
-    ("DATE '2023-10-18'", "DATE '2023-07-10'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Talee di patata'", "'0001'", "'A00H'", "'Struttura Stoccaggio'", 0.70),
-
-    # CAROTA - tuberi e radici
-    ("DATE '2024-04-21'", "DATE '2024-02-01'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Carota'", "'0001'", "'A00H'", "'Struttura Stoccaggio'", 12.00),
-
-    # SEMI CAROTA
-    ("DATE '2024-04-21'", "DATE '2024-02-01'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Semi di carota'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.08),
-
-    # ZUCCHINA
-    ("DATE '2025-07-04'", "DATE '2025-05-10'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Zucchina'", "'0001'", "'A00I'", "'Struttura Stoccaggio'", 12.00),
-
-    # SEMI ZUCCHINA
-    ("DATE '2025-07-04'", "DATE '2025-05-10'", "'000D'", "'A00C'", "'Struttura Agricola'", "'Semi di zucchina'", "'0001'", "'A00G'", "'Struttura Stoccaggio'", 0.10),
-
-    # LATTUGA - produzione recente
-    ("DATE '2026-05-20'", "DATE '2026-04-05'", "'001A'", "'A00A'", "'Struttura Agricola II'", "'Lattuga'", "'0002'", "'A00I'", "'Struttura Stoccaggio'", 10.50),
-
-    # SEMI LATTUGA
-    ("DATE '2026-05-20'", "DATE '2026-04-05'", "'001A'", "'A00A'", "'Struttura Agricola II'", "'Semi di lattuga'", "'0002'", "'A00G'", "'Struttura Stoccaggio'", 0.07)
-]
-
-DATA_PRODUZIONE_AGRICOLA = [riga[0] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-DATA_INIZIO_CICLO_COLTIVAZIONE = [riga[1] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-CODICE_CELLA_IDR = [riga[2] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-CODICE_AREA_CELLA = [riga[3] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-NOME_STRUTTURA_CELLA = [riga[4] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-NOME_PRODOTTO = [riga[5] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-NUMERO_SCAFFALE = [riga[6] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-CODICE_AREA_SCAFF = [riga[7] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-NOME_STRUTTURA_SCAFF = [riga[8] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
-
-QUANTITA_ALLOCATA = [riga[9] for riga in RIGHE_ALLOC_PRODUZIONE_AGRICOLA_SCAFFALE]
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
 
-theList=list(zip(DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA_CELLA, NOME_STRUTTURA_CELLA, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA))
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-keys = ["DATA_PRODUZIONE_AGRICOLA", "DATA_INIZIO_CICLO_COLTIVAZIONE", "CODICE_CELLA_IDR", "CODICE_AREA_CELLA", "NOME_STRUTTURA_CELLA", "NOME_PRODOTTO", "NUMERO_SCAFFALE", "CODICE_AREA_SCAFF", "NOME_STRUTTURA_SCAFF", "QUANTITA_ALLOCATA"]
+    if raw == "":
+        return "NULL"
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+    upper = raw.upper()
 
-lines="--DATA_PRODUZIONE_AGRICOLA, DATA_INIZIO_CICLO_COLTIVAZIONE, CODICE_CELLA_IDR, CODICE_AREA_CELLA, NOME_STRUTTURA_CELLA, NOME_PRODOTTO, NUMERO_SCAFFALE, CODICE_AREA_SCAFF, NOME_STRUTTURA_SCAFF, QUANTITA_ALLOCATA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("PRODUZIONE_AGRICOLA_ALLOC_SCAFF", theList[i])+"\n"
+    if upper == "NULL":
+        return "NULL"
 
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/16_produzione_agricola_alloc_scaff.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-make_DML("DB/DML/6_associazioni/16_produzione_agricola_alloc_scaff.sql", lines)
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
+
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
+
+    if upper.startswith("TIMESTAMP "):
+        return raw
+
+    if upper.startswith("TO_DATE("):
+        return raw
+
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
+
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
+
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
+
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
+
+
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
+
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
+
+
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
+
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
+
+    n = ask_int("Quante tuple vuoi inserire? ")
+
+    rows = []
+
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
+
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

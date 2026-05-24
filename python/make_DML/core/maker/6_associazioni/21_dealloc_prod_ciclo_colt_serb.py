@@ -1,113 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'DEALLOC_PROD_CICLO_COLT_SERB'
+ATTRIBUTES = ['DATE_MIN', 'NOME_PRODOTTO', 'NUMERO_SERB', 'CODICE_AREA_SERB', 'NOME_STRUTTURA_SERB', 'DATA_INIZIO', 'CODICE_CELLA_IDR', 'CODICE_AREA_CELLA', 'NOME_STRUTTURA_CELLA', 'QUANTITA_DEALLOCATA']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/21_dealloc_prod_ciclo_colt_serb.json')
+DML_PATH = Path('DB/DML/6_associazioni/21_dealloc_prod_ciclo_colt_serb.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#DEALLOC_PROD_CICLO_COLT_SERB:DATE_MIN NOME_PRODOTTO NUMERO_SERB CODICE_AREA_SERB NOME_STRUTTURA_SERB DATA_INIZIO CODICE_CELLA_IDR CODICE_AREA_CELLA NOME_STRUTTURA_CELLA QUANTITA_DEALLOCATA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE = [
-    # 1) GRANO DURO - Idro cereali base
-    ("DATE '2023-05-25'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 194.40),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 17.28),
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    # 2) POMODORO - Idro pomodoro standard
-    ("DATE '2023-05-25'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-03-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 151.20),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-03-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 12.96),
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    # 3) MAIS - Idro cereali base
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-06-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 129.60),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-06-01'", "'000A'", "'A00A'", "'Struttura Agricola'", 11.52),
 
-    # 4) MAIS - Idro cereali base
-    ("DATE '2023-05-25'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-05'", "'000B'", "'A00A'", "'Struttura Agricola'", 129.60),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-05'", "'000B'", "'A00A'", "'Struttura Agricola'", 11.52),
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    # 5) SOIA - Idro soia nutriente
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-01-15'", "'000B'", "'A00A'", "'Struttura Agricola'", 172.80),
-    ("DATE '2024-06-25'", "'Soluzione nutritiva concentrata'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-01-15'", "'000B'", "'A00A'", "'Struttura Agricola'", 14.40),
+    if raw == "":
+        return "NULL"
 
-    # 6) LATTUGA - Idro lattuga rapida
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-01-10'", "'000B'", "'A00A'", "'Struttura Agricola'", 37.80),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-01-10'", "'000B'", "'A00A'", "'Struttura Agricola'", 3.24),
+    upper = raw.upper()
 
-    # 7) POMODORO - Idro pomodoro intensivo
-    ("DATE '2023-05-25'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-08-01'", "'000C'", "'A00B'", "'Struttura Agricola'", 183.60),
-    ("DATE '2024-06-25'", "'Soluzione nutritiva concentrata'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-08-01'", "'000C'", "'A00B'", "'Struttura Agricola'", 16.20),
+    if upper == "NULL":
+        return "NULL"
 
-    # 8) FAGIOLO - Idro legumi base
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-04-01'", "'000C'", "'A00B'", "'Struttura Agricola'", 118.80),
-    ("DATE '2024-01-02'", "'Biofertilizzante microbico'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-04-01'", "'000C'", "'A00B'", "'Struttura Agricola'", 9.72),
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-    # 9) PATATA - Idro tuberi substrato
-    ("DATE '2023-05-25'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-10'", "'000D'", "'A00C'", "'Struttura Agricola'", 132.00),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2023-07-10'", "'000D'", "'A00C'", "'Struttura Agricola'", 10.80),
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-    # 10) CAROTA - Idro radici substrato
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-02-01'", "'000D'", "'A00C'", "'Struttura Agricola'", 76.80),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2024-02-01'", "'000D'", "'A00C'", "'Struttura Agricola'", 6.72),
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-    # 11) ZUCCHINA - Idro cucurbitacee
-    ("DATE '2023-08-12'", "'Acqua potabile'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-05-10'", "'000D'", "'A00C'", "'Struttura Agricola'", 99.00),
-    ("DATE '2024-06-25'", "'Soluzione nutritiva concentrata'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2025-05-10'", "'000D'", "'A00C'", "'Struttura Agricola'", 8.58),
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-    # 12) LATTUGA - Idro lattuga rapida
-    ("DATE '2026-03-08'", "'Acqua potabile'", "'S007'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-05'", "'001A'", "'A00A'", "'Struttura Agricola II'", 37.80),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-05'", "'001A'", "'A00A'", "'Struttura Agricola II'", 3.24),
+    if upper.startswith("TO_DATE("):
+        return raw
 
-    # 13) FAGIOLO - Idro legumi base
-    ("DATE '2026-03-08'", "'Acqua potabile'", "'S007'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-05-21'", "'001A'", "'A00A'", "'Struttura Agricola II'", 118.80),
-    ("DATE '2024-01-02'", "'Biofertilizzante microbico'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-05-21'", "'001A'", "'A00A'", "'Struttura Agricola II'", 9.72),
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-    # 14) MAIS - Idro cereali base
-    ("DATE '2026-03-08'", "'Acqua potabile'", "'S007'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-05'", "'001B'", "'A00A'", "'Struttura Agricola II'", 129.60),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-05'", "'001B'", "'A00A'", "'Struttura Agricola II'", 11.52),
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-    # 15) PATATA - Idro tuberi substrato
-    ("DATE '2026-03-08'", "'Acqua potabile'", "'S007'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-04'", "'001C'", "'A00A'", "'Struttura Agricola II'", 132.00),
-    ("DATE '2023-05-20'", "'Soluzione nutritiva idroponica base'", "'S006'", "'A00L'", "'Struttura Stoccaggio'", "DATE '2026-04-04'", "'001C'", "'A00A'", "'Struttura Agricola II'", 10.80)
-]
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-DATE_MIN = [riga[0] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-NOME_PRODOTTO = [riga[1] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
 
-NUMERO_SERB = [riga[2] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-CODICE_AREA_SERB = [riga[3] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-NOME_STRUTTURA_SERB = [riga[4] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
 
-DATA_INIZIO = [riga[5] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-CODICE_CELLA_IDR = [riga[6] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-CODICE_AREA_CELLA = [riga[7] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-NOME_STRUTTURA_CELLA = [riga[8] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
+    rows = []
 
-QUANTITA_DEALLOCATA = [riga[9] for riga in RIGHE_DEALLOC_SERBATOIO_CICLO_COLTIVAZIONE]
-theList=list(zip(DATE_MIN, NOME_PRODOTTO, NUMERO_SERB, CODICE_AREA_SERB, NOME_STRUTTURA_SERB, DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA_CELLA, NOME_STRUTTURA_CELLA, QUANTITA_DEALLOCATA))
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-keys = ["DATE_MIN", "NOME_PRODOTTO", "NUMERO_SERB", "CODICE_AREA_SERB", "NOME_STRUTTURA_SERB", "DATA_INIZIO", "CODICE_CELLA_IDR", "CODICE_AREA_CELLA", "NOME_STRUTTURA_CELLA", "QUANTITA_DEALLOCATA"]
+        row = []
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
 
-lines="--DATE_MIN, NOME_PRODOTTO, NUMERO_SERB, CODICE_AREA_SERB, NOME_STRUTTURA_SERB, DATA_INIZIO, CODICE_CELLA_IDR, CODICE_AREA_CELLA, NOME_STRUTTURA_CELLA, QUANTITA_DEALLOCATA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("DEALLOC_PROD_CICLO_COLT_SERB", theList[i])+"\n"
+        rows.append(tuple(row))
 
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/21_dealloc_prod_ciclo_colt_serb.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    return rows
 
-make_DML("DB/DML/6_associazioni/21_dealloc_prod_ciclo_colt_serb.sql", lines)
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

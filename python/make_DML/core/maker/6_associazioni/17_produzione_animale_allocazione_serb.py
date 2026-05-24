@@ -1,77 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'PRODUZIONE_ANIMALE_ALLOC_SERB'
+ATTRIBUTES = ['DATA_PRODUZIONE', 'NUMERO_BLOCCO', 'NOME_STRUTTURA_BLOCCO', 'CODICE_AREA_BLOCCO', 'NOME_PRODOTTO', 'NUMERO_SERBATOIO', 'CODICE_AREA_SERB', 'NOME_STRUTTURA_SERB', 'QUANTITA_ALLOCATA']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/17_produzione_animale_allocazione_serb.json')
+DML_PATH = Path('DB/DML/6_associazioni/17_produzione_animale_allocazione_serb.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#PRODUZIONE_ANIMALE_ALLOC_SERB:DATA_PRODUZIONE NUMERO_BLOCCO NOME_STRUTTURA_BLOCCO CODICE_AREA_BLOCCO NOME_PRODOTTO NUMERO_SERBATOIO CODICE_AREA_SERB NOME_STRUTTURA_SERB QUANTITA_ALLOCATA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO = [
-    # LATTE CAPRINO
-    ("DATE '2025-02-24'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 1.80),
-    ("DATE '2025-02-25'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.02),
-    ("DATE '2025-02-26'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.47),
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    # LATTE BOVINO
-    ("DATE '2025-02-26'", "'0001'", "'Struttura Zootecnica'", "'A00B'", "'Latte bovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 48.40),
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    # LATTE CAPRINO / OVINO
-    ("DATE '2025-02-26'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 5.27),
-    ("DATE '2025-02-26'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 3.03),
 
-    # LATTE CAPRINO / BOVINO
-    ("DATE '2025-02-27'", "'0001'", "'Struttura Zootecnica'", "'A00A'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 3.21),
-    ("DATE '2025-02-27'", "'0001'", "'Struttura Zootecnica'", "'A00B'", "'Latte bovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 42.97),
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    # LATTE CAPRINO
-    ("DATE '2025-02-27'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 4.46),
+    if raw == "":
+        return "NULL"
 
-    # LATTE CAPRINO / OVINO
-    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte caprino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 4.69),
-    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00B'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 2.95),
+    upper = raw.upper()
 
-    # LATTE OVINO
-    ("DATE '2025-03-09'", "'0002'", "'Struttura Zootecnica'", "'A00C'", "'Latte ovino'", "'S001'", "'A00C'", "'Struttura Stoccaggio'", 0.91)
-]
-DATA_PRODUZIONE = [riga[0] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    if upper == "NULL":
+        return "NULL"
 
-NUMERO_BLOCCO = [riga[1] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-NOME_STRUTTURA_BLOCCO = [riga[2] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-CODICE_AREA_BLOCCO = [riga[3] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-NOME_PRODOTTO = [riga[4] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-NUMERO_SERBATOIO = [riga[5] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    if upper.startswith("TO_DATE("):
+        return raw
 
-CODICE_AREA_SERB = [riga[6] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-NOME_STRUTTURA_SERB = [riga[7] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-QUANTITA_ALLOCATA = [riga[8] for riga in RIGHE_ALLOC_PRODUZIONE_ANIMALE_SERBATOIO]
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-theList=list(zip(DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SERBATOIO, CODICE_AREA_SERB, NOME_STRUTTURA_SERB, QUANTITA_ALLOCATA))
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-keys = ["DATA_PRODUZIONE", "NUMERO_BLOCCO", "NOME_STRUTTURA_BLOCCO", "CODICE_AREA_BLOCCO", "NOME_PRODOTTO", "NUMERO_SERBATOIO", "CODICE_AREA_SERB", "NOME_STRUTTURA_SERB", "QUANTITA_ALLOCATA"]
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-lines="--DATA_PRODUZIONE, NUMERO_BLOCCO, NOME_STRUTTURA_BLOCCO, CODICE_AREA_BLOCCO, NOME_PRODOTTO, NUMERO_SERBATOIO, CODICE_AREA_SERB, NOME_STRUTTURA_SERB, QUANTITA_ALLOCATA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("PRODUZIONE_ANIMALE_ALLOC_SERB", theList[i])+"\n"
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/17_produzione_animale_allocazione_serb.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
 
-make_DML("DB/DML/6_associazioni/17_produzione_animale_allocazione_serb.sql", lines)
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
+
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
+
+    n = ask_int("Quante tuple vuoi inserire? ")
+
+    rows = []
+
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
+
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

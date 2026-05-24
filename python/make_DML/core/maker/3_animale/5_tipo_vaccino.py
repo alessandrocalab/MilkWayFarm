@@ -1,257 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'VACCINO'
+ATTRIBUTES = ['NOME_VACCINO', 'NOME_TIPO_ANIMALE', 'NOME_STADIO_CRESCITA', 'NOME_VACCINO_PROPEDEUTICO', 'NOME_STADIO_CRESCITA_PROPEDEUTICO', 'NOME_TIPO_ANIMALE_PROPEDEUTICO', 'IS_VACCINO_OBBLIGATORIO', 'ETA_MINIMA_MESI', 'DOSE_ML']
+
+JSON_PATH = Path('python/make_DML/data/3_animale/5_tipo_vaccino.json')
+DML_PATH = Path('DB/DML/3_animale/5_tipo_vaccino.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#VACCINO:NOME_VACCINO NOME_TIPO_ANIMALE NOME_STADIO_CRESCITA NOME_VACCINO_PROPEDEUTICO NOME_STADIO_CRESCITA_PROPEDEUTICO NOME_TIPO_ANIMALE_PROPEDEUTICO IS_VACCINO_OBBLIGATORIO ETA_MINIMA_MESI DOSE_ML 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-NOME_VACCINO = [
-    "'Newcastle'",
-    "'bronchite infettiva'",
-    "'coccidiosi'",
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    "'mixomatosi'",
-    "'malattia emorragica'",
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    "'clostridiosi'",
-    "'enterotossiemia'",
 
-    "'clostridiosi'",
-    "'enterotossiemia'",
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    "'mal rosso'",
-    "'parvovirosi'",
+    if raw == "":
+        return "NULL"
 
-    "'respiratorio'",
-    "'clostridiosi'",
-    "'mastite'",
+    upper = raw.upper()
 
-    "'Newcastle'",
-    "'coccidiosi'"
-]
+    if upper == "NULL":
+        return "NULL"
 
-NOME_TIPO_ANIMALE = [
-    "'Gallina'",
-    "'Gallina'",
-    "'Gallina'",
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-    "'Coniglio'",
-    "'Coniglio'",
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-    "'Capra'",
-    "'Capra'",
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-    "'Pecora'",
-    "'Pecora'",
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-    "'Maiale'",
-    "'Maiale'",
+    if upper.startswith("TO_DATE("):
+        return raw
 
-    "'Bovino'",
-    "'Bovino'",
-    "'Bovino'",
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-    "'Tacchino'",
-    "'Tacchino'"
-]
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-NOME_STADIO_CRESCITA = [
-    "'Pulcino'",
-    "'Giovane'",
-    "'Pulcino'",
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-    "'Svezzamento'",
-    "'Giovane'",
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-    "'Svezzamento'",
-    "'Giovane'",
 
-    "'Svezzamento'",
-    "'Giovane'",
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-    "'Accrescimento'",
-    "'Adulto'",
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-    "'Svezzamento'",
-    "'Giovane'",
-    "'Adulto'",
 
-    "'Pulcino'",
-    "'Giovane'"
-]
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-NOME_VACCINO_PROPEDEUTICO = [
-    "NULL",
-    "'Vaccino pollame Newcastle'",
-    "NULL",
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-    "NULL",
-    "'Vaccino conigli mixomatosi'",
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-    "NULL",
-    "'Vaccino ovicaprini clostridiosi'",
+    rows = []
 
-    "NULL",
-    "'Vaccino ovicaprini clostridiosi'",
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-    "NULL",
-    "'Vaccino suini mal rosso'",
+        row = []
 
-    "NULL",
-    "'Vaccino bovini respiratorio'",
-    "'Vaccino bovini clostridiosi'",
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
 
-    "NULL",
-    "'Vaccino pollame Newcastle'"
-]
+        rows.append(tuple(row))
 
-NOME_STADIO_CRESCITA_PROPEDEUTICO = [
-    "NULL",
-    "'Pulcino'",
-    "NULL",
+    return rows
 
-    "NULL",
-    "'Svezzamento'",
 
-    "NULL",
-    "'Svezzamento'",
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
 
-    "NULL",
-    "'Svezzamento'",
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-    "NULL",
-    "'Accrescimento'",
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
 
-    "NULL",
-    "'Svezzamento'",
-    "'Giovane'",
+    return data
 
-    "NULL",
-    "'Pulcino'"
-]
 
-NOME_TIPO_ANIMALE_PROPEDEUTICO = [
-    "NULL",
-    "'Gallina'",
-    "NULL",
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    "NULL",
-    "'Coniglio'",
+    old_data = load_existing_json(JSON_PATH)
 
-    "NULL",
-    "'Capra'",
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
 
-    "NULL",
-    "'Pecora'",
+    final_data = old_data + new_data
 
-    "NULL",
-    "'Maiale'",
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
 
-    "NULL",
-    "'Bovino'",
-    "'Bovino'",
 
-    "NULL",
-    "'Tacchino'"
-]
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
 
-IS_VACCINO_OBBLIGATORIO = [
-    1,
-    1,
-    0,
 
-    1,
-    1,
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    1,
-    1,
+    file_exists = DML_PATH.exists()
+    old_text = ""
 
-    1,
-    1,
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
 
-    1,
-    1,
+    old_text_stripped = old_text.strip()
 
-    1,
-    1,
-    0,
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
 
-    1,
-    0
-]
+    lines = old_text
 
-ETA_MINIMA_MESI = [
-    0,
-    1,
-    0,
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
 
-    1,
-    2,
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
 
-    3,
-    6,
+    lines += "COMMIT;\n"
 
-    3,
-    6,
+    DML_PATH.write_text(lines, encoding="utf-8")
 
-    3,
-    8,
 
-    3,
-    12,
-    24,
+def main() -> None:
+    rows = collect_rows()
 
-    0,
-    2
-]
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
 
-DOSE_ML = [
-    0.05,
-    0.05,
-    0.05,
+    append_json(rows)
+    append_dml(rows)
 
-    0.50,
-    0.50,
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
 
-    2.00,
-    2.00,
 
-    2.00,
-    2.00,
-
-    2.00,
-    2.00,
-
-    2.00,
-    2.00,
-    2.00,
-
-    0.05,
-    0.05
-]
-
-theList=list(zip(NOME_VACCINO, NOME_TIPO_ANIMALE, NOME_STADIO_CRESCITA, NOME_VACCINO_PROPEDEUTICO, NOME_STADIO_CRESCITA_PROPEDEUTICO, NOME_TIPO_ANIMALE_PROPEDEUTICO, IS_VACCINO_OBBLIGATORIO, ETA_MINIMA_MESI, DOSE_ML))
-
-keys = ["NOME_VACCINO", "NOME_TIPO_ANIMALE", "NOME_STADIO_CRESCITA", "NOME_VACCINO_PROPEDEUTICO", "NOME_STADIO_CRESCITA_PROPEDEUTICO", "NOME_TIPO_ANIMALE_PROPEDEUTICO", "IS_VACCINO_OBBLIGATORIO", "ETA_MINIMA_MESI", "DOSE_ML"]
-
-theJsonList=[dict(zip(keys, row)) for row in theList]
-
-lines="--NOME_VACCINO, NOME_TIPO_ANIMALE, NOME_STADIO_CRESCITA, NOME_VACCINO_PROPEDEUTICO, NOME_STADIO_CRESCITA_PROPEDEUTICO, NOME_TIPO_ANIMALE_PROPEDEUTICO, IS_VACCINO_OBBLIGATORIO, ETA_MINIMA_MESI, DOSE_ML\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("VACCINO", theList[i])+"\n"
-
-os.makedirs("make_DML/data/3_animale", exist_ok=True)
-with open("make_DML/data/3_animale/5_tipo_vaccino.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
-
-make_DML("DB/DML/3_animale/5_tipo_vaccino.sql", lines)
+if __name__ == "__main__":
+    main()

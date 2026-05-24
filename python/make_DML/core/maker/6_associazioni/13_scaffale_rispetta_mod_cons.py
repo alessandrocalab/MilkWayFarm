@@ -1,120 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'SCAFFALE_RISPETTA_MOD_CONS'
+ATTRIBUTES = ['NUMERO_SCAFFALE', 'CODICE_AREA', 'NOME_STRUTTURA', 'NOME_CONSERVAZIONE']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/13_scaffale_rispetta_mod_cons.json')
+DML_PATH = Path('DB/DML/6_associazioni/13_scaffale_rispetta_mod_cons.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#SCAFFALE_RISPETTA_MOD_CONS:NUMERO_SCAFFALE CODICE_AREA NOME_STRUTTURA NOME_CONSERVAZIONE 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-RIGHE_SCAFFALE_RISPETTA_CONSERVAZIONE = [
-    # PRIMO MODULO - A00A
-    ("'0001'", "'A00A'", "'Primo Modulo'", "'Ambiente secco controllato'"),
-    ("'0001'", "'A00A'", "'Primo Modulo'", "'Conservazione mangimi secchi'"),
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    # PRIMO MODULO - A00B
-    ("'0001'", "'A00B'", "'Primo Modulo'", "'Ambiente secco controllato'"),
-    ("'0001'", "'A00B'", "'Primo Modulo'", "'Conservazione mangimi secchi'"),
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    # STRUTTURA AGRICOLA - A00A
-    ("'0001'", "'A00A'", "'Struttura Agricola'", "'Ambiente secco controllato'"),
-    ("'0001'", "'A00A'", "'Struttura Agricola'", "'Conservazione mangimi secchi'"),
 
-    # STRUTTURA STOCCAGGIO - A00A
-    ("'0001'", "'A00A'", "'Struttura Stoccaggio'", "'Ambiente secco controllato'"),
-    ("'0001'", "'A00A'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
-    ("'0002'", "'A00A'", "'Struttura Stoccaggio'", "'Ambiente secco controllato'"),
-    ("'0002'", "'A00A'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
-    ("'0003'", "'A00A'", "'Struttura Stoccaggio'", "'Ambiente secco controllato'"),
-    ("'0003'", "'A00A'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
-    ("'0004'", "'A00A'", "'Struttura Stoccaggio'", "'Ambiente secco controllato'"),
-    ("'0004'", "'A00A'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    # STRUTTURA STOCCAGGIO - A00B
-    ("'0001'", "'A00B'", "'Struttura Stoccaggio'", "'Ambiente fresco controllato'"),
-    ("'0001'", "'A00B'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0002'", "'A00B'", "'Struttura Stoccaggio'", "'Ambiente fresco controllato'"),
-    ("'0002'", "'A00B'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0003'", "'A00B'", "'Struttura Stoccaggio'", "'Ambiente fresco controllato'"),
-    ("'0003'", "'A00B'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
+    if raw == "":
+        return "NULL"
 
-    # STRUTTURA STOCCAGGIO - A00C
-    ("'0001'", "'A00C'", "'Struttura Stoccaggio'", "'Refrigerazione standard'"),
-    ("'0002'", "'A00C'", "'Struttura Stoccaggio'", "'Refrigerazione standard'"),
-    ("'0003'", "'A00C'", "'Struttura Stoccaggio'", "'Refrigerazione standard'"),
+    upper = raw.upper()
 
-    # STRUTTURA STOCCAGGIO - A00D
-    ("'0001'", "'A00D'", "'Struttura Stoccaggio'", "'Congelamento standard'"),
-    ("'0002'", "'A00D'", "'Struttura Stoccaggio'", "'Congelamento standard'"),
-    ("'0003'", "'A00D'", "'Struttura Stoccaggio'", "'Congelamento standard'"),
+    if upper == "NULL":
+        return "NULL"
 
-    # STRUTTURA STOCCAGGIO - A00E
-    ("'0001'", "'A00E'", "'Struttura Stoccaggio'", "'Catena del freddo sanitaria'"),
-    ("'0002'", "'A00E'", "'Struttura Stoccaggio'", "'Catena del freddo sanitaria'"),
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-    # STRUTTURA STOCCAGGIO - A00F
-    ("'0001'", "'A00F'", "'Struttura Stoccaggio'", "'Conservazione semi breve termine'"),
-    ("'0002'", "'A00F'", "'Struttura Stoccaggio'", "'Conservazione semi breve termine'"),
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-    # STRUTTURA STOCCAGGIO - A00G
-    ("'0001'", "'A00G'", "'Struttura Stoccaggio'", "'Conservazione semi lungo termine'"),
-    ("'0002'", "'A00G'", "'Struttura Stoccaggio'", "'Conservazione semi lungo termine'"),
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-    # STRUTTURA STOCCAGGIO - A00H
-    ("'0001'", "'A00H'", "'Struttura Stoccaggio'", "'Conservazione tuberi e radici'"),
-    ("'0002'", "'A00H'", "'Struttura Stoccaggio'", "'Conservazione tuberi e radici'"),
-    ("'0003'", "'A00H'", "'Struttura Stoccaggio'", "'Conservazione tuberi e radici'"),
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-    # STRUTTURA STOCCAGGIO - A00I
-    ("'0001'", "'A00I'", "'Struttura Stoccaggio'", "'Conservazione verdure fresche'"),
-    ("'0002'", "'A00I'", "'Struttura Stoccaggio'", "'Conservazione verdure fresche'"),
+    if upper.startswith("TO_DATE("):
+        return raw
 
-    # STRUTTURA STOCCAGGIO - A00J
-    ("'0001'", "'A00J'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
-    ("'0002'", "'A00J'", "'Struttura Stoccaggio'", "'Conservazione mangimi secchi'"),
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-    # STRUTTURA STOCCAGGIO - A00K
-    ("'0001'", "'A00K'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0002'", "'A00K'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0003'", "'A00K'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0004'", "'A00K'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-    # STRUTTURA STOCCAGGIO - A00L
-    ("'0001'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione soluzioni agricole'"),
-    ("'0001'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0002'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione soluzioni agricole'"),
-    ("'0002'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'"),
-    ("'0003'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione soluzioni agricole'"),
-    ("'0003'", "'A00L'", "'Struttura Stoccaggio'", "'Conservazione biomasse organiche'")
-]
-NUMERO_SCAFFALE = [riga[0] for riga in RIGHE_SCAFFALE_RISPETTA_CONSERVAZIONE]
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-CODICE_AREA = [riga[1] for riga in RIGHE_SCAFFALE_RISPETTA_CONSERVAZIONE]
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-NOME_STRUTTURA = [riga[2] for riga in RIGHE_SCAFFALE_RISPETTA_CONSERVAZIONE]
 
-NOME_CONSERVAZIONE = [riga[3] for riga in RIGHE_SCAFFALE_RISPETTA_CONSERVAZIONE]
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-theList=list(zip(NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE))
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-keys = ["NUMERO_SCAFFALE", "CODICE_AREA", "NOME_STRUTTURA", "NOME_CONSERVAZIONE"]
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-lines="--NUMERO_SCAFFALE, CODICE_AREA, NOME_STRUTTURA, NOME_CONSERVAZIONE\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("SCAFFALE_RISPETTA_MOD_CONS", theList[i])+"\n"
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/13_scaffale_rispetta_mod_cons.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-make_DML("DB/DML/6_associazioni/13_scaffale_rispetta_mod_cons.sql", lines)
+    rows = []
+
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
+
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

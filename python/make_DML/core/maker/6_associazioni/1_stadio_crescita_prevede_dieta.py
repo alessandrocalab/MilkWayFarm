@@ -6,11 +6,11 @@ from pathlib import Path
 
 ROOT_NAME = "MilkWayFarm"
 
-TABLE_NAME = 'SENSORE'
-ATTRIBUTES = ['SERIALE', 'NOME_PRODUTTORE', 'NOME_MODELLO', 'CODICE_AREA', 'NOME_STRUTTURA']
+TABLE_NAME = 'STADIO_CRESCITA_PREVEDE_DIETA'
+ATTRIBUTES = ['NOME_STADIO_CRESCITA', 'NOME_TIPO_ANIMALE', 'NOME_DIETA', 'DATA_INIZIO', 'DATA_FINE']
 
-JSON_PATH = Path('python/make_DML/data/2_struttura/7_sensore.json')
-DML_PATH = Path('DB/DML/2_struttura/7_sensore.sql')
+JSON_PATH = Path('python/make_DML/data/6_associazioni/1_stadio_crescita_prevede_dieta.json')
+DML_PATH = Path('DB/DML/6_associazioni/1_stadio_crescita_prevede_dieta.sql')
 
 HEADER = "--" + ", ".join(ATTRIBUTES)
 

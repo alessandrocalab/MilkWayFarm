@@ -1,182 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'STADIO_CRESCITA_INTOLLERANTE_SOSTANZA'
+ATTRIBUTES = ['NOME_STADIO_CRESCITA', 'NOME_TIPO_ANIMALE', 'NOME_SOSTANZA']
+
+JSON_PATH = Path('python/make_DML/data/6_associazioni/4_stadio_crescita_intollerante_sostanza.json')
+DML_PATH = Path('DB/DML/6_associazioni/4_stadio_crescita_intollerante_sostanza.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#STADIO_CRESCITA_INTOLLERANTE_SOSTANZA:NOME_STADIO_CRESCITA NOME_TIPO_ANIMALE NOME_SOSTANZA 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-RIGHE_STADIO_INTOLLERANTE_SOSTANZA = [
-    # GALLINA
-    ("'Pulcino'", "'Gallina'", "'Lectine vegetali'"),
-    ("'Pulcino'", "'Gallina'", "'Raffinosio'"),
-    ("'Pulcino'", "'Gallina'", "'Stachiosio'"),
-    ("'Pulcino'", "'Gallina'", "'Solanina'"),
-    ("'Pulcino'", "'Gallina'", "'Ossalati'"),
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-    ("'Giovane'", "'Gallina'", "'Solanina'"),
-    ("'Giovane'", "'Gallina'", "'Lectine vegetali'"),
-    ("'Giovane'", "'Gallina'", "'Raffinosio'"),
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
-    ("'Ovodeposizione'", "'Gallina'", "'Solanina'"),
-    ("'Ovodeposizione'", "'Gallina'", "'Ossalati'"),
 
-    ("'Adulto'", "'Gallina'", "'Solanina'"),
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
 
-    # CONIGLIO
-    ("'Cucciolo'", "'Coniglio'", "'Lectine vegetali'"),
-    ("'Cucciolo'", "'Coniglio'", "'Galatto oligosaccaridi'"),
-    ("'Cucciolo'", "'Coniglio'", "'Raffinosio'"),
-    ("'Cucciolo'", "'Coniglio'", "'Stachiosio'"),
-    ("'Cucciolo'", "'Coniglio'", "'Solanina'"),
-    ("'Cucciolo'", "'Coniglio'", "'Ossalati'"),
+    if raw == "":
+        return "NULL"
 
-    ("'Svezzamento'", "'Coniglio'", "'Lattosio'"),
-    ("'Svezzamento'", "'Coniglio'", "'Lectine vegetali'"),
-    ("'Svezzamento'", "'Coniglio'", "'Galatto oligosaccaridi'"),
-    ("'Svezzamento'", "'Coniglio'", "'Raffinosio'"),
-    ("'Svezzamento'", "'Coniglio'", "'Stachiosio'"),
-    ("'Svezzamento'", "'Coniglio'", "'Solanina'"),
-    ("'Svezzamento'", "'Coniglio'", "'Ossalati'"),
+    upper = raw.upper()
 
-    ("'Giovane'", "'Coniglio'", "'Lattosio'"),
-    ("'Giovane'", "'Coniglio'", "'Galatto oligosaccaridi'"),
-    ("'Giovane'", "'Coniglio'", "'Raffinosio'"),
-    ("'Giovane'", "'Coniglio'", "'Stachiosio'"),
-    ("'Giovane'", "'Coniglio'", "'Solanina'"),
-    ("'Giovane'", "'Coniglio'", "'Ossalati'"),
+    if upper == "NULL":
+        return "NULL"
 
-    ("'Adulto'", "'Coniglio'", "'Lattosio'"),
-    ("'Adulto'", "'Coniglio'", "'Fruttani'"),
-    ("'Adulto'", "'Coniglio'", "'Solanina'"),
-    ("'Adulto'", "'Coniglio'", "'Ossalati'"),
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
 
-    # CAPRA
-    ("'Capretto'", "'Capra'", "'Lectine vegetali'"),
-    ("'Capretto'", "'Capra'", "'Raffinosio'"),
-    ("'Capretto'", "'Capra'", "'Stachiosio'"),
-    ("'Capretto'", "'Capra'", "'Solanina'"),
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
 
-    ("'Svezzamento'", "'Capra'", "'Lectine vegetali'"),
-    ("'Svezzamento'", "'Capra'", "'Raffinosio'"),
-    ("'Svezzamento'", "'Capra'", "'Stachiosio'"),
-    ("'Svezzamento'", "'Capra'", "'Solanina'"),
-    ("'Svezzamento'", "'Capra'", "'Ossalati'"),
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
 
-    ("'Giovane'", "'Capra'", "'Solanina'"),
-    ("'Giovane'", "'Capra'", "'Ossalati'"),
-    ("'Giovane'", "'Capra'", "'Glucosinolati'"),
+    if upper.startswith("TIMESTAMP "):
+        return raw
 
-    ("'Adulto'", "'Capra'", "'Solanina'"),
-    ("'Adulto'", "'Capra'", "'Ossalati'"),
-    ("'Adulto'", "'Capra'", "'Glucosinolati'"),
+    if upper.startswith("TO_DATE("):
+        return raw
 
-    # PECORA
-    ("'Agnello'", "'Pecora'", "'Lectine vegetali'"),
-    ("'Agnello'", "'Pecora'", "'Raffinosio'"),
-    ("'Agnello'", "'Pecora'", "'Stachiosio'"),
-    ("'Agnello'", "'Pecora'", "'Solanina'"),
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
 
-    ("'Svezzamento'", "'Pecora'", "'Lectine vegetali'"),
-    ("'Svezzamento'", "'Pecora'", "'Raffinosio'"),
-    ("'Svezzamento'", "'Pecora'", "'Stachiosio'"),
-    ("'Svezzamento'", "'Pecora'", "'Solanina'"),
-    ("'Svezzamento'", "'Pecora'", "'Ossalati'"),
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
 
-    ("'Giovane'", "'Pecora'", "'Solanina'"),
-    ("'Giovane'", "'Pecora'", "'Ossalati'"),
-    ("'Giovane'", "'Pecora'", "'Glucosinolati'"),
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
 
-    ("'Adulto'", "'Pecora'", "'Solanina'"),
-    ("'Adulto'", "'Pecora'", "'Ossalati'"),
-    ("'Adulto'", "'Pecora'", "'Glucosinolati'"),
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
-    # MAIALE
-    ("'Suinetto'", "'Maiale'", "'Lectine vegetali'"),
-    ("'Suinetto'", "'Maiale'", "'Galatto oligosaccaridi'"),
-    ("'Suinetto'", "'Maiale'", "'Raffinosio'"),
-    ("'Suinetto'", "'Maiale'", "'Stachiosio'"),
-    ("'Suinetto'", "'Maiale'", "'Solanina'"),
 
-    ("'Svezzamento'", "'Maiale'", "'Lectine vegetali'"),
-    ("'Svezzamento'", "'Maiale'", "'Galatto oligosaccaridi'"),
-    ("'Svezzamento'", "'Maiale'", "'Raffinosio'"),
-    ("'Svezzamento'", "'Maiale'", "'Stachiosio'"),
-    ("'Svezzamento'", "'Maiale'", "'Solanina'"),
-    ("'Svezzamento'", "'Maiale'", "'Glucosinolati'"),
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-    ("'Accrescimento'", "'Maiale'", "'Raffinosio'"),
-    ("'Accrescimento'", "'Maiale'", "'Solanina'"),
-    ("'Accrescimento'", "'Maiale'", "'Glucosinolati'"),
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-    ("'Adulto'", "'Maiale'", "'Solanina'"),
-    ("'Adulto'", "'Maiale'", "'Glucosinolati'"),
 
-    # BOVINO
-    ("'Vitello'", "'Bovino'", "'Lectine vegetali'"),
-    ("'Vitello'", "'Bovino'", "'Raffinosio'"),
-    ("'Vitello'", "'Bovino'", "'Stachiosio'"),
-    ("'Vitello'", "'Bovino'", "'Solanina'"),
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-    ("'Svezzamento'", "'Bovino'", "'Lectine vegetali'"),
-    ("'Svezzamento'", "'Bovino'", "'Raffinosio'"),
-    ("'Svezzamento'", "'Bovino'", "'Stachiosio'"),
-    ("'Svezzamento'", "'Bovino'", "'Solanina'"),
-    ("'Svezzamento'", "'Bovino'", "'Ossalati'"),
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-    ("'Giovane'", "'Bovino'", "'Solanina'"),
-    ("'Giovane'", "'Bovino'", "'Ossalati'"),
-    ("'Giovane'", "'Bovino'", "'Glucosinolati'"),
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-    ("'Adulto'", "'Bovino'", "'Solanina'"),
-    ("'Adulto'", "'Bovino'", "'Ossalati'"),
-    ("'Adulto'", "'Bovino'", "'Glucosinolati'"),
+    rows = []
 
-    # TACCHINO
-    ("'Pulcino'", "'Tacchino'", "'Lectine vegetali'"),
-    ("'Pulcino'", "'Tacchino'", "'Raffinosio'"),
-    ("'Pulcino'", "'Tacchino'", "'Stachiosio'"),
-    ("'Pulcino'", "'Tacchino'", "'Solanina'"),
-    ("'Pulcino'", "'Tacchino'", "'Ossalati'"),
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
 
-    ("'Giovane'", "'Tacchino'", "'Solanina'"),
-    ("'Giovane'", "'Tacchino'", "'Lectine vegetali'"),
-    ("'Giovane'", "'Tacchino'", "'Raffinosio'"),
+        row = []
 
-    ("'Ingrasso'", "'Tacchino'", "'Solanina'"),
-    ("'Ingrasso'", "'Tacchino'", "'Lectine vegetali'"),
-    ("'Ingrasso'", "'Tacchino'", "'Ossalati'"),
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
 
-    ("'Adulto'", "'Tacchino'", "'Solanina'"),
-    ("'Adulto'", "'Tacchino'", "'Ossalati'")
-]
+        rows.append(tuple(row))
 
-NOME_STADIO_CRESCITA = [riga[0] for riga in RIGHE_STADIO_INTOLLERANTE_SOSTANZA]
+    return rows
 
-NOME_TIPO_ANIMALE = [riga[1] for riga in RIGHE_STADIO_INTOLLERANTE_SOSTANZA]
 
-NOME_SOSTANZA = [riga[2] for riga in RIGHE_STADIO_INTOLLERANTE_SOSTANZA]
-theList=list(zip(NOME_STADIO_CRESCITA, NOME_TIPO_ANIMALE, NOME_SOSTANZA))
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
 
-keys = ["NOME_STADIO_CRESCITA", "NOME_TIPO_ANIMALE", "NOME_SOSTANZA"]
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
 
-lines="--NOME_STADIO_CRESCITA, NOME_TIPO_ANIMALE, NOME_SOSTANZA\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("STADIO_CRESCITA_INTOLLERANTE_SOSTANZA", theList[i])+"\n"
+    return data
 
-os.makedirs("make_DML/data/6_associazioni", exist_ok=True)
-with open("make_DML/data/6_associazioni/4_stadio_crescita_intollerante_sostanza.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
 
-make_DML("DB/DML/6_associazioni/4_stadio_crescita_intollerante_sostanza.sql", lines)
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()

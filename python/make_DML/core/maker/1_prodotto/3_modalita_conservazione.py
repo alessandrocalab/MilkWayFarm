@@ -1,125 +1,238 @@
 import os
 import sys
 import json
+import re
+from pathlib import Path
 
-dir = os.getcwd()
-while os.path.basename(dir) != "MilkWayFarm":
-    os.chdir("..")
-    dir = os.getcwd()
+ROOT_NAME = "MilkWayFarm"
 
-sys.path.append(dir)
+TABLE_NAME = 'MODALITA_CONSERVAZIONE'
+ATTRIBUTES = ['NOME_CONSERVAZIONE', 'DURATA_MASSIMA_GIORNI', 'TEMPERATURA_MAX', 'TEMPERATURA_MIN', 'UMIDITA_MIN', 'UMIDITA_MAX']
+
+JSON_PATH = Path('python/make_DML/data/1_prodotto/3_modalita_conservazione.json')
+DML_PATH = Path('DB/DML/1_prodotto/3_modalita_conservazione.sql')
+
+HEADER = "--" + ", ".join(ATTRIBUTES)
+
+
+def go_to_project_root() -> Path:
+    current = Path.cwd().resolve()
+
+    while current.name != ROOT_NAME:
+        if current.parent == current:
+            raise RuntimeError(f"Cartella {ROOT_NAME} non trovata risalendo dal path corrente.")
+        current = current.parent
+
+    os.chdir(current)
+
+    if str(current) not in sys.path:
+        sys.path.append(str(current))
+
+    return current
+
+
+go_to_project_root()
 
 from python.make_DML.core.utils.make_DML_line import make_DML_line
-from python.make_DML.core.utils.make_DML import make_DML
 
 
-#MODALITA_CONSERVAZIONE:NOME_CONSERVAZIONE DURATA_MASSIMA_GIORNI TEMPERATURA_MAX TEMPERATURA_MIN UMIDITA_MIN UMIDITA_MAX 
+def is_number(raw: str) -> bool:
+    """
+    Riconosce numeri veri:
+    10
+    10.5
+    0.25
 
-NOME_CONSERVAZIONE = [
-    "'Ambiente secco controllato'",
-    "'Ambiente fresco controllato'",
-    "'Refrigerazione standard'",
-    "'Congelamento standard'",
-    "'Catena del freddo sanitaria'",
-    "'Conservazione semi breve termine'",
-    "'Conservazione semi lungo termine'",
-    "'Conservazione tuberi e radici'",
-    "'Conservazione verdure fresche'",
-    "'Conservazione mangimi secchi'",
-    "'Conservazione biomasse organiche'",
-    "'Conservazione soluzioni agricole'"
-]
+    Non considera numeri codici con zeri davanti:
+    0001
+    0000000001
+    """
+    raw = raw.replace(",", ".")
 
-DURATA_MASSIMA_GIORNI = [
-    365,   # cereali, legumi secchi, prodotti stabili
-    180,   # prodotti freschi ma non refrigerati
-    14,    # latte, uova, verdure, funghi, alghe fresche
-    365,   # carne congelata, prodotti surgelati
-    365,   # vaccini e farmaci refrigerati
-    180,   # semi usati entro pochi cicli produttivi
-    1460,  # semi da banca genetica/riserva
-    120,   # patate, carote, barbabietole, radici
-    10,    # lattuga, spinaci, rucola, bietola
-    365,   # mangimi animali, fieno, paglia
-    180,   # letame, pollina, compost sterile
-    180    # soluzioni nutritive, correttori pH, concentrati
-]
-
-TEMPERATURA_MIN = [
-    288.15,  # 15°C
-    281.15,  # 8°C
-    273.15,  # 0°C
-    253.15,  # -20°C
-    275.15,  # 2°C
-    277.15,  # 4°C
-    273.15,  # 0°C
-    277.15,  # 4°C
-    274.15,  # 1°C
-    283.15,  # 10°C
-    278.15,  # 5°C
-    278.15   # 5°C
-]
-
-TEMPERATURA_MAX = [
-    298.15,  # 25°C
-    288.15,  # 15°C
-    277.15,  # 4°C
-    255.15,  # -18°C
-    281.15,  # 8°C
-    283.15,  # 10°C
-    278.15,  # 5°C
-    285.15,  # 12°C
-    277.15,  # 4°C
-    298.15,  # 25°C
-    298.15,  # 25°C
-    298.15   # 25°C
-]
-
-UMIDITA_MIN = [
-    25,
-    35,
-    70,
-    30,
-    35,
-    20,
-    15,
-    85,
-    90,
-    25,
-    30,
-    30
-]
+    return re.fullmatch(r"[+-]?((0)|(0\.\d+)|([1-9]\d*)(\.\d+)?)", raw) is not None
 
 
-UMIDITA_MAX = [
-    55,
-    65,
-    90,
-    60,
-    65,
-    45,
-    35,
-    95,
-    98,
-    60,
-    70,
-    60
-]
+def parse_value(attr: str, raw: str) -> str:
+    raw = raw.strip()
+
+    if raw == "":
+        return "NULL"
+
+    upper = raw.upper()
+
+    if upper == "NULL":
+        return "NULL"
+
+    # se vuoi scrivere SQL puro:
+    # =SYSDATE
+    # =TO_DATE('2026-01-01','YYYY-MM-DD')
+    if raw.startswith("="):
+        return raw[1:].strip()
+
+    # per attributi DATA puoi scrivere direttamente 2026-01-01
+    if "DATA" in attr.upper() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return f"DATE '{raw}'"
+
+    # SQL già valido
+    if upper.startswith("DATE "):
+        return raw
+
+    if upper.startswith("TIMESTAMP "):
+        return raw
+
+    if upper.startswith("TO_DATE("):
+        return raw
+
+    if upper in ("SYSDATE", "CURRENT_DATE"):
+        return raw
+
+    # stringa già quotata
+    if len(raw) >= 2 and raw[0] == "'" and raw[-1] == "'":
+        return raw
+
+    # numero
+    if is_number(raw):
+        return raw.replace(",", ".")
+
+    # stringa normale: aggiungo apici e faccio escape
+    escaped = raw.replace("'", "''")
+    return f"'{escaped}'"
 
 
+def ask_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
 
-theList=list(zip(NOME_CONSERVAZIONE, DURATA_MASSIMA_GIORNI, TEMPERATURA_MAX, TEMPERATURA_MIN, UMIDITA_MIN, UMIDITA_MAX))
+        try:
+            n = int(value)
+            if n < 0:
+                print("Inserisci un numero >= 0.")
+                continue
+            return n
+        except ValueError:
+            print("Valore non valido. Inserisci un numero intero.")
 
-keys = ["NOME_CONSERVAZIONE", "DURATA_MASSIMA_GIORNI", "TEMPERATURA_MAX", "TEMPERATURA_MIN", "UMIDITA_MIN", "UMIDITA_MAX"]
 
-theJsonList=[dict(zip(keys, row)) for row in theList]
+def collect_rows() -> list[tuple]:
+    print()
+    print(f"TABELLA: {TABLE_NAME}")
+    print("Attributi:")
+    for attr in ATTRIBUTES:
+        print(f"  - {attr}")
 
-lines="--NOME_CONSERVAZIONE, DURATA_MASSIMA_GIORNI, TEMPERATURA_MAX, TEMPERATURA_MIN, UMIDITA_MIN, UMIDITA_MAX\n"
-for i in range(len(theList)):
-  lines+=make_DML_line("MODALITA_CONSERVAZIONE", theList[i])+"\n"
+    print()
+    print("Regole input:")
+    print("  - stringhe: puoi scriverle senza apici")
+    print("  - numeri: scrivili normalmente, es. 12.5")
+    print("  - NULL: lascia vuoto oppure scrivi NULL")
+    print("  - date: per attributi DATA puoi scrivere 2026-01-01")
+    print("  - SQL puro: metti '=' davanti, es. =SYSDATE")
+    print()
 
-os.makedirs("make_DML/data/1_prodotto", exist_ok=True)
-with open("make_DML/data/1_prodotto/3_modalita_conservazione.json", "w", encoding="utf-8") as f:
-   json.dump(theJsonList, f, indent=4, ensure_ascii=False)
+    n = ask_int("Quante tuple vuoi inserire? ")
 
-make_DML("DB/DML/1_prodotto/3_modalita_conservazione.sql", lines)
+    rows = []
+
+    for i in range(n):
+        print()
+        print(f"--- TUPLA {i + 1}/{n} ---")
+
+        row = []
+
+        for attr in ATTRIBUTES:
+            raw = input(f"{attr}: ")
+            value = parse_value(attr, raw)
+            row.append(value)
+
+        rows.append(tuple(row))
+
+    return rows
+
+
+def load_existing_json(path: Path) -> list[dict]:
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError(f"Il file JSON {path} non contiene una lista.")
+
+    return data
+
+
+def append_json(rows: list[tuple]) -> None:
+    JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    old_data = load_existing_json(JSON_PATH)
+
+    new_data = [
+        dict(zip(ATTRIBUTES, row))
+        for row in rows
+    ]
+
+    final_data = old_data + new_data
+
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+
+
+def remove_final_commit(sql_text: str) -> str:
+    return re.sub(
+        r"\s*COMMIT;\s*$",
+        "\n",
+        sql_text,
+        flags=re.IGNORECASE
+    )
+
+
+def append_dml(rows: list[tuple]) -> None:
+    DML_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    file_exists = DML_PATH.exists()
+    old_text = ""
+
+    if file_exists:
+        old_text = DML_PATH.read_text(encoding="utf-8")
+
+    old_text_stripped = old_text.strip()
+
+    if old_text_stripped:
+        old_text = remove_final_commit(old_text)
+
+    lines = old_text
+
+    # Se il file non esiste o è vuoto, metto il commento iniziale.
+    # Se esiste già, NON lo ripeto.
+    if not old_text_stripped:
+        lines += HEADER + "\n"
+    elif not lines.endswith("\n"):
+        lines += "\n"
+
+    for row in rows:
+        lines += make_DML_line(TABLE_NAME, row) + "\n"
+
+    lines += "COMMIT;\n"
+
+    DML_PATH.write_text(lines, encoding="utf-8")
+
+
+def main() -> None:
+    rows = collect_rows()
+
+    if len(rows) == 0:
+        print("Nessuna tupla inserita.")
+        return
+
+    append_json(rows)
+    append_dml(rows)
+
+    print()
+    print(f"OK: aggiunte {len(rows)} tuple.")
+    print(f"JSON aggiornato: {JSON_PATH}")
+    print(f"DML aggiornato: {DML_PATH}")
+
+
+if __name__ == "__main__":
+    main()
